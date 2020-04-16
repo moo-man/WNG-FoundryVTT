@@ -1,0 +1,16 @@
+<div class="wfrp4e chat-card" data-actor-id="{{actorId}}" data-hide = {{hideData}}>
+
+    {{> systems/wfrp4e/templates/chat/test-card.html}}
+
+    {{#if testData.extensions}}
+    <div class="card-content">
+    {{testData.extensions}} {{localize "DIALOG.Extensions"}}
+    </div>
+    {{/if}}
+
+   <!-- {{#if opposed}}
+    <div class ="card-buttons">
+        <button class = "oppose-button">Oppose</button>
+    </div>
+    {{/if}}-->
+</div>
