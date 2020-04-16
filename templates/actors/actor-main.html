@@ -1,16 +1,11 @@
-<div class="characteristics">
-  <div class="characteristics-table" cellpadding="0">
+<div class="attributes">
+  <div class="attributes-table" cellpadding="0">
     <!-- <div class="table-header table-row"> -->
       <div class="table-header"></div>
-      {{#each actor.data.characteristics as |ch c|}}
-      <div title="{{ch.label}}" class="table-header">
+      {{#each actor.data.attributes as |atr a|}}
+      <div title="{{atr.label}}" class="table-header">
         <div class="header-block">
-          {{ch.abrev}}
-          {{#if ch.career}}
-          <a class="advancement-indicator" title="{{ch.cost}} Exp" data-target="{{c}}">+</a>
-          {{else}}
-          <a class="advancement-indicator" style="display: none" data-char="{{c}}">+</a>
-          {{/if}}
+          {{localize atr.abrev}}
         </div>
       </div>
       {{/each}}
@@ -18,35 +13,35 @@
     <!-- <div class="table-row"> -->
       <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Initial"}}
+          {{localize "Rating"}}
         </div>
       </div>
-      {{#each actor.data.characteristics as |ch c|}}
+      {{#each actor.data.attributes as |atr a|}}
       <div class="table-data">
-        <input name="data.characteristics.{{c}}.initial" type="text" value="{{ch.initial}}" data-dtype="Number">
+        <input name="data.attributes.{{a}}.rating" type="text" value="{{atr.rating}}" data-dtype="Number">
       </div>
       {{/each}}
     <!-- </div> -->
     <!-- <div class="table-row"> -->
       <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Advances"}}
+          {{localize "Bonus"}}
         </div>
       </div>
-      {{#each actor.data.characteristics as |ch c|}}
+      {{#each actor.data.attributes as |atr a|}}
       <div class="table-data">
-        <input name="data.characteristics.{{c}}.advances" type="text" value="{{ch.advances}}" data-dtype="Number">
+        <input name="data.attributes.{{a}}.bonus" type="text" value="{{atr.bonus}}" data-dtype="Number">
       </div>
       {{/each}}
     <!-- </div> -->
     <!-- <div class="table-row bottom"> -->
       <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Current"}}
+          {{localize "Total"}}
         </div>
       </div>
-      {{#each actor.data.characteristics as |ch c|}}
-      <div class="table-data ch-value" data-char="{{c}}"><a>{{ch.value}}</a></div>
+      {{#each actor.data.attributes as |atr a|}}
+      <div class="table-data ch-value" data-char="{{a}}"><a>{{atr.total}}</a></div>
       {{/each}}
     <!-- </div> -->
   </div>

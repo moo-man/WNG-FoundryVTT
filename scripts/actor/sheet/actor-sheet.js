@@ -96,7 +96,7 @@ class ActorSheetWNG extends ActorSheet {
    */
   getData() {
     const sheetData = super.getData();
-    mergeObject(sheetData.actor, this.actor.prepare())
+    //mergeObject(sheetData.actor, this.actor.prepare())
     sheetData.isGM = game.user.isGM;
     return sheetData;
   }

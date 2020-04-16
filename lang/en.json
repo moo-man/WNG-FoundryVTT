@@ -55,6 +55,8 @@
     "SHEET.EncAbbrev" : "Enc",
     "SHEET.QtyAbbrev" : "Qty",
 
+    "Rating" : "Rating",
+    "Bonus" : "Bonus",
     "Speed" : "Speed",
     "Penalty" : "Penalty",
     "Penalties" : "Penalties",

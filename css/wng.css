@@ -3593,25 +3593,25 @@
     font-weight: var(--actor-label-font-weight);
     color: var(--actor-label-color);
   }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-class {
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-tier {
       margin: 0px 15px 0px 0px;
-      width: 70px;
+      width: 30px;
     }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-career {
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-archetype {
       margin: 0px 15px 0px 0px;
       width: 113px;
     }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-careerlevel {
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-rank {
       margin: 0px 0px 0px 0px;
       width: 190px;
     }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-status {
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-faction {
       /* margin: 0px; */
       width: 60px;
     }
     .app.window-app.sheet.wng.actor.character-sheet .general #field-age {
       /* margin: 0px; */
-      width: 80px;
+      width: 40px;
     }
     .app.window-app.sheet.wng.actor.character-sheet .general #field-height {
       /* margin: 0px; */
@@ -3629,13 +3629,9 @@
       /* margin: 0px; */
       width: 80px;
     }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-distinguishingmark {
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-keywords {
       /* margin: 0px; */
-      width: 145px;
-    }
-    .app.window-app.sheet.wng.actor.character-sheet .general #field-starsign {
-      margin: 0px;
-      width: 148px;
+      width: 290px;
     }
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -3703,7 +3699,7 @@
 /* ==================== (F) MAIN TAB ========================== */
 
   /* ================== 1. CHARACTERISTICS TABLE ============== */
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes {
       border-top: none;
       margin: 6px 0px 0px 0px;
       padding: 0px 0px 0px 0px;
@@ -3711,20 +3707,20 @@
       width: 506px;
       max-width: 506px
     }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table {
       margin: 6px 0px 0px 0px;
       padding: 0px 0px 0px 0px;
       height: 109px;
       width: 506px;
       max-width: 506px;
       display: grid;
-      grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto auto auto;
       grid-gap: 0px;
       background: none;
       border: 1px solid #736953a6;
     }   
 
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-header {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header {
       font-family: var(--actor-label-font-family);
       font-size: var(--actor-label-font-size);
       font-weight: var(--actor-label-font-weight);
@@ -3735,18 +3731,18 @@
       border-bottom: none;  
       border-right: 1px solid #736953a6;
     }  
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-header .header-block {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header .header-block {
         padding-top: 0px;
       }  
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-header:last-of-type {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header:last-of-type {
         border-right: none;
       } 
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-header .header-block .advancement-indicator {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header .header-block .advancement-indicator {
         position: fixed;
         margin-top: -3px;
         margin-left: 3px;
       }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .row-type.table-data {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .row-type.table-data {
       font-family: var(--actor-label-font-family);
       font-size: var(--actor-label-font-size);
       font-weight: var(--actor-label-font-weight);
@@ -3759,18 +3755,18 @@
       max-height: 29px;
       padding-top: 5px;
     }  
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-data {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-data {
       border-top: 1px solid #736953a6;
       border-right: 1px solid #736953a6;
     }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table div:nth-of-type(11),
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table div:nth-of-type(22),
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table div:nth-of-type(33),
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table div:nth-of-type(44) {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table div:nth-of-type(8),
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table div:nth-of-type(16),
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table div:nth-of-type(24),
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table div:nth-of-type(32) {
         border-right: none;
         /* background: red; */
       }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-data input {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-data input {
       min-width: unset;
       width: 100%;
       height: 100%;
@@ -3781,7 +3777,7 @@
       text-align: center;
       padding-top: 7px;
     }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .characteristics-table .table-data.ch-value {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-data.ch-value {
       font-family: var(--actor-input-font-family);
       font-size: var(--actor-input-font-size);
       font-weight: var(--actor-input-font-weight);
@@ -9618,8 +9614,8 @@
   }
 
   /* FIRST ROW */
-  .limited .general .characteristics,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics {
+  .limited .general .attributes,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes {
     border-top: none;
     margin: 1px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
@@ -9627,8 +9623,8 @@
     width: 403px;
     max-width: 400px
   }
-  .limited .general .characteristics .characteristics-table,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table {
+  .limited .general .attributes .attributes-table,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table {
     margin: 1px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     height: 49px;
@@ -9640,8 +9636,8 @@
     background: none;
     border: 1px solid #736953a6;
   }   
-  .limited .general .characteristics .characteristics-table .table-header,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-header {
+  .limited .general .attributes .attributes-table .table-header,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header {
     font-family: var(--actor-label-font-family);
     font-size: var(--actor-label-font-size);
     font-weight: var(--actor-label-font-weight);
@@ -9652,31 +9648,31 @@
     border-bottom: none;  
     border-right: 1px solid #736953a6;
   }  
-  .limited .general .characteristics .characteristics-table .table-header:nth-of-type(10),
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-header:nth-of-type(10)  {
+  .limited .general .attributes .attributes-table .table-header:nth-of-type(10),
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header:nth-of-type(10)  {
     border-right: none;
     /* background: red; */
   }  
-  .limited .general .characteristics .characteristics-table .table-header .table-header .header-block,
-    .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-header .header-block {
+  .limited .general .attributes .attributes-table .table-header .table-header .header-block,
+    .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block {
       padding-top: 0px;
     }  
-    .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-header .header-block .advancement-indicator {
+    .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block .advancement-indicator {
       position: fixed;
       margin-top: -3px;
       margin-left: 3px;
     }
-  .limited .general .characteristics-table .table-data,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-data {
+  .limited .general .attributes-table .table-data,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data {
     border-top: 1px solid #736953a6;
     border-right: 1px solid #736953a6;
   }
-  .limited .general .characteristics-table .table-data:last-of-type,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-data:last-of-type {
+  .limited .general .attributes-table .table-data:last-of-type,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data:last-of-type {
     border-right: none;
   }
-  .limited .general .characteristics-table .table-data input,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-data input {
+  .limited .general .attributes-table .table-data input,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data input {
     min-width: unset;
     width: 100%;
     min-height: 26px;
@@ -9688,8 +9684,8 @@
     text-align: center;
     padding-top: 7px;
   }
-  .limited .general .characteristics-table .table-data.ch-value,
-  .app.window-app.sheet.wng.actor.npc-sheet .general .characteristics-table .table-data.ch-value {
+  .limited .general .attributes-table .table-data.ch-value,
+  .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-data.ch-value {
     font-family: var(--actor-input-font-family);
     font-size: var(--actor-input-font-size);
     font-weight: var(--actor-input-font-weight);
@@ -11179,7 +11175,7 @@
   }
 
   /* FIRST ROW */
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes {
     border-top: none;
     margin: 1px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
@@ -11187,7 +11183,7 @@
     width: 403px;
     max-width: 400px
   }
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table {
     margin: 1px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     height: 49px;
@@ -11200,7 +11196,7 @@
     border: 1px solid #736953a6;
   }   
 
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-header {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header {
     font-family: var(--actor-label-font-family);
     font-size: var(--actor-label-font-size);
     font-weight: var(--actor-label-font-weight);
@@ -11211,26 +11207,26 @@
     border-bottom: none;  
     border-right: 1px solid #736953a6;
   }  
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-header:nth-of-type(10)  {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header:nth-of-type(10)  {
     border-right: none;
     /* background: red; */
   }  
-    .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-header .header-block {
+    .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header .header-block {
       padding-top: 0px;
     }  
-    .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-header .header-block .advancement-indicator {
+    .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header .header-block .advancement-indicator {
       position: fixed;
       margin-top: -3px;
       margin-left: 3px;
     }
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-data {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-data {
     border-top: 1px solid #736953a6;
     border-right: 1px solid #736953a6;
   }
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-data:last-of-type {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-data:last-of-type {
     border-right: none;
   }
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-data input {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-data input {
     min-width: unset;
     width: 100%;
     min-height: 26px;
@@ -11242,7 +11238,7 @@
     text-align: center;
     padding-top: 7px;
   }
-  .app.window-app.sheet.wng.actor.creature-sheet .general .characteristics-table .table-data.ch-value {
+  .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-data.ch-value {
     font-family: var(--actor-input-font-family);
     font-size: var(--actor-input-font-size);
     font-weight: var(--actor-input-font-weight);
