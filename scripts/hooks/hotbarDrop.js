@@ -12,7 +12,7 @@ Hooks.on("hotbarDrop", async (bar, data, slot) =>
     if (data.data.type != "weapon" && data.data.type != "spell" && data.data.type != "prayer" && data.data.type != "trait" && data.data.type != "skill")
       return
     let item = data.data
-    let command = `WFRP_Utility.rollItemMacro("${item.name}", "${item.type}");`;
+    let command = `WNG_Utility.rollItemMacro("${item.name}", "${item.type}");`;
     let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command));
     if (!macro)
     {
@@ -53,7 +53,7 @@ Hooks.on("hotbarDrop", async (bar, data, slot) =>
       macro = await Macro.create({
       name: journal.data.name,
       type : "script",
-      img: "systems/wfrp4e/icons/buildings/scroll.png",
+      img: "systems/wng/icons/buildings/scroll.png",
       command : command
       }, {displaySheet: false})
       game.user.assignHotbarMacro(macro, slot);

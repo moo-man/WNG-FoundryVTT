@@ -3,14 +3,14 @@
  */
 Hooks.on("ready", async () => {
 
-    // Localize strings in the WFRP4E object
-    for (let obj in WFRP4E)
+    // Localize strings in the WNG object
+    for (let obj in WNG)
     {
-      for (let el in WFRP4E[obj])
+      for (let el in WNG[obj])
       {
-        if (typeof WFRP4E[obj][el] === "string")
+        if (typeof WNG[obj][el] === "string")
         {
-          WFRP4E[obj][el] = game.i18n.localize(WFRP4E[obj][el])
+          WNG[obj][el] = game.i18n.localize(WNG[obj][el])
         }
       }
     }
@@ -38,16 +38,16 @@ Hooks.on("ready", async () => {
    
                fetch(file).then(r=>r.json()).then(async records => {
                 // If extension of a table, add it to the columns
-                if(records.extend && WFRP_Tables[filename])
+                if(records.extend && WNG_Tables[filename])
                 {
-                  WFRP_Tables[filename].columns = WFRP_Tables[filename].columns.concat(records.columns)
-                   WFRP_Tables[filename].rows.forEach((obj, row) => {
+                  WNG_Tables[filename].columns = WNG_Tables[filename].columns.concat(records.columns)
+                   WNG_Tables[filename].rows.forEach((obj, row) => {
                     for (let c of records.columns)
-                      WFRP_Tables[filename].rows[row].range[c] = records.rows[row].range[c]
+                      WNG_Tables[filename].rows[row].range[c] = records.rows[row].range[c]
                    })
                 }
                 else // If not extension, load table as its filename
-                  WFRP_Tables[filename] = records;
+                  WNG_Tables[filename] = records;
                })
              }
              catch(error) {
@@ -76,16 +76,16 @@ Hooks.on("ready", async () => {
 
           fetch(file).then(r=>r.json()).then(async records => {
             // If extension of a table, add it to the columns
-            if(records.extend && WFRP_Tables[filename])
+            if(records.extend && WNG_Tables[filename])
             {
-              WFRP_Tables[filename].columns = WFRP_Tables[filename].columns.concat(records.columns)
-              WFRP_Tables[filename].rows.forEach((obj, row) => {
+              WNG_Tables[filename].columns = WNG_Tables[filename].columns.concat(records.columns)
+              WNG_Tables[filename].rows.forEach((obj, row) => {
                 for (let c of records.columns)
-                  WFRP_Tables[filename].rows[row].range[c] = records.rows[row].range[c]
+                  WNG_Tables[filename].rows[row].range[c] = records.rows[row].range[c]
               })
             }
             else // If not extension, load table as its filename
-              WFRP_Tables[filename] = records;
+              WNG_Tables[filename] = records;
           })
         }
         catch(error) {
@@ -110,7 +110,7 @@ Hooks.on("ready", async () => {
 
     else if (PSEUDO_ENTITIES.includes(entityType))
     {
-      return WFRP_Utility._replaceCustomLink(match, entityType, id, name)
+      return WNG_Utility._replaceCustomLink(match, entityType, id, name)
     }
 
     // Match World content
@@ -162,7 +162,7 @@ Hooks.on("ready", async () => {
 
 
 // Socket Responses - Morrslieb and opposed tests
- game.socket.on("system.wfrp4e", data => {
+ game.socket.on("system.wng", data => {
    if (data.type == "morrslieb")
     canvas.draw();
 
@@ -197,7 +197,7 @@ Hooks.on("ready", async () => {
  let needMigration
  try 
  {
-  needMigration = game.settings.get("wfrp4e", "systemMigrationVersion") < NEEDS_MIGRATION_VERSION;
+  needMigration = game.settings.get("wng", "systemMigrationVersion") < NEEDS_MIGRATION_VERSION;
  }
  catch 
  {
@@ -231,7 +231,7 @@ Hooks.on("closePermissionConfig", () => {
   {
     if (type != "GAMEMASTER" && !permissions[type].includes("FILES_BROWSE"))
     {
-      ui.notifications.warn("WARNING: WFRP4E currently requires users to have \"Browse File Explorer\" Permission")
+      ui.notifications.warn("WARNING: WNG currently requires users to have \"Browse File Explorer\" Permission")
       return
     }
   }

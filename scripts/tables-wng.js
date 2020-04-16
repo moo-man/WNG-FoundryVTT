@@ -1,13 +1,13 @@
 /**
  * This class handles all aspects of custom WFRP tables.
  * 
- * The WFRP_Tables is given table objects on 'init' and 'ready' hooks by
+ * The WNG_Tables is given table objects on 'init' and 'ready' hooks by
  * both the system, modules, and the world. See the tables folder for 
  * how they're structured. All files in that folder will be
- * added to WFRP_Tables if possible. 
+ * added to WNG_Tables if possible. 
  */
 
-class WFRP_Tables
+class WNG_Tables
 {
 
   /**
@@ -187,10 +187,10 @@ class WFRP_Tables
       case "winds":
         return `<b>The Swirling Winds</b><br> <b>Roll:</b> ${eval(result.roll)} <br> <b>Modifier: </b> ${result.modifier}`;
       case "career":
-        return `<b>Random Career - ${WFRP4E.species[column]}</b><br> <a class = "item-lookup">${result.name}</a> <br> <b>Roll:</b> ${result.roll}`;
+        return `<b>Random Career - ${WNG.species[column]}</b><br> <a class = "item-lookup">${result.name}</a> <br> <b>Roll:</b> ${result.roll}`;
       case "eyes":
       case "hair":
-        return `<b>${this[table].name} - ${WFRP4E.species[column]}</b><br>${result.name}<br><b>Roll:</b> ${eval(result.roll)}`
+        return `<b>${this[table].name} - ${WNG.species[column]}</b><br>${result.name}<br><b>Roll:</b> ${eval(result.roll)}`
 
       // Special scatter table display
       case "scatter":

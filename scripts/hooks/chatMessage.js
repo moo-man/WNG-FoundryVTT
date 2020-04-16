@@ -21,7 +21,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
     {
       // If no argument, display help menu
       if (command.length == 1)
-        msg.content = WFRP_Tables.formatChatRoll("menu")
+        msg.content = WNG_Tables.formatChatRoll("menu")
       else
       {
         // [0]: /table [1]: <table-name> [2]: argument1 [3]: argument2
@@ -38,7 +38,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
           column = command[2]
         }
         // Call tables class to roll and return html
-        msg.content = WFRP_Tables.formatChatRoll(command[1], {modifier : modifier}, column)
+        msg.content = WNG_Tables.formatChatRoll(command[1], {modifier : modifier}, column)
       }
       // Create message and return false to not display user input of `/table`
       if (msg)
@@ -52,9 +52,9 @@ Hooks.on("chatMessage", (html, content, msg) => {
       // Only one argument possible [1]: condition to lookup
       let conditionInput = command[1].toLowerCase();
       // Don't require spelling, match the closest condition to the input
-      let closest = WFRP_Utility.matchClosest(WFRP4E.conditions, conditionInput)
-      let description = WFRP4E.conditionDescriptions[closest];
-      let name = WFRP4E.conditions[closest];
+      let closest = WNG_Utility.matchClosest(WNG.conditions, conditionInput)
+      let description = WNG.conditionDescriptions[closest];
+      let name = WNG.conditions[closest];
   
       // Create message and return false to not display user input of `/cond`
       msg.content = `<b>${name}</b><br>${description}`
@@ -65,7 +65,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
     else if (command[0] == "/char")
     {
       // Begin character generation, return false to not display user input of `/char`
-      GeneratorWfrp4e.speciesStage()
+      GeneratorWNG.speciesStage()
       return false
     }
     // Name generation
@@ -76,7 +76,7 @@ Hooks.on("chatMessage", (html, content, msg) => {
       let species = (command[1] || "").toLowerCase();
       // Call generator class to create name, create message, return false to not display user input of `/name`
       let name = NameGenWfrp.generateName({species, gender})
-      ChatMessage.create(WFRP_Utility.chatDataSetup(name))
+      ChatMessage.create(WNG_Utility.chatDataSetup(name))
       return false
     }
   });

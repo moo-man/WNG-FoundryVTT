@@ -1,12 +1,12 @@
 /**
- * DiceWFRP is the centralized object that handles all things involving rolling logic. At the base of roll evaluation, there is
+ * DiceWNG is the centralized object that handles all things involving rolling logic. At the base of roll evaluation, there is
  * rollTest() which provides the basics of roll evaluation - determining success, SL, etc. This function is used by more complex
  * test evaluation functions like rollWeaponTest, which calls rollTest, then extends upon it with more logic concerning weapons.
  * Another noteworthy function is renderRollCard, which is used to display the roll results of all tests. Lastly, this object
  * is where chat listeners are defined, which add interactivity to chat, usually in the form of button clickss.
  */
 
-class DiceWFRP
+class DiceWNG
 {
   /**
    * Prepare Test is called by the setup functions for the actors (see setupCharacteristic() for info on their usage)
@@ -29,9 +29,9 @@ class DiceWFRP
 
     var sceneStress = "challenging";
     // Overrides default difficulty to Average depending on module setting and combat state
-    if (game.settings.get("wfrp4e", "testDefaultDifficulty") && (game.combat != null))
+    if (game.settings.get("wng", "testDefaultDifficulty") && (game.combat != null))
       sceneStress = game.combat.started ? "challenging" : "average";
-    else if (game.settings.get("wfrp4e", "testDefaultDifficulty"))
+    else if (game.settings.get("wng", "testDefaultDifficulty"))
       sceneStress = "average";
       
     // Merge input with generic properties constant between all tests
@@ -49,7 +49,7 @@ class DiceWFRP
     mergeObject(dialogOptions.data,
     {
       testDifficulty: dialogOptions.data.testDifficulty || sceneStress,
-      difficultyLabels: WFRP4E.difficultyLabels,
+      difficultyLabels: WNG.difficultyLabels,
       testModifier: (dialogOptions.data.modifier || 0) + dialogOptions.data.advantage * 10 || 0,
       slBonus: dialogOptions.data.slBonus || 0,
       successBonus: dialogOptions.data.successBonus || 0,
@@ -65,7 +65,7 @@ class DiceWFRP
     if (dialogOptions.rollOverride)
       roll = dialogOptions.rollOverride;
     else // Otherwise use a generic test
-      roll = ActorWfrp4e.defaultRoll;
+      roll = ActorWNG.defaultRoll;
 
     dialogOptions.data.rollMode = rollMode;
     dialogOptions.data.rollModes = CONFIG.rollModes;
@@ -170,7 +170,7 @@ class DiceWFRP
     else if (roll.total <= 5 || roll.total <= targetNum)
     {
       description = game.i18n.localize("Success")
-      if (game.settings.get("wfrp4e", "fastSL"))
+      if (game.settings.get("wng", "fastSL"))
       {
         let rollString = roll.total.toString();
         if (rollString.length == 2)
@@ -211,7 +211,7 @@ class DiceWFRP
         description = game.i18n.localize("Marginal") + " " + game.i18n.localize("Success");
 
       // Add 1 SL for each whole 10 the target number is above 100 (120 target: +2 SL) if the option is selected
-      if (game.settings.get("wfrp4e", "testAbove100"))
+      if (game.settings.get("wng", "testAbove100"))
       {
         if (targetNum > 100)
         {
@@ -249,9 +249,9 @@ class DiceWFRP
     if (testData.hitLocation)
     {
       if (testData.hitloc)
-        rollResults.hitloc = WFRP_Tables.rollTable("hitloc",{lookup: testData.hitloc});
+        rollResults.hitloc = WNG_Tables.rollTable("hitloc",{lookup: testData.hitloc});
       else
-        rollResults.hitloc = WFRP_Tables.rollTable("hitloc");
+        rollResults.hitloc = WNG_Tables.rollTable("hitloc");
 
       rollResults.hitloc.roll = eval(rollResults.hitloc.roll) // Cleaner number when editing chat card
       rollResults.hitloc.description = game.i18n.localize(rollResults.hitloc.description)
@@ -273,7 +273,7 @@ class DiceWFRP
     }
 
     // If optional rule of criticals/fumbles on all tessts - assign Astounding Success/Failure accordingly
-    if (game.settings.get("wfrp4e", "criticalsFumblesOnAllTests") && !testData.hitLocation)
+    if (game.settings.get("wng", "criticalsFumblesOnAllTests") && !testData.hitLocation)
     {
       if (roll.total > targetNum && roll.total % 11 == 0 || roll.total == 100)
       {
@@ -383,7 +383,7 @@ class DiceWFRP
 
     let CNtoUse = spell.data.cn.value
     // Partial channelling - reduce CN by SL so far
-    if (game.settings.get("wfrp4e", "partialChannelling"))
+    if (game.settings.get("wng", "partialChannelling"))
     {
       CNtoUse -=  spell.data.cn.SL;
     }
@@ -527,7 +527,7 @@ class DiceWFRP
     if (testResults.description.includes(game.i18n.localize("Failure")))
     {
       // Optional Rule: If SL in extended test is -/+0, counts as -/+1
-      if (Number(SL) == 0 && game.settings.get("wfrp4e", "extendedTests"))
+      if (Number(SL) == 0 && game.settings.get("wng", "extendedTests"))
         SL = -1;
 
       testResults.description = game.i18n.localize("ROLL.ChannelFailed")
@@ -543,7 +543,7 @@ class DiceWFRP
       testResults.description = game.i18n.localize("ROLL.ChannelSuccess")
 
       // Optional Rule: If SL in extended test is -/+0, counts as -/+1
-      if (Number(SL) == 0 && game.settings.get("wfrp4e", "extendedTests"))
+      if (Number(SL) == 0 && game.settings.get("wng", "extendedTests"))
         SL = 1;
 
       // Critical Channel - miscast and set SL gained to CN
@@ -694,7 +694,7 @@ class DiceWFRP
   {
 
     // Blank if manual chat cards
-    if (game.settings.get("wfrp4e", "manualChatCards") && !rerenderMessage)
+    if (game.settings.get("wng", "manualChatCards") && !rerenderMessage)
     {
       testData.roll = testData.SL = null;
     }
@@ -727,7 +727,7 @@ class DiceWFRP
       return renderTemplate(chatOptions.template, chatData).then(html =>
       {
         // Emit the HTML as a chat message
-        if (game.settings.get("wfrp4e", "manualChatCards"))
+        if (game.settings.get("wng", "manualChatCards"))
         {
           let blank = $(html)
           let elementsToToggle = blank.find(".display-toggle")
@@ -782,12 +782,12 @@ class DiceWFRP
       let name = $(ev.currentTarget).attr("data-name"); // Use name attribute if available, otherwis, use text clicked.
       let item;
       if (name)
-        item = await WFRP_Utility.findItem(name, itemType, location);
+        item = await WNG_Utility.findItem(name, itemType, location);
       else if (location)
-        item = await WFRP_Utility.findItem(ev.currentTarget.text, itemType, location);
+        item = await WNG_Utility.findItem(ev.currentTarget.text, itemType, location);
 
       if (!item)
-        WFRP_Utility.findItem(ev.currentTarget.text, itemType).then(item => item.postItem());
+        WNG_Utility.findItem(ev.currentTarget.text, itemType).then(item => item.postItem());
       else
         item.postItem()
     })
@@ -795,45 +795,45 @@ class DiceWFRP
     // Lookp function uses specialized skill and talent lookup functions that improve searches based on specializations
     html.on("click", ".talent-lookup", async ev =>
     {
-      WFRP_Utility.findTalent(ev.target.text).then(talent => talent.sheet.render(true));
+      WNG_Utility.findTalent(ev.target.text).then(talent => talent.sheet.render(true));
     })
 
     html.on("click", ".skill-lookup", async ev =>
     {
-      WFRP_Utility.findSkill(ev.target.text).then(skill => skill.sheet.render(true));
+      WNG_Utility.findSkill(ev.target.text).then(skill => skill.sheet.render(true));
     })
 
     // If draggable skill/talent, right click to open sheet
     html.on("mousedown", ".talent-drag", async ev =>
     {
       if (ev.button == 2)
-        WFRP_Utility.findTalent(ev.target.text).then(talent => talent.sheet.render(true));
+        WNG_Utility.findTalent(ev.target.text).then(talent => talent.sheet.render(true));
     })
     html.on("mousedown", ".skill-drag", async ev =>
     {
       if (ev.button == 2)
-        WFRP_Utility.findSkill(ev.target.text).then(skill => skill.sheet.render(true));
+        WNG_Utility.findSkill(ev.target.text).then(skill => skill.sheet.render(true));
     })
 
     // Custom entity clicks
     html.on("click", ".chat-roll", ev =>
     {
-      WFRP_Utility.handleRollClick(ev)
+      WNG_Utility.handleRollClick(ev)
     })
 
     html.on("click", ".symptom-tag", ev =>
     {
-      WFRP_Utility.handleSymptomClick(ev)
+      WNG_Utility.handleSymptomClick(ev)
     })
 
     html.on("click", ".condition-chat", ev =>
     {
-      WFRP_Utility.handleConditionClick(ev)
+      WNG_Utility.handleConditionClick(ev)
     })
 
     html.on('mousedown', '.table-click', ev =>
     {
-      WFRP_Utility.handleTableClick(ev)
+      WNG_Utility.handleTableClick(ev)
     })
 
     // Respond to editing chat cards - take all inputs and call the same function used with the data filled out
@@ -874,7 +874,7 @@ class DiceWFRP
       if (chatOptions.rollMode === "blindroll") chatOptions["blind"] = true;
 
       // Send message as third argument (rerenderMessage) so that the message will be updated instead of rendering a new one
-      ActorWfrp4e[`${data.postData.postFunction}`](newTestData, chatOptions, message);
+      ActorWNG[`${data.postData.postFunction}`](newTestData, chatOptions, message);
     })
 
     // Change card to edit mode
@@ -888,21 +888,21 @@ class DiceWFRP
     html.on('click', '.opposed-toggle', ev =>
     {
       ev.preventDefault();
-      OpposedWFRP.opposedClicked(ev)
+      OpposedWNG.opposedClicked(ev)
     });
 
     // Post an item property (quality/flaw) description when clicked
     html.on("click", '.item-property', event =>
     {
       event.preventDefault();
-      WFRP_Utility.postProperty(event.target.text);
+      WNG_Utility.postProperty(event.target.text);
     });
 
     // Character generation - select specific species
     html.on("click", '.species-select', event =>
     {
       event.preventDefault();
-      GeneratorWfrp4e.rollSpecies(
+      GeneratorWNG.rollSpecies(
         $(event.currentTarget).parents('.message').attr("data-message-id"),
         $(event.currentTarget).attr("data-species")); // Choose selected species
     });
@@ -915,27 +915,27 @@ class DiceWFRP
       switch ($(event.currentTarget).attr("data-button"))
       {
         case "rollSpecies":
-          GeneratorWfrp4e.rollSpecies($(event.currentTarget).parents('.message').attr("data-message-id"))
+          GeneratorWNG.rollSpecies($(event.currentTarget).parents('.message').attr("data-message-id"))
           break;
         case "rollCareer":
-          GeneratorWfrp4e.rollCareer($(event.currentTarget).attr("data-species"), WFRP4E.randomExp.careerRand)
+          GeneratorWNG.rollCareer($(event.currentTarget).attr("data-species"), WNG.randomExp.careerRand)
           break;
         case "rerollCareer":
-          GeneratorWfrp4e.rollCareer($(event.currentTarget).attr("data-species"), WFRP4E.randomExp.careerReroll, true)
-          GeneratorWfrp4e.rollCareer($(event.currentTarget).attr("data-species"), WFRP4E.randomExp.careerReroll, true)
+          GeneratorWNG.rollCareer($(event.currentTarget).attr("data-species"), WNG.randomExp.careerReroll, true)
+          GeneratorWNG.rollCareer($(event.currentTarget).attr("data-species"), WNG.randomExp.careerReroll, true)
           break;
         case "chooseCareer":
-          GeneratorWfrp4e.chooseCareer($(event.currentTarget).attr("data-species"))
+          GeneratorWNG.chooseCareer($(event.currentTarget).attr("data-species"))
           break;
         case "rollSpeciesSkillsTalents":
-          GeneratorWfrp4e.speciesSkillsTalents($(event.currentTarget).attr("data-species"))
+          GeneratorWNG.speciesSkillsTalents($(event.currentTarget).attr("data-species"))
           break;
         case "rollDetails":
-          GeneratorWfrp4e.rollDetails($(event.currentTarget).attr("data-species"))
+          GeneratorWNG.rollDetails($(event.currentTarget).attr("data-species"))
           break;
 
         case "rerollAttributes":
-          GeneratorWfrp4e.rollAttributes($(event.currentTarget).attr("data-species"), Number($(event.currentTarget).attr("data-exp")), true)
+          GeneratorWNG.rollAttributes($(event.currentTarget).attr("data-species"), Number($(event.currentTarget).attr("data-exp")), true)
           break;
       }
     });
@@ -946,7 +946,7 @@ class DiceWFRP
       event.preventDefault();
       let careerSelected = $(event.currentTarget).attr("data-career")
       let species = $(event.currentTarget).attr("data-species")
-      GeneratorWfrp4e.displayCareer(careerSelected, species, 0, false, true)
+      GeneratorWNG.displayCareer(careerSelected, species, 0, false, true)
     });
 
     // Proceed with an opposed test as unopposed
@@ -954,7 +954,7 @@ class DiceWFRP
     {
       event.preventDefault()
       let messageId = $(event.currentTarget).parents('.message').attr("data-message-id")
-      OpposedWFRP.resolveUnopposed(messageId)
+      OpposedWNG.resolveUnopposed(messageId)
     })
 
     // Used to select damage dealt (there's 2 numbers if Tiring + impact/damaging)
@@ -978,8 +978,8 @@ class DiceWFRP
     html.on("click", '.hidden-table', event =>
     {
       event.preventDefault()
-      let html = WFRP_Tables.tableMenu(true);
-      let chatData = WFRP_Utility.chatDataSetup(html)
+      let html = WNG_Tables.tableMenu(true);
+      let chatData = WNG_Utility.chatDataSetup(html)
       ChatMessage.create(chatData);
     })
 
@@ -1003,7 +1003,7 @@ class DiceWFRP
       if (manual)
       {
         if (message.data.flags.opposeData)
-          OpposedWFRP.clearOpposed();
+          OpposedWNG.clearOpposed();
       }
       ui.notifications.notify(game.i18n.localize("ROLL.CancelOppose"))
     })

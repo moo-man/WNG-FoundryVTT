@@ -6,7 +6,7 @@
  * involve retrieving data from the configuration values or the compendia.
  *
  */
-class WFRP_Utility
+class WNG_Utility
 {
   /**
    * Augments the spell item's description with the lore effect
@@ -28,8 +28,8 @@ class WFRP_Utility
     if (spell.data.lore.effect)
       description += "\n\n <b>Lore:</b> " + spell.data.lore.effect;
     // Otherwise, use config value for lore effect
-    else if (WFRP4E.loreEffect[spell.data.lore.value])
-      description += "\n\n <b>Lore:</b> " + WFRP4E.loreEffect[spell.data.lore.value];
+    else if (WNG.loreEffect[spell.data.lore.value])
+      description += "\n\n <b>Lore:</b> " + WNG.loreEffect[spell.data.lore.value];
     return description;
   }
 
@@ -37,7 +37,7 @@ class WFRP_Utility
    * Used when preparing armour - every time an armour item is prepared it's added as a layer. Each
    * layer has booleans for qualities/flaws and an AP value
    * 
-   * @param {Object} AP     AP object defined in actor preparation (see ActorWfrp4e.prepareItems()) - consists of layers
+   * @param {Object} AP     AP object defined in actor preparation (see ActorWNG.prepareItems()) - consists of layers
    * @param {Object} armor  'armour' Item type - armour layer that is being added
    * @param {String} loc    Location key to lookup AP value at that location
    */
@@ -71,8 +71,8 @@ class WFRP_Utility
       if (item)
       {
         item = item.trim();
-        if (!(Object.values(WFRP_Utility.qualityList()).includes(item) || (Object.values(WFRP_Utility.flawList()).includes(item)))) //if the quality does not show up in either quality or flaw list, add it
-          WFRP4E.itemQualities[item.toLowerCase().trim()] = item;
+        if (!(Object.values(WNG_Utility.qualityList()).includes(item) || (Object.values(WNG_Utility.flawList()).includes(item)))) //if the quality does not show up in either quality or flaw list, add it
+          WNG.itemQualities[item.toLowerCase().trim()] = item;
         return item
       }
     });
@@ -81,8 +81,8 @@ class WFRP_Utility
       if (item)
       {
         item = item.trim();
-        if (!(Object.values(WFRP_Utility.flawList()).includes(item) || (Object.values(WFRP_Utility.qualityList()).includes(item)))) //if the quality does not show up in either quality or flaw list, add it
-          WFRP4E.itemFlaws[item.toLowerCase().trim()] = item;
+        if (!(Object.values(WNG_Utility.flawList()).includes(item) || (Object.values(WNG_Utility.qualityList()).includes(item)))) //if the quality does not show up in either quality or flaw list, add it
+          WNG.itemFlaws[item.toLowerCase().trim()] = item;
         return item;
       }
     });
@@ -135,11 +135,11 @@ class WFRP_Utility
   static speciesCharacteristics(species, average)
   {
     let characteristics = {};
-    let characteristicFormulae = WFRP4E.speciesCharacteristics[species];
+    let characteristicFormulae = WNG.speciesCharacteristics[species];
     try
     {
       if (!characteristicFormulae) // If input species was not a valid key, try finding it as a value
-        characteristicFormulae = WFRP4E.speciesCharacteristics[this.findKey(species, WFRP4E.species)]
+        characteristicFormulae = WNG.speciesCharacteristics[this.findKey(species, WNG.species)]
     }
     catch (error)
     {
@@ -148,7 +148,7 @@ class WFRP_Utility
       throw error
     }
 
-    for (let char in WFRP4E.characteristics)
+    for (let char in WNG.characteristics)
     {
       if (average)
       {
@@ -170,9 +170,9 @@ class WFRP_Utility
    */
   static speciesMovement(species)
   {
-    let move = WFRP4E.speciesMovement[species];
+    let move = WNG.speciesMovement[species];
     if (!move) // If input species was not a valid key, try finding it as a value
-      move = WFRP4E.speciesMovement[this.findKey(species, WFRP4E.species)]
+      move = WNG.speciesMovement[this.findKey(species, WNG.species)]
     return move;
   }
 
@@ -274,7 +274,7 @@ class WFRP_Utility
    * 
    * @param {String} itemName   Item name to be searched for 
    * @param {String} itemType   Item's type (armour, weapon, etc.)
-   * @param {String} location   Compendium to look into, format: <package.name> - "wfrp4e.trappings"
+   * @param {String} location   Compendium to look into, format: <package.name> - "wng.trappings"
    */
   static async findItem(itemName, itemType, location = null)
   {
@@ -316,7 +316,7 @@ class WFRP_Utility
   }
 
 
-  // Used to sort arrays based on string value (used in organizing skills to be alphabetical - see ActorWfrp4e.prepareItems())
+  // Used to sort arrays based on string value (used in organizing skills to be alphabetical - see ActorWNG.prepareItems())
   static nameSorter(a, b)
   {
     if (a.name.toLowerCase() < b.name.toLowerCase())
@@ -331,9 +331,9 @@ class WFRP_Utility
    */
   static qualityList()
   {
-    let weapon = duplicate(WFRP4E.weaponQualities);
-    let armor = duplicate(WFRP4E.armorQualities);
-    let item = duplicate(WFRP4E.itemQualities);
+    let weapon = duplicate(WNG.weaponQualities);
+    let armor = duplicate(WNG.armorQualities);
+    let item = duplicate(WNG.itemQualities);
     let list = mergeObject(weapon, mergeObject(item, armor))
     return list;
   }
@@ -344,9 +344,9 @@ class WFRP_Utility
    */
   static flawList()
   {
-    let weapon = duplicate(WFRP4E.weaponFlaws);
-    let armor = duplicate(WFRP4E.armorFlaws);
-    let item = duplicate(WFRP4E.itemFlaws);
+    let weapon = duplicate(WNG.weaponFlaws);
+    let armor = duplicate(WNG.armorFlaws);
+    let item = duplicate(WNG.itemFlaws);
     let list = mergeObject(weapon, mergeObject(item, armor))
     return list;
   }
@@ -362,9 +362,9 @@ class WFRP_Utility
     let index = Math.floor(currentAdvances / 5);
     index = index < 0 ? 0 : index; // min 0
 
-    if (index >= WFRP4E.xpCost[type].length)
-      return WFRP4E.xpCost[WFRP4E.xpCost.length - 1];
-    return WFRP4E.xpCost[type][index];
+    if (index >= WNG.xpCost[type].length)
+      return WNG.xpCost[WNG.xpCost.length - 1];
+    return WNG.xpCost[type][index];
   }
 
   /**
@@ -388,7 +388,7 @@ class WFRP_Utility
     };
     if (["gmroll", "blindroll"].includes(chatOptions.rollMode)) chatOptions["whisper"] = ChatMessage.getWhisperIDs("GM");
     if (chatOptions.rollMode === "blindroll") chatOptions["blind"] = true;
-    chatOptions["template"] = "systems/wfrp4e/templates/chat/combat-status.html"
+    chatOptions["template"] = "systems/wng/templates/chat/combat-status.html"
 
 
     let chatData = {
@@ -437,7 +437,7 @@ class WFRP_Utility
     };
     if (["gmroll", "blindroll"].includes(chatOptions.rollMode)) chatOptions["whisper"] = ChatMessage.getWhisperIDs("GM");
     if (chatOptions.rollMode === "blindroll") chatOptions["blind"] = true;
-    chatOptions["template"] = "systems/wfrp4e/templates/chat/round-summary.html"
+    chatOptions["template"] = "systems/wng/templates/chat/round-summary.html"
 
 
     let chatData = {
@@ -500,7 +500,7 @@ class WFRP_Utility
     let returnConditions = [];
     for (let c in conditions)
     {
-      let displayValue = (WFRP4E.conditions[c])
+      let displayValue = (WNG.conditions[c])
       if (typeof conditions[c] !== "boolean") // Numeric condition
         displayValue += " " + conditions[c]
       returnConditions.push(displayValue);
@@ -516,8 +516,8 @@ class WFRP_Utility
    */
   static postSymptom(symptom)
   {
-    let symkey = WFRP_Utility.findKey(symptom.split("(")[0].trim(), WFRP4E.symptoms)
-    let content = `<b>${symptom}</b>: ${WFRP4E.symptomDescriptions[symkey]}`;
+    let symkey = WNG_Utility.findKey(symptom.split("(")[0].trim(), WNG.symptoms)
+    let content = `<b>${symptom}</b>: ${WNG.symptomDescriptions[symkey]}`;
     let chatOptions = {
       user: game.user._id,
       rollMode: game.settings.get("core", "rollMode"),
@@ -529,7 +529,7 @@ class WFRP_Utility
 
     if (game.user.isGM)
     {
-      content = `<b>${symptom} Treatment</b>: ${WFRP4E.symptomTreatment[symkey]}`;
+      content = `<b>${symptom} Treatment</b>: ${WNG.symptomTreatment[symkey]}`;
       chatOptions = {
         user: game.user._id,
         rollMode: game.settings.get("core", "rollMode"),
@@ -547,13 +547,13 @@ class WFRP_Utility
    */
   static postProperty(property)
   {
-    let properties = mergeObject(WFRP_Utility.qualityList(), WFRP_Utility.flawList()),
-      propertyDescr = Object.assign(duplicate(WFRP4E.qualityDescriptions), WFRP4E.flawDescriptions),
+    let properties = mergeObject(WNG_Utility.qualityList(), WNG_Utility.flawList()),
+      propertyDescr = Object.assign(duplicate(WNG.qualityDescriptions), WNG.flawDescriptions),
       propertyKey;
 
     property = property.replace(/,/g, '').trim();
 
-    propertyKey = WFRP_Utility.findKey(property.split(" ")[0], properties)
+    propertyKey = WNG_Utility.findKey(property.split(" ")[0], properties)
 
     let propertyDescription = `<b>${property}:</b><br>${propertyDescr[propertyKey]}`;
     propertyDescription = propertyDescription.replace("(Rating)", property.split(" ")[1])
@@ -643,7 +643,7 @@ class WFRP_Utility
   {
     let returnSkills = [];
 
-    const pack = game.packs.find(p => p.collection == "wfrp4e.skills")
+    const pack = game.packs.find(p => p.collection == "wng.skills")
     let skills = [];
     await pack.getIndex().then(index => skills = index);
     for (let sk of skills)
@@ -672,7 +672,7 @@ class WFRP_Utility
   static async allMoneyItems()
   {
     let moneyItems = []
-    const trappings = game.packs.find(p => p.collection == "wfrp4e.trappings")
+    const trappings = game.packs.find(p => p.collection == "wng.trappings")
     let trappingsIndex = [];
     await trappings.getIndex().then(index => trappingsIndex = index);
 
@@ -701,7 +701,7 @@ class WFRP_Utility
       case "Roll":
         return `<a class="chat-roll" data-roll="${id}"><i class='fas fa-dice'></i> ${name ? name : id}</a>`
       case "Table":
-        return `<a class = "table-click" data-table="${id}"><i class="fas fa-list"></i> ${(WFRP_Tables[id] && !name) ? WFRP_Tables[id].name : name}</a>`
+        return `<a class = "table-click" data-table="${id}"><i class="fas fa-list"></i> ${(WNG_Tables[id] && !name) ? WNG_Tables[id].name : name}</a>`
       case "Symptom":
         return `<a class = "symptom-tag" data-symptom="${id}"><i class='fas fa-user-injured'></i> ${name ? name : id}</a>`
       case "Condition":
@@ -710,7 +710,7 @@ class WFRP_Utility
   }
 
   /**
-   * Collects data from the table click event and sends it to WFRP_Tables to be rolled.
+   * Collects data from the table click event and sends it to WNG_Tables to be rolled.
    * 
    * @param {Object} event  click event
    */
@@ -724,11 +724,11 @@ class WFRP_Utility
     {
       if (event.target.text == game.i18n.localize("ROLL.CritCast"))
       {
-        html = WFRP_Tables.criticalCastMenu($(event.currentTarget).attr("data-table"));
+        html = WNG_Tables.criticalCastMenu($(event.currentTarget).attr("data-table"));
       }
 
       else if (event.target.text == game.i18n.localize("ROLL.TotalPower"))
-        html = WFRP_Tables.restrictedCriticalCastMenu();
+        html = WNG_Tables.restrictedCriticalCastMenu();
 
       // Not really a table but whatever
       else if ($(event.currentTarget).attr("data-table") == "misfire")
@@ -737,7 +737,7 @@ class WFRP_Utility
         html = `<b>${game.i18n.localize("Misfire")}</b>: ${game.i18n.localize("ROLL.MisfireText1")} ${damage} ${game.i18n.localize("ROLL.MisfireText2")}`;
       }
       else
-        html = WFRP_Tables.formatChatRoll($(event.currentTarget).attr("data-table"),
+        html = WNG_Tables.formatChatRoll($(event.currentTarget).attr("data-table"),
         {
           modifier: modifier
         }, $(event.currentTarget).attr("data-column"));
@@ -751,7 +751,7 @@ class WFRP_Utility
     // If right click, open table modifier menu
     else if (event.button == 2)
     {
-      renderTemplate('systems/wfrp4e/templates/chat/table-dialog.html').then(html =>
+      renderTemplate('systems/wng/templates/chat/table-dialog.html').then(html =>
       {
         new Dialog(
         {
@@ -767,7 +767,7 @@ class WFRP_Utility
                 let tableModifier = html.find('[name="tableModifier"]').val();
                 let tableLookup = html.find('[name="tableLookup"]').val();
                 let minOne = html.find('[name="minOne"]').is(':checked');
-                html = WFRP_Tables.formatChatRoll($(event.currentTarget).attr("data-table"),
+                html = WNG_Tables.formatChatRoll($(event.currentTarget).attr("data-table"),
                 {
                   modifier: tableModifier,
                   minOne: minOne,
@@ -796,11 +796,11 @@ class WFRP_Utility
     if (!cond)
       cond = event.target.text.trim();
     cond = cond.split(" ")[0]
-    let condkey = WFRP_Utility.findKey(cond, WFRP4E.conditions);
-    let condDescr = WFRP4E.conditionDescriptions[condkey];
+    let condkey = WNG_Utility.findKey(cond, WNG.conditions);
+    let condDescr = WNG.conditionDescriptions[condkey];
     let messageContent = `<b>${cond}</b><br>${condDescr}`
 
-    let chatData = WFRP_Utility.chatDataSetup(messageContent)
+    let chatData = WNG_Utility.chatDataSetup(messageContent)
     ChatMessage.create(chatData);
   }
 
@@ -814,7 +814,7 @@ class WFRP_Utility
     let symptom = $(event.currentTarget).attr("data-symptom")
     if (!symptom)
       symptom = event.target.text;
-    WFRP_Utility.postSymptom(symptom)
+    WNG_Utility.postSymptom(symptom)
   }
 
   /**
@@ -881,9 +881,9 @@ class WFRP_Utility
   static async toggleMorrslieb()
   {
     console.log("toggleMorrslieb()")
-    let morrsliebActive = canvas.scene.getFlag("wfrp4e", "morrslieb")
+    let morrsliebActive = canvas.scene.getFlag("wng", "morrslieb")
     morrsliebActive = !morrsliebActive
-    await canvas.scene.setFlag("wfrp4e", "morrslieb", morrsliebActive)
+    await canvas.scene.setFlag("wng", "morrslieb", morrsliebActive)
 
     if (game.modules.get("fxmaster") && game.modules.get("fxmaster").active)
     {
@@ -918,7 +918,7 @@ class WFRP_Utility
       }
       else 
       {
-        game.socket.emit("system.wfrp4e", {
+        game.socket.emit("system.wng", {
           type : "morrslieb"
         })
         canvas.draw();

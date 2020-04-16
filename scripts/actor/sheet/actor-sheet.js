@@ -1,19 +1,19 @@
 /**
  * Provides the data and general interaction with Actor Sheets - Abstract class.
  *
- * ActorSheetWfrp4e provides the general interaction and data organization shared among all 
+ * ActorSheetWNG provides the general interaction and data organization shared among all 
  * actor sheets, as this is an abstract class, inherited by either Character, NPC, or Creature
  * specific actor sheet classes. When rendering an actor sheet, getData() is called, which is
  * a large and key function that prepares the actor data for display, processing the raw data
  * and items and compiling them into data to display on the sheet. Additionally, this class
  * contains all the main events that respond to sheet interaction in activateListeners().
  *
- * @see   ActorWfrp4e - Data and main computation model (this.actor)
- * @see   ActorSheetWfrp4eCharacter - Character sheet class
- * @see   ActorSheetWfrp4eNPC - NPC sheet class
- * @see   ActorSheetWfrp4eCreature - Creature sheet class
+ * @see   ActorWNG - Data and main computation model (this.actor)
+ * @see   ActorSheetWNGCharacter - Character sheet class
+ * @see   ActorSheetWNGNPC - NPC sheet class
+ * @see   ActorSheetWNGCreature - Creature sheet class
  */
-class ActorSheetWfrp4e extends ActorSheet {
+class ActorSheetWNG extends ActorSheet {
 
 
   /**
@@ -90,7 +90,7 @@ class ActorSheetWfrp4e extends ActorSheet {
    * Provides the data to the template when rendering the actor sheet
    * 
    * This function is called when rendering the sheet, where it calls the base actor class
-   * to organize, process, and prepare all actor data for display. See ActorWfrp4e.prepare()
+   * to organize, process, and prepare all actor data for display. See ActorWNG.prepare()
    * 
    * @returns {Object} sheetData    Data given to the template when rendering
    */
@@ -333,7 +333,7 @@ class ActorSheetWfrp4e extends ActorSheet {
   // Unarmed attack button (fist in the combat tab)
   html.find('.fist-icon').click(async event => {
     event.preventDefault();
-    let pack = game.packs.find(p => p.collection == "wfrp4e.trappings");
+    let pack = game.packs.find(p => p.collection == "wng.trappings");
     let weapons;
     await pack.getIndex().then(index => weapons = index);
     let unarmedId = weapons.find(w => w.name.toLowerCase() == "unarmed");
@@ -354,7 +354,7 @@ class ActorSheetWfrp4e extends ActorSheet {
     // Dodge (Arrow in the combat tab)
     html.find('.improvised-icon').click(async event => {
       event.preventDefault();
-      let pack = game.packs.find(p => p.collection == "wfrp4e.trappings");
+      let pack = game.packs.find(p => p.collection == "wng.trappings");
       let weapons;
       await pack.getIndex().then(index => weapons = index);
       let improvId = weapons.find(w => w.name.toLowerCase() == "improvised weapon");
@@ -365,7 +365,7 @@ class ActorSheetWfrp4e extends ActorSheet {
     // Stomp (Creature)
     html.find('.stomp-icon').click(async event => {
       event.preventDefault();
-      let pack = game.packs.find(p => p.collection == "wfrp4e.traits");
+      let pack = game.packs.find(p => p.collection == "wng.traits");
       let traits;
       await pack.getIndex().then(index => traits = index);
       let stompId = traits.find(w => w.name.toLowerCase() == "weapon");
@@ -708,7 +708,7 @@ class ActorSheetWfrp4e extends ActorSheet {
   html.find('.item-delete').click(ev => {
     let li = $(ev.currentTarget).parents(".item"),
       itemId = li.attr("data-item-id");
-      renderTemplate('systems/wfrp4e/templates/chat/delete-item-dialog.html').then(html => {
+      renderTemplate('systems/wng/templates/chat/delete-item-dialog.html').then(html => {
         new Dialog({
         title: "Delete Confirmation",
         content: html,
@@ -860,14 +860,14 @@ class ActorSheetWfrp4e extends ActorSheet {
   html.find('.input.species').change(async event => {
     if (this.actor.data.type == "character")
       return
-    if (game.settings.get("wfrp4e", "npcSpeciesCharacteristics"))
+    if (game.settings.get("wng", "npcSpeciesCharacteristics"))
     {
       let species = event.target.value;
       await this.actor.update({"data.details.species.value" : species});
 
       try
       {
-        let initialValues = WFRP_Utility.speciesCharacteristics(species, true);
+        let initialValues = WNG_Utility.speciesCharacteristics(species, true);
         let characteristics = duplicate(this.actor.data.data.characteristics);
 
         for (let c in characteristics)
@@ -877,7 +877,7 @@ class ActorSheetWfrp4e extends ActorSheet {
         
 
         await this.actor.update({'data.characteristics' : characteristics})
-        await this.actor.update({"data.details.move.value" : WFRP_Utility.speciesMovement(species) || 4})
+        await this.actor.update({"data.details.move.value" : WNG_Utility.speciesMovement(species) || 4})
 
       }
       catch
@@ -911,7 +911,7 @@ class ActorSheetWfrp4e extends ActorSheet {
           // This if will do another test to see if creatureMethod should be used - If the user has modified the initial values, use creatureMethod
           if (!creatureMethod)
           {
-            let averageCharacteristics = WFRP_Utility.speciesCharacteristics(species, true);
+            let averageCharacteristics = WNG_Utility.speciesCharacteristics(species, true);
 
             // If this loop results in turning creatureMethod to true, that means an NPCs statistics have been edited manually, use -10 + 2d10 method
             for (let char in characteristics)
@@ -924,7 +924,7 @@ class ActorSheetWfrp4e extends ActorSheet {
           // Get species characteristics
           if (!creatureMethod)
           {
-            let rolledCharacteristics = WFRP_Utility.speciesCharacteristics(species, false);
+            let rolledCharacteristics = WNG_Utility.speciesCharacteristics(species, false);
             for (let char in rolledCharacteristics)
             {
               characteristics[char].initial = rolledCharacteristics[char];
@@ -994,19 +994,19 @@ class ActorSheetWfrp4e extends ActorSheet {
 
   // ---- Listen for custom entity links -----
   html.on("click", ".chat-roll", ev => {
-    WFRP_Utility.handleRollClick(ev)
+    WNG_Utility.handleRollClick(ev)
   })
 
   html.on("click", ".symptom-tag", ev => {
-    WFRP_Utility.handleSymptomClick(ev)
+    WNG_Utility.handleSymptomClick(ev)
   })
 
   html.on("click", ".condition-chat", ev => {
-    WFRP_Utility.handleConditionClick(ev)
+    WNG_Utility.handleConditionClick(ev)
   })
 
   html.on('mousedown', '.table-click', ev => {
-    WFRP_Utility.handleTableClick(ev)
+    WNG_Utility.handleTableClick(ev)
   })
 
   }
@@ -1119,7 +1119,7 @@ class ActorSheetWfrp4e extends ActorSheet {
           data.status.resolve.value = transfer.payload.resilience;
           data.details.experience.total += transfer.payload.exp;
         }
-        for (let c in WFRP4E.characteristics)
+        for (let c in WNG.characteristics)
         {
           data.characteristics[c].initial = transfer.payload.characteristics[c]
         }
@@ -1147,12 +1147,12 @@ class ActorSheetWfrp4e extends ActorSheet {
       if (transfer.lookupType == "skill")
       {
         // Advanced find function, returns the skill the user expects it to return, even with skills not included in the compendium (Lore (whatever))
-        item = await WFRP_Utility.findSkill(transfer.name)
+        item = await WNG_Utility.findSkill(transfer.name)
       }
       else if (transfer.lookupType == "talent")
       {
         // Advanced find function, returns the talent the user expects it to return, even with talents not included in the compendium (Etiquette (whatever))
-        item = await WFRP_Utility.findTalent(transfer.name)
+        item = await WNG_Utility.findTalent(transfer.name)
       }
       else 
       {
@@ -1270,7 +1270,7 @@ class ActorSheetWfrp4e extends ActorSheet {
       // Post an Item Quality/Flaw
       div.on("click", ".item-property", ev =>
       {
-        WFRP_Utility.postProperty(ev.target.text) 
+        WNG_Utility.postProperty(ev.target.text) 
       })
   
       // Roll a career income skill
@@ -1304,8 +1304,8 @@ class ActorSheetWfrp4e extends ActorSheet {
   
     let li = $(event.currentTarget).parents(".item"),
       property = event.target.text, // Proprety clicked on
-      properties = mergeObject(WFRP_Utility.qualityList(), WFRP_Utility.flawList()), // Property names
-      propertyDescr = Object.assign(duplicate(WFRP4E.qualityDescriptions), WFRP4E.flawDescriptions); // Property descriptions
+      properties = mergeObject(WNG_Utility.qualityList(), WNG_Utility.flawList()), // Property names
+      propertyDescr = Object.assign(duplicate(WNG.qualityDescriptions), WNG.flawDescriptions); // Property descriptions
   
     property = property.replace(/,/g, '').trim(); // Remove commas/whitespace
   
@@ -1334,7 +1334,7 @@ class ActorSheetWfrp4e extends ActorSheet {
     }
     else // Otherwise, just lookup the key for the property and use that to lookup the description
     {
-      propertyKey = WFRP_Utility.findKey(property.split(" ")[0], properties)
+      propertyKey = WNG_Utility.findKey(property.split(" ")[0], properties)
     }
   
     let propertyDescription = "<b>" + property + "</b>" + ": " + propertyDescr[propertyKey];
@@ -1377,27 +1377,27 @@ class ActorSheetWfrp4e extends ActorSheet {
     {
       let range = parseInt(event.target.text);
       expansionText =
-        `<a class="range-click" data-range="easy">0 yd - ${Math.ceil(range / 10)} yds: ${WFRP4E.rangeModifiers["Point Blank"]}</a><br>
-          <a class="range-click" data-range="average">${(Math.ceil(range / 10) + 1)} yds - ${Math.ceil(range / 2)} yds: ${WFRP4E.rangeModifiers["Short Range"]}</a><br>
-          <a class="range-click" data-range="challenging">${(Math.ceil(range / 2) + 1)} yds - ${range} yds: ${WFRP4E.rangeModifiers["Normal"]}</a><br>
-          <a class="range-click" data-range="difficult">${(range + 1)} yds - ${range * 2} yds: ${WFRP4E.rangeModifiers["Long Range"]}</a><br>
-          <a class="range-click" data-range="vhard">${(range * 2 + 1)} yds - ${range * 3} yds: ${WFRP4E.rangeModifiers["Extreme"]}</a><br>`;
+        `<a class="range-click" data-range="easy">0 yd - ${Math.ceil(range / 10)} yds: ${WNG.rangeModifiers["Point Blank"]}</a><br>
+          <a class="range-click" data-range="average">${(Math.ceil(range / 10) + 1)} yds - ${Math.ceil(range / 2)} yds: ${WNG.rangeModifiers["Short Range"]}</a><br>
+          <a class="range-click" data-range="challenging">${(Math.ceil(range / 2) + 1)} yds - ${range} yds: ${WNG.rangeModifiers["Normal"]}</a><br>
+          <a class="range-click" data-range="difficult">${(range + 1)} yds - ${range * 2} yds: ${WNG.rangeModifiers["Long Range"]}</a><br>
+          <a class="range-click" data-range="vhard">${(range * 2 + 1)} yds - ${range * 3} yds: ${WNG.rangeModifiers["Extreme"]}</a><br>`;
     }
     // Expand the weapon's group description
     else if (classes.hasClass("weapon-group"))
     {
       let weaponGroup = event.target.text;
       let weaponGroupKey = "";
-      weaponGroupKey = WFRP_Utility.findKey(weaponGroup, WFRP4E.weaponGroups);
-      expansionText = WFRP4E.weaponGroupDescriptions[weaponGroupKey];
+      weaponGroupKey = WNG_Utility.findKey(weaponGroup, WNG.weaponGroups);
+      expansionText = WNG.weaponGroupDescriptions[weaponGroupKey];
     }
     // Expand the weapon's reach description
     else if (classes.hasClass("weapon-reach"))
     {
       let reach = event.target.text;
       let reachKey;
-      reachKey = WFRP_Utility.findKey(reach, WFRP4E.weaponReaches);
-      expansionText = WFRP4E.reachDescription[reachKey];
+      reachKey = WNG_Utility.findKey(reach, WNG.weaponReaches);
+      expansionText = WNG.reachDescription[reachKey];
     }
   
     // Toggle expansion 
@@ -1479,7 +1479,7 @@ class ActorSheetWfrp4e extends ActorSheet {
         });
       }
     }
-    data["img"] = "systems/wfrp4e/icons/blank.png";
+    data["img"] = "systems/wng/icons/blank.png";
     data["name"] = `New ${data.type.capitalize()}`;
     this.actor.createEmbeddedEntity("OwnedItem", data,
     {

@@ -8,7 +8,7 @@ Hooks.on("getCombatTrackerEntryContext", (html, options) => {
       condition: true,
       icon: '<i class="far fa-question-circle"></i>',
       callback: target => {
-        WFRP_Utility.displayStatus(target.attr("data-token-id"));
+        WNG_Utility.displayStatus(target.attr("data-token-id"));
         $(`#sidebar-tabs`).find(`.item[data-tab="chat"]`).click();
       }
     })

@@ -1,158 +1,264 @@
 {
   "Actor": {
-    "types": ["character","npc","creature"],
+    "types": ["character","npc"],
     "templates": {
       "attributes":{
         "attributes": {
-          "ws": {
-            "type": "number",
-            "label": "Weapon Skill",
-            "abrev": "WS",
-            "initial": 20,
-            "advances": 0
-          },
-          "bs": {
-            "type": "Number",
-            "label": "Ballistic Skill",
-            "abrev": "BS",
-            "initial": 20,
-            "advances": 0
-          },
           "s": {
             "type": "Number",
-            "label": "Strength",
-            "abrev": "S",
+            "label": "ATR.S",
+            "abrev": "ATRAbbrev.S",
             "initial": 20,
             "advances": 0
           },
           "t": {
             "type": "Number",
-            "label": "Toughness",
-            "abrev": "T",
+            "label": "ATR.T",
+            "abrev": "ATRAbbrev.T",
+            "initial": 20,
+            "advances": 0
+          },
+          "a": {
+            "type": "Number",
+            "label": "ATR.A",
+            "abrev": "ATRAbbrev.A",
             "initial": 20,
             "advances": 0
           },
           "i": {
             "type": "Number",
-            "label": "Initiative",
-            "abrev": "I",
+            "label": "ATR.I",
+            "abrev": "ATRAbbrev.I",
             "initial": 20,
             "advances": 0
           },
-          "ag": {
+          "wil": {
             "type": "Number",
-            "label": "Agility",
-            "abrev": "Ag",
-            "initial": 20,
-            "advances": 0
-          },
-          "dex": {
-            "type": "Number",
-            "label": "Dexterity",
-            "abrev": "Dex",
+            "label": "ATR.Will",
+            "abrev": "ATRAbbrev.Will",
             "initial": 20,
             "advances": 0
           },
           "int": {
             "type": "Number",
-            "label": "Intelligence",
-            "abrev": "Int",
-            "initial": 20,
-            "advances": 0
-          },
-          "wp": {
-            "type": "Number",
-            "label": "Willpower",
-            "abrev": "WP",
+            "label": "ATR.Int",
+            "abrev": "ATRAbbrev.Int",
             "initial": 20,
             "advances": 0
           },
           "fel": {
             "type": "Number",
-            "label": "Fellowship",
-            "abrev": "Fel",
+            "label": "ATR.Fel",
+            "abrev": "ATRAbbrev.Fel",
             "initial": 20,
             "advances": 0
           }
         }
       },
-      "status": {
-        "status": {
-          "wounds": {
+      "skills":{
+        "skills": {
+          "ath": {
             "type": "Number",
-            "label": "Wounds",
-            "abrev": "W",
-            "value": 8,
-            "max": 8
+            "label" : "SKILL.Ath",
+            "attribute" : "s",
+            "rating" : 0,
+            "total" : 0
           },
-          "advantage": {
+          "aw": {
             "type": "Number",
-            "label": "Advantage",
-            "value": 0,
-            "max": 10
+            "label" : "SKILL.Aw",
+            "attribute" : "int",
+            "rating" : 0,
+            "total" : 0
           },
-          "criticalWounds": {
+          "bs": {
             "type": "Number",
-            "label": "Critical Wounds",
-            "value": 0,
-            "max": 2
+            "label" : "SKILL.BS",
+            "attribute" : "a",
+            "rating" : 0,
+            "total" : 0
           },
-          "sin": {
+          "cun": {
             "type": "Number",
-            "label": "Sin",
-            "value": 0
+            "label" : "SKILL.Cun",
+            "attribute" : "fel",
+            "rating" : 0,
+            "total" : 0
           },
-          "penalties": {
-            "type": "String",
-            "label": "Penalties",
-            "value": ""
-          },
-          "corruption": {
+          "dec": {
             "type": "Number",
-            "label": "Corruption",
-            "value": 0
+            "label" : "SKILL.Dec",
+            "attribute" : "fel",
+            "rating" : 0,
+            "total" : 0
           },
-          "encumbrance": {
+          "ins": {
             "type": "Number",
-            "label": "Encumbrance",
-            "max": 0,
-            "current": 0
+            "label" : "SKILL.Ins",
+            "attribute" : "fel",
+            "rating" : 0,
+            "total" : 0
+          },
+          "int": {
+            "type": "Number",
+            "label" : "SKILL.Int",
+            "attribute" : "wil",
+            "rating" : 0,
+            "total" : 0
+          },
+          "inv": {
+            "type": "Number",
+            "label" : "SKILL.Inv",
+            "attribute" : "int",
+            "rating" : 0,
+            "total" : 0
+          },
+          "lead": {
+            "type": "Number",
+            "label" : "SKILL.Lead",
+            "attribute" : "wil",
+            "rating" : 0,
+            "total" : 0
+          },
+          "med": {
+            "type": "Number",
+            "label" : "SKILL.Med",
+            "attribute" : "int",
+            "rating" : 0,
+            "total" : 0
+          },
+          "per": {
+            "type": "Number",
+            "label" : "SKILL.Per",
+            "attribute" : "fel",
+            "rating" : 0,
+            "total" : 0
+          },
+          "pil": {
+            "type": "Number",
+            "label" : "SKILL.Pil",
+            "attribute" : "a",
+            "rating" : 0,
+            "total" : 0
+          },
+          "psy": {
+            "type": "Number",
+            "label" : "SKILL.Psy",
+            "attribute" : "wil",
+            "rating" : 0,
+            "total" : 0
+          },
+          "sch": {
+            "type": "Number",
+            "label" : "SKILL.Sch",
+            "attribute" : "int",
+            "rating" : 0,
+            "total" : 0
+          },
+          "sth": {
+            "type": "Number",
+            "label" : "SKILL.Sth",
+            "attribute" : "a",
+            "rating" : 0,
+            "total" : 0
+          },
+          "surv": {
+            "type": "Number",
+            "label" : "SKILL.Surv",
+            "attribute" : "wil",
+            "rating" : 0,
+            "total" : 0
+          },
+          "tech": {
+            "type": "Number",
+            "label" : "SKILL.Tech",
+            "attribute" : "int",
+            "rating" : 0,
+            "total" : 0
+          },
+          "ws": {
+            "type": "Number",
+            "label" : "SKILL.WS",
+            "attribute" : "i",
+            "rating" : 0,
+            "total" : 0
           }
         }
       },
-      "details": {
-        "details": {
-          "species": {
-            "type": "String",
-            "label": "Species",
-            "value": ""
+      "survival": {
+        "survival": {
+          "wounds": {
+            "value": 0,
+            "max": 0
           },
+          "shock": {
+            "value": 0,
+            "max": 0,
+            "determination" : 0
+          },
+          "defence" : {
+            "base" : 0,
+            "armour" : 0,
+            "total" : 0
+          }
+        }
+      },
+      "objective": {
+        "objective": {
+          "conviction" : 0,
+          "size" : "",
+          "resolve" : 0,
+          "speed" : 0
+        }
+      },
+      "wrath" : 0,
+      "details" : {
+        "details" :{
           "gender": {
-            "type": "String",
             "label": "Gender",
             "value": ""
           },
-          "size": {
-            "type": "String",
-            "label": "Size",
-            "value": "avg"
+          "tier": {
+            "label": "Tier",
+            "value": 1
           },
-          "move": {
-            "type": "Number",
-            "label": "Movement",
-            "value": 4,
-            "walk": 0,
-            "run": 0
-          },
-          "god": {
-            "type": "String",
-            "label": "God",
+          "species": {
+            "label": "Species",
             "value": ""
           },
-          "hitLocationTable": {
-            "value": "hitloc",
-            "type": "String",
-            "label": "Hit Location Table"
+          "faction": {
+            "label": "Faction",
+            "value": ""
+          },
+          "archetype": {
+            "label": "Archetype",
+            "value": ""
+          },
+          "keywords": {
+            "label": "Keywords",
+            "value": []
+          },
+          "background": {
+            "label": "Background",
+            "value": ""
+          },
+          "notes": {
+            "label": "Notes",
+            "value": ""
+          },
+          "faith": {
+            "label": "Faith",
+            "max": 0,
+            "current": 0
+          },
+          "xp": {
+            "label": "XP",
+            "current": 0,
+            "total": 0
+          },
+          "corruption": {
+            "label": "Corruption",
+            "level": 0
           }
         }
       }

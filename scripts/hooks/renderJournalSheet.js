@@ -9,19 +9,19 @@ Hooks.on("renderJournalSheet", (obj, html, data) => {
 
     // ---- Listen for custom entity links -----
     html.find(".chat-roll").click(ev => {
-      WFRP_Utility.handleRollClick(ev)
+      WNG_Utility.handleRollClick(ev)
     })
 
     html.find(".symptom-tag").click(ev => {
-      WFRP_Utility.handleSymptomClick(ev)
+      WNG_Utility.handleSymptomClick(ev)
     })
 
     html.find(".condition-chat").click(ev => {
-      WFRP_Utility.handleConditionClick(ev)
+      WNG_Utility.handleConditionClick(ev)
     })
 
     html.find('.table-click').mousedown(ev => {
-      WFRP_Utility.handleTableClick(ev)
+      WNG_Utility.handleTableClick(ev)
     })
   })
   

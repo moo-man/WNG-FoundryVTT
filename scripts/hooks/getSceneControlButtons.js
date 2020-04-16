@@ -7,7 +7,7 @@ Hooks.on("getSceneControlButtons", (buttons) => {
       button: true,
       icon : "fas fa-circle",
       name: "morrslieb",
-      title: canvas.scene.getFlag("wfrp4e", "morrslieb") ? "Morrslieb - Currently On " : "Morrslieb - Currently Off",
-      onClick : WFRP_Utility.toggleMorrslieb
+      title: canvas.scene.getFlag("wng", "morrslieb") ? "Morrslieb - Currently On " : "Morrslieb - Currently Off",
+      onClick : WNG_Utility.toggleMorrslieb
     })
   })

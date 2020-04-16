@@ -7,7 +7,7 @@
  * interactivity and events are handled here.
  */
 
-class ItemSheetWfrp4e extends ItemSheet
+class ItemSheetWNG extends ItemSheet
 {
   constructor(item, options)
   {
@@ -51,7 +51,7 @@ class ItemSheetWfrp4e extends ItemSheet
   get template()
   {
     let type = this.item.type;
-    return `systems/wfrp4e/templates/items/item-${type}-sheet.html`;
+    return `systems/wng/templates/items/item-${type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -62,7 +62,7 @@ class ItemSheetWfrp4e extends ItemSheet
    * Start with the base item data and extending with additional properties for rendering.
    * Each item type has specific data (typically from config constants) that needs to be rendered
    * 
-   * Example: A weapon sheet needs all different weapon types to list in the weaponGroup dropdown (`data['weaponGroups'] = WFRP4E.weaponGroups;`)
+   * Example: A weapon sheet needs all different weapon types to list in the weaponGroup dropdown (`data['weaponGroups'] = WNG.weaponGroups;`)
    */
   getData()
   {
@@ -70,55 +70,55 @@ class ItemSheetWfrp4e extends ItemSheet
 
     if (this.item.type === "skill")
     {
-      data['characteristics'] = WFRP4E.characteristics;
-      data['skillGroup'] = WFRP4E.skillGroup;
-      data['skillTypes'] = WFRP4E.skillTypes;
+      data['characteristics'] = WNG.characteristics;
+      data['skillGroup'] = WNG.skillGroup;
+      data['skillTypes'] = WNG.skillTypes;
     }
     else if (this.item.type === "talent")
     {
-      data['talentMaxs'] = WFRP4E.talentMax;
+      data['talentMaxs'] = WNG.talentMax;
     }
     else if (this.item.type == "weapon")
     {
-      data['weaponGroups'] = WFRP4E.weaponGroups;
-      data['availability'] = WFRP4E.availability;
-      data['weaponReaches'] = WFRP4E.weaponReaches
-      data['ammunitionGroups'] = WFRP4E.ammunitionGroups;
-      data['weaponTypes'] = WFRP4E.weaponTypes;
-      data.isMelee = WFRP4E.groupToType[this.item.data.data.weaponGroup.value] == "melee"
+      data['weaponGroups'] = WNG.weaponGroups;
+      data['availability'] = WNG.availability;
+      data['weaponReaches'] = WNG.weaponReaches
+      data['ammunitionGroups'] = WNG.ammunitionGroups;
+      data['weaponTypes'] = WNG.weaponTypes;
+      data.isMelee = WNG.groupToType[this.item.data.data.weaponGroup.value] == "melee"
     }
     else if (this.item.type == "ammunition")
     {
-      data['availability'] = WFRP4E.availability;
-      data['ammunitionGroups'] = WFRP4E.ammunitionGroups;
+      data['availability'] = WNG.availability;
+      data['ammunitionGroups'] = WNG.ammunitionGroups;
     }
     else if (this.item.type == "armour")
     {
-      data['armorTypes'] = WFRP4E.armorTypes;
-      data['availability'] = WFRP4E.availability;
+      data['armorTypes'] = WNG.armorTypes;
+      data['availability'] = WNG.availability;
     }
     else if (this.item.type == "spell")
     {
-      if (WFRP4E.magicLores[this.item.data.data.lore.value])
+      if (WNG.magicLores[this.item.data.data.lore.value])
       {
-        data["loreValue"] = WFRP4E.magicLores[this.item.data.data.lore.value]
+        data["loreValue"] = WNG.magicLores[this.item.data.data.lore.value]
       }
       else
       {
         data["loreValue"] = this.item.data.data.lore.value;
       }
-      data["descriptionAndLore"] = WFRP_Utility._spellDescription(this.item.data)
+      data["descriptionAndLore"] = WNG_Utility._spellDescription(this.item.data)
 
     }
     else if (this.item.type == "prayer")
     {
-      data['prayerTypes'] = WFRP4E.prayerTypes;
+      data['prayerTypes'] = WNG.prayerTypes;
     }
 
 
     else if (this.item.type == "career")
     {
-      data['statusTiers'] = WFRP4E.statusTiers;
+      data['statusTiers'] = WNG.statusTiers;
       data['skills'] = data.data.skills.join(", ").toString();
       data['earningSkills'] = data.data.incomeSkill.map(function (item)
       {
@@ -126,17 +126,17 @@ class ItemSheetWfrp4e extends ItemSheet
       });
       data['talents'] = data.data.talents.toString();
       data['trappings'] = data.data.trappings.toString();
-      let characteristicList = duplicate(WFRP4E.characteristicsAbbrev);
+      let characteristicList = duplicate(WNG.characteristicsAbbrev);
       for (let char in characteristicList)
       {
         if (data.data.characteristics.includes(char))
           characteristicList[char] = {
-            abrev: WFRP4E.characteristicsAbbrev[char],
+            abrev: WNG.characteristicsAbbrev[char],
             checked: true
           };
         else
           characteristicList[char] = {
-            abrev: WFRP4E.characteristicsAbbrev[char],
+            abrev: WNG.characteristicsAbbrev[char],
             checked: false
           };
       }
@@ -146,24 +146,24 @@ class ItemSheetWfrp4e extends ItemSheet
 
     else if (this.item.type == "trapping")
     {
-      data['trappingTypes'] = WFRP4E.trappingTypes;
-      data['availability'] = WFRP4E.availability;
+      data['trappingTypes'] = WNG.trappingTypes;
+      data['availability'] = WNG.availability;
     }
 
     else if (this.item.type == "trait")
     {
-      data['characteristics'] = WFRP4E.characteristics;
-      data['difficultyLabels'] = WFRP4E.difficultyLabels;
+      data['characteristics'] = WNG.characteristics;
+      data['difficultyLabels'] = WNG.difficultyLabels;
     }
 
     else if (this.item.type == "container")
     {
-      data['availability'] = WFRP4E.availability;
+      data['availability'] = WNG.availability;
     }
 
     else if (this.item.type == "mutation")
     {
-      data['mutationTypes'] = WFRP4E.mutationTypes;
+      data['mutationTypes'] = WNG.mutationTypes;
     }
 
     data.isGM = game.user.isGM;
@@ -196,10 +196,10 @@ class ItemSheetWfrp4e extends ItemSheet
       {
         let inputLore = event.target.value;
         // Go through each lore name
-        for (let lore in WFRP4E.magicLores)
+        for (let lore in WNG.magicLores)
         {
           // If lore value matches config, use that (Update the actor with the "key" value)
-          if (inputLore == WFRP4E.magicLores[lore])
+          if (inputLore == WNG.magicLores[lore])
           {
             await this.item.update({'data.lore.value': lore});
             return;
@@ -337,29 +337,29 @@ class ItemSheetWfrp4e extends ItemSheet
     // Support custom entity links
     html.on("click", ".chat-roll", ev =>
     {
-      WFRP_Utility.handleRollClick(ev)
+      WNG_Utility.handleRollClick(ev)
     })
 
     html.on("click", ".symptom-tag", ev =>
     {
-	  WFRP_Utility.handleSymptomClick(ev)
+	  WNG_Utility.handleSymptomClick(ev)
     })
 
     html.on("click", ".condition-chat", ev =>
     {
-      WFRP_Utility.handleConditionClick(ev)
+      WNG_Utility.handleConditionClick(ev)
     })
 
     html.on('mousedown', '.table-click', ev =>
     {
-      WFRP_Utility.handleTableClick(ev)
+      WNG_Utility.handleTableClick(ev)
     })
 
   }
 }
 
 Items.unregisterSheet("core", ItemSheet);
-Items.registerSheet("wfrp4e", ItemSheetWfrp4e,
+Items.registerSheet("wng", ItemSheetWNG,
 {
   makeDefault: true
 });

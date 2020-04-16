@@ -1,18 +1,18 @@
 /**
  * Provides the specific interaction handlers for Character Sheets.
  *
- * ActorSheetWfrp4eCharacter are assigned to character type actors, and the specific interactions
+ * ActorSheetWNGCharacter are assigned to character type actors, and the specific interactions
  * character type actors need are defined here, specifically for careers and spending exp.
  * 
  */
-class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
+class ActorSheetWNGCharacter extends ActorSheetWNG
 {
   static get defaultOptions()
   {
     const options = super.defaultOptions;
     mergeObject(options,
     {
-      classes: options.classes.concat(["wfrp4e", "actor", "character-sheet"]),
+      classes: options.classes.concat(["wng", "actor", "character-sheet"]),
       width: 610,
       height: 740,
     });
@@ -26,8 +26,8 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
    */
   get template()
   {
-    if (!game.user.isGM && this.actor.limited) return "systems/wfrp4e/templates/actors/actor-limited.html";
-    return "systems/wfrp4e/templates/actors/actor-sheet.html";
+    if (!game.user.isGM && this.actor.limited) return "systems/wng/templates/actors/actor-limited.html";
+    return "systems/wng/templates/actors/actor-sheet.html";
 
   }
 
@@ -96,7 +96,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
     html.find(".untrained-skill").mousedown(async ev =>
     {
 
-      let skill = await WFRP_Utility.findSkill(event.target.text);
+      let skill = await WNG_Utility.findSkill(event.target.text);
 
       // Right click - show sheet
       if (ev.button == 2)
@@ -144,7 +144,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
     // Grayed-out talent click - prompt to add the talent
     html.find(".untrained-talent").mousedown(async ev =>
     {
-      let talent = await WFRP_Utility.findTalent(event.target.text);
+      let talent = await WNG_Utility.findTalent(event.target.text);
 
       // Right click - show sheet
       if (ev.button == 2)
@@ -212,7 +212,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
         if (ev.button == 0)
         {
           // Calculate the advancement cost based on the current number of advances, subtract that amount, advance by 1
-          let cost = WFRP_Utility._calculateAdvCost(item.data.advances.value, type)
+          let cost = WNG_Utility._calculateAdvCost(item.data.advances.value, type)
           data.details.experience.spent = Number(data.details.experience.spent) + cost;
           item.data.advances.value++;
           await this.actor.updateEmbeddedEntity("OwnedItem",{_id: itemId, "data.advances.value": item.data.advances.value});
@@ -224,7 +224,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
           if (item.data.advances.value == 0)
             return;
           item.data.advances.value--;
-          let cost = WFRP_Utility._calculateAdvCost(item.data.advances.value, type)
+          let cost = WNG_Utility._calculateAdvCost(item.data.advances.value, type)
           data.details.experience.spent = Number(data.details.experience.spent) - cost;
           this.actor.updateEmbeddedEntity("OwnedItem",{_id: itemId,"data.advances.value": item.data.advances.value});
           this.actor.update({"data.details.experience.spent": data.details.experience.spent});
@@ -309,7 +309,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
         if (ev.button == 0)
         {
           // Calculate the advancement cost based on the current number of advances, subtract that amount, advance by 1
-          let cost = WFRP_Utility._calculateAdvCost(currentChar.advances, "characteristic");
+          let cost = WNG_Utility._calculateAdvCost(currentChar.advances, "characteristic");
 
           data.characteristics[characteristic].advances++;
           data.details.experience.spent = Number(data.details.experience.spent) + cost;
@@ -324,7 +324,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
           // Calculate the advancement cost based on advances -1, add that amount back into exp
           if (currentChar.advances == 0)
             return
-          let cost = WFRP_Utility._calculateAdvCost(currentChar.advances - 1, "characteristic");
+          let cost = WNG_Utility._calculateAdvCost(currentChar.advances - 1, "characteristic");
 
           data.characteristics[characteristic].advances--;
           data.details.experience.spent = Number(data.details.experience.spent) - cost;
@@ -340,7 +340,7 @@ class ActorSheetWfrp4eCharacter extends ActorSheetWfrp4e
 }
 
 // Register Character Sheet
-Actors.registerSheet("wfrp4e", ActorSheetWfrp4eCharacter,
+Actors.registerSheet("wng", ActorSheetWNGCharacter,
 {
   types: ["character"],
   makeDefault: true

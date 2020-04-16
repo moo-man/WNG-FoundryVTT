@@ -15,7 +15,7 @@ Hooks.on("preCreateActor", (dir, actor) =>{
 
   // Set custom default token
   if (!actor.img)
-    actor.img = "systems/wfrp4e/tokens/unknown.png"
+    actor.img = "systems/wng/tokens/unknown.png"
 
   // Default characters to HasVision = true and Link Data = true
   if (actor.type == "character")

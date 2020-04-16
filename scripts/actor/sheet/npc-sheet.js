@@ -1,20 +1,20 @@
 /**
  * Provides the specific interaction handlers for NPC Sheets.
  *
- * ActorSheetWfrp4eNPC is assigned to NPC type actors, and the specific interactions
+ * ActorSheetWNGNPC is assigned to NPC type actors, and the specific interactions
  * npc type actors need are defined here, specifically for careers. NPCs have the unique
  * functionality with careers where clicking "complete" automatically advances characteristics,
  * skills, and talents from that career.
  * 
  */
-class ActorSheetWfrp4eNPC extends ActorSheetWfrp4e
+class ActorSheetWNGNPC extends ActorSheetWNG
 {
   static get defaultOptions()
   {
     const options = super.defaultOptions;
     mergeObject(options,
     {
-      classes: options.classes.concat(["wfrp4e", "actor", "npc-sheet"]),
+      classes: options.classes.concat(["wng", "actor", "npc-sheet"]),
       width: 610,
       height: 740,
     });
@@ -27,8 +27,8 @@ class ActorSheetWfrp4eNPC extends ActorSheetWfrp4e
    */
   get template()
   {
-    if (!game.user.isGM && this.actor.limited) return "systems/wfrp4e/templates/actors/actor-limited.html";
-    return "systems/wfrp4e/templates/actors/npc-sheet.html";
+    if (!game.user.isGM && this.actor.limited) return "systems/wng/templates/actors/actor-limited.html";
+    return "systems/wng/templates/actors/npc-sheet.html";
   }
 
   /* -------------------------------------------- */
@@ -75,7 +75,7 @@ class ActorSheetWfrp4eNPC extends ActorSheetWfrp4e
 }
 
 // Register NPC Sheet
-Actors.registerSheet("wfrp4e", ActorSheetWfrp4eNPC,
+Actors.registerSheet("wng", ActorSheetWNGNPC,
 {
   types: ["npc"],
   makeDefault: true

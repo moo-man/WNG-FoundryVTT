@@ -4,7 +4,7 @@
 Hooks.once("init", () => {
 
     // load tables from system folder
-    FilePicker.browse("data", "systems/wfrp4e/tables").then(resp => {
+    FilePicker.browse("data", "systems/wng/tables").then(resp => {
       try 
       {
       if (resp.error)
@@ -16,7 +16,7 @@ Hooks.once("init", () => {
             continue
           let filename = file.substring(file.lastIndexOf("/")+1, file.indexOf(".json"));
           fetch(file).then(r=>r.json()).then(async records => {
-            WFRP_Tables[filename] = records;
+            WNG_Tables[filename] = records;
           })
         }
         catch(error) {
@@ -30,7 +30,7 @@ Hooks.once("init", () => {
     }
     })
     // Create scatter table
-    WFRP_Tables.scatter = {
+    WNG_Tables.scatter = {
       name : "Scatter",
       die : "1d10",
       rows : [
@@ -78,7 +78,7 @@ Hooks.once("init", () => {
     }
   
     // Create Winds table
-    WFRP_Tables.winds = {
+    WNG_Tables.winds = {
       name : "The Swirling Winds",
       die : "1d10",
       rows : [
@@ -106,7 +106,7 @@ Hooks.once("init", () => {
     }
 
   
-    game.settings.register("wfrp4e", "systemMigrationVersion", {
+    game.settings.register("wng", "systemMigrationVersion", {
       name: "System Migration Version",
       scope: "world",
       config: false,
@@ -115,7 +115,7 @@ Hooks.once("init", () => {
     });
 
     // Register initiative rule
-    game.settings.register("wfrp4e", "initiativeRule", {
+    game.settings.register("wng", "initiativeRule", {
       name: "SETTINGS.InitRule",
       hint: "SETTINGS.InitHint",
       scope: "world",
@@ -128,12 +128,12 @@ Hooks.once("init", () => {
         "d10Init": "SETTINGS.InitD10",
         "d10InitAgi": "SETTINGS.InitD10Agi"
       },
-      onChange: rule => _setWfrp4eInitiative(rule)
+      onChange: rule => _setWNGInitiative(rule)
     });
-    _setWfrp4eInitiative(game.settings.get("wfrp4e", "initiativeRule"));
+    _setWNGInitiative(game.settings.get("wng", "initiativeRule"));
   
   
-    function _setWfrp4eInitiative(initMethod)
+    function _setWNGInitiative(initMethod)
     {
       let formula;
       switch (initMethod)
@@ -164,7 +164,7 @@ Hooks.once("init", () => {
   
   
      // Register Advantage cap
-     game.settings.register("wfrp4e", "capAdvantageIB", {
+     game.settings.register("wng", "capAdvantageIB", {
        name: "SETTINGS.CapAdvIB",
        hint: "SETTINGS.CapAdvIBHint",
        scope: "world",
@@ -174,7 +174,7 @@ Hooks.once("init", () => {
      });
   
     // Register Fast SL rule
-    game.settings.register("wfrp4e", "fastSL", {
+    game.settings.register("wng", "fastSL", {
       name: "SETTINGS.FastSL",
       hint: "SETTINGS.FastSLHint",
       scope: "world",
@@ -184,7 +184,7 @@ Hooks.once("init", () => {
     });
   
     // Register Tests above 100% Rule
-    game.settings.register("wfrp4e", "testAbove100", {
+    game.settings.register("wng", "testAbove100", {
       name: "SETTINGS.TestsAbove100",
       hint: "SETTINGS.TestsAbove100Hint",
       scope: "world",
@@ -194,7 +194,7 @@ Hooks.once("init", () => {
     });
 
     // Register Criticals/Fumbles on all tests
-    game.settings.register("wfrp4e", "criticalsFumblesOnAllTests", {
+    game.settings.register("wng", "criticalsFumblesOnAllTests", {
       name: "SETTINGS.CriticalsFumblesAllTests",
       hint: "SETTINGS.CriticalsFumblesAllTestsHint",
       scope: "world",
@@ -205,7 +205,7 @@ Hooks.once("init", () => {
   
   
       // Register Extended Tests
-      game.settings.register("wfrp4e", "extendedTests", {
+      game.settings.register("wng", "extendedTests", {
         name: "SETTINGS.ExtendedTests",
         hint: "SETTINGS.ExtendedTestsHint",
         scope: "world",
@@ -215,7 +215,7 @@ Hooks.once("init", () => {
       });
   
       // Register Test auto-fill
-      game.settings.register("wfrp4e", "testAutoFill", {
+      game.settings.register("wng", "testAutoFill", {
         name: "SETTINGS.TestDialogAutoPopulate",
         hint: "SETTINGS.TestDialogAutoPopulateHint",
         scope: "world",
@@ -225,7 +225,7 @@ Hooks.once("init", () => {
       });
 
       // Register default test difficulty
-      game.settings.register("wfrp4e", "testDefaultDifficulty", {
+      game.settings.register("wng", "testDefaultDifficulty", {
         name: "SETTINGS.TestDialogDefaultDifficulty",
         hint: "SETTINGS.TestDialogDefaultDifficultyHint",
         scope: "world",
@@ -235,7 +235,7 @@ Hooks.once("init", () => {
       });
   
       // Register NPC Species Randomization
-      game.settings.register("wfrp4e", "npcSpeciesCharacteristics", {
+      game.settings.register("wng", "npcSpeciesCharacteristics", {
         name: "SETTINGS.NpcAverageChar",
         hint: "SETTINGS.NpcAverageCharHint",
         scope: "world",
@@ -245,7 +245,7 @@ Hooks.once("init", () => {
       });
   
       // Register Partial Channelling
-      game.settings.register("wfrp4e", "partialChannelling", {
+      game.settings.register("wng", "partialChannelling", {
         name: "SETTINGS.PartialChannelling",
         hint: "SETTINGS.PartialChannellingHint",
         scope: "world",
@@ -255,7 +255,7 @@ Hooks.once("init", () => {
       });
 
       // Register Round Summary
-      game.settings.register("wfrp4e", "displayRoundSummary", {
+      game.settings.register("wng", "displayRoundSummary", {
         name: "SETTINGS.RoundSummary",
         hint: "SETTINGS.RoundSummaryHint",
         scope: "world",
@@ -265,7 +265,7 @@ Hooks.once("init", () => {
       });
   
       // Register Status on Turn Start
-      game.settings.register("wfrp4e", "statusOnTurnStart", {
+      game.settings.register("wng", "statusOnTurnStart", {
         name: "SETTINGS.StatusTurnStart",
         hint: "SETTINGS.StatusTurnStartHint",
         scope: "world",
@@ -276,7 +276,7 @@ Hooks.once("init", () => {
   
   
       // Register Focus on Turn Start
-      game.settings.register("wfrp4e", "focusOnTurnStart", {
+      game.settings.register("wng", "focusOnTurnStart", {
         name: "SETTINGS.FocusTurnStart",
         hint: "SETTINGS.FocusTurnStartHint",
         scope: "world",
@@ -286,7 +286,7 @@ Hooks.once("init", () => {
       });
   
       // Register Hiding Test Data
-      game.settings.register("wfrp4e", "hideTestData", {
+      game.settings.register("wng", "hideTestData", {
         name: "SETTINGS.HideTestData",
         hint: "SETTINGS.HideTestDataHint",
         scope: "world",
@@ -296,7 +296,7 @@ Hooks.once("init", () => {
       });
 
       // Register Manual Chat Cards
-      game.settings.register("wfrp4e", "manualChatCards", {
+      game.settings.register("wng", "manualChatCards", {
         name: "SETTINGS.ManualChatCards",
         hint: "SETTINGS.ManualChatCardsHint",
         scope: "client",
@@ -305,7 +305,7 @@ Hooks.once("init", () => {
         type: Boolean
       });
 
-      game.settings.register("wfrp4e", "playerBrowser", {
+      game.settings.register("wng", "playerBrowser", {
         name: "SETTINGS.PlayerBrowser",
         hint: "SETTINGS.PlayerBrowserHint",
         scope: "world",
@@ -318,27 +318,27 @@ Hooks.once("init", () => {
   
     // Pre-load templates
     loadTemplates([
-      "systems/wfrp4e/templates/actors/actor-attributes.html",
-      "systems/wfrp4e/templates/actors/actor-abilities.html",
-      "systems/wfrp4e/templates/actors/actor-main.html",
-      "systems/wfrp4e/templates/actors/actor-combat.html",
-      "systems/wfrp4e/templates/actors/actor-biography.html",
-      "systems/wfrp4e/templates/actors/actor-inventory.html",
-      "systems/wfrp4e/templates/actors/actor-skills.html",
-      "systems/wfrp4e/templates/actors/actor-magic.html",
-      "systems/wfrp4e/templates/actors/actor-religion.html",
-      "systems/wfrp4e/templates/actors/actor-talents.html",
-      "systems/wfrp4e/templates/actors/actor-classes.html",
-      "systems/wfrp4e/templates/actors/actor-notes.html",
-      "systems/wfrp4e/templates/actors/npc-main.html",
-      "systems/wfrp4e/templates/actors/npc-notes.html",
-      "systems/wfrp4e/templates/actors/creature-main.html",
-      "systems/wfrp4e/templates/actors/creature-notes.html",
-      "systems/wfrp4e/templates/actors/creature-main.html",
-      "systems/wfrp4e/templates/chat/dialog-constant.html",
-      "systems/wfrp4e/templates/chat/test-card.html",
-      "systems/wfrp4e/templates/items/item-header.html",
-      "systems/wfrp4e/templates/items/item-description.html",
+      "systems/wng/templates/actors/actor-attributes.html",
+      "systems/wng/templates/actors/actor-abilities.html",
+      "systems/wng/templates/actors/actor-main.html",
+      "systems/wng/templates/actors/actor-combat.html",
+      "systems/wng/templates/actors/actor-biography.html",
+      "systems/wng/templates/actors/actor-inventory.html",
+      "systems/wng/templates/actors/actor-skills.html",
+      "systems/wng/templates/actors/actor-magic.html",
+      "systems/wng/templates/actors/actor-religion.html",
+      "systems/wng/templates/actors/actor-talents.html",
+      "systems/wng/templates/actors/actor-classes.html",
+      "systems/wng/templates/actors/actor-notes.html",
+      "systems/wng/templates/actors/npc-main.html",
+      "systems/wng/templates/actors/npc-notes.html",
+      "systems/wng/templates/actors/creature-main.html",
+      "systems/wng/templates/actors/creature-notes.html",
+      "systems/wng/templates/actors/creature-main.html",
+      "systems/wng/templates/chat/dialog-constant.html",
+      "systems/wng/templates/chat/test-card.html",
+      "systems/wng/templates/items/item-header.html",
+      "systems/wng/templates/items/item-description.html",
     ]);
 
     // Load name construction from files

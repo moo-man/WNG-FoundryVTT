@@ -32,7 +32,7 @@ Hooks.on("createOwnedItem", (actor, id, item) => {
     // If talent - see if it's a characteristic increasing talent, if so, apply the bonus.
     if (item.type == "talent")
     {
-      let charToIncrease = WFRP4E.talentBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
+      let charToIncrease = WNG.talentBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
       if (charToIncrease)
       {
         let newValue = actor.data.data.characteristics[charToIncrease].initial + 5;
@@ -44,7 +44,7 @@ Hooks.on("createOwnedItem", (actor, id, item) => {
     {
       if (actor.data.data.excludedTraits && actor.data.data.excludedTraits.length && actor.data.data.excludedTraits.includes(item._id))
         return
-      let bonuses = WFRP4E.traitBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
+      let bonuses = WNG.traitBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
       let data = duplicate(actor.data.data)
       for (let char in bonuses)
       {
@@ -58,7 +58,7 @@ Hooks.on("createOwnedItem", (actor, id, item) => {
 Hooks.on("deleteOwnedItem", (actor, id, item) => {
   if (item.type == "talent")
   {
-    let charToDecrease = WFRP4E.talentBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
+    let charToDecrease = WNG.talentBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
 
     if (charToDecrease)
     {
@@ -71,7 +71,7 @@ Hooks.on("deleteOwnedItem", (actor, id, item) => {
     if (actor.data.data.excludedTraits.length && actor.data.data.excludedTraits.includes(item._id))
       return
     
-    let bonuses = WFRP4E.traitBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
+    let bonuses = WNG.traitBonuses[item.name.toLowerCase().trim()] // TODO: investigate why trim is needed here
     let data = duplicate(actor.data.data)
     for (let char in bonuses)
     {

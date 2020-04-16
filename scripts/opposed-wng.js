@@ -6,10 +6,10 @@
  * Second click - defender test result and speaker stored, opposed values compared, roll message updated with result.
  * 
  * Targeted flow:
- * Every roll (see roll overrides, ActorWfrp4e) checks to see if a target is selected, if so, handleOpposed is called. See this function for details
+ * Every roll (see roll overrides, ActorWNG) checks to see if a target is selected, if so, handleOpposed is called. See this function for details
  * on how targeted opposed rolls are handled.
  */
-class OpposedWFRP
+class OpposedWNG
 {
 
   /**
@@ -115,7 +115,7 @@ class OpposedWFRP
         {
           // Calculate size damage multiplier 
           let damageMultiplier = 1;
-          let sizeDiff = WFRP4E.actorSizeNums[opposeResult.attackerTestResult.size] - WFRP4E.actorSizeNums[opposeResult.defenderTestResult.size]
+          let sizeDiff = WNG.actorSizeNums[opposeResult.attackerTestResult.size] - WNG.actorSizeNums[opposeResult.defenderTestResult.size]
           damageMultiplier = sizeDiff >= 2 ? sizeDiff : 1
 
           // If the attacker is using a Trait0 to do damage, calculate damaging and impact if necessary
@@ -170,7 +170,7 @@ class OpposedWFRP
       if (options.target)
       {
         opposeResult.hideData = true;
-        renderTemplate("systems/wfrp4e/templates/chat/opposed-result.html", opposeResult).then(html =>
+        renderTemplate("systems/wng/templates/chat/opposed-result.html", opposeResult).then(html =>
         {
           let chatOptions = {
             user: game.user.id,
@@ -184,7 +184,7 @@ class OpposedWFRP
       else // If manual - update start message and clear opposed data
       {
         opposeResult.hideData = true;
-        renderTemplate("systems/wfrp4e/templates/chat/opposed-result.html", opposeResult).then(html =>
+        renderTemplate("systems/wng/templates/chat/opposed-result.html", opposeResult).then(html =>
         {
           let chatOptions = {
             user: game.user.id,
@@ -261,7 +261,7 @@ class OpposedWFRP
    * There's 3 paths handleOpposed can take, either 1. Responding to being targeted, 2. Starting an opposed test, or neither.
    *
    * 1. Responding to a target: If the actor has a value in flags.oppose, that means another actor targeted them: Organize
-   *    attacker and defender data, and send it to the OpposedWFRP.evaluateOpposedTest() method. Afterward, remove the oppose
+   *    attacker and defender data, and send it to the OpposedWNG.evaluateOpposedTest() method. Afterward, remove the oppose
    *    flag
    * 2. Starting an opposed test: If the user using the actor has a target, start an opposed Test: create the message then
    *    insert oppose data into the target's flags.oppose object.
@@ -274,7 +274,7 @@ class OpposedWFRP
   {
     if (!message) return;
     // Get actor/tokens and test results
-    let actor = WFRP_Utility.getSpeaker(message.data.speaker)
+    let actor = WNG_Utility.getSpeaker(message.data.speaker)
     let testResult = message.data.flags.data.postData
 
     try
@@ -287,14 +287,14 @@ class OpposedWFRP
         let attacker = {
           speaker: actor.data.flags.oppose.speaker,
           testResult: attackMessage.data.flags.data.postData,
-          img: WFRP_Utility.getSpeaker(actor.data.flags.oppose.speaker).data.img
+          img: WNG_Utility.getSpeaker(actor.data.flags.oppose.speaker).data.img
         }
         let defender = {
           speaker: message.data.speaker,
           testResult: testResult,
           img: actor.data.msg
         } // evaluateOpposedTest is usually for manual opposed tests, it requires extra options for targeted opposed test
-        await OpposedWFRP.evaluateOpposedTest(attacker, defender,
+        await OpposedWNG.evaluateOpposedTest(attacker, defender,
         {
           target: true,
           startMessageId: actor.data.flags.oppose.startMessageId
@@ -351,7 +351,7 @@ class OpposedWFRP
 
         if (!game.user.isGM)
         {
-          game.socket.emit("system.wfrp4e", {
+          game.socket.emit("system.wng", {
             type: "target",
             payload: {
               target: target.data._id,

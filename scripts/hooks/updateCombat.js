@@ -6,13 +6,13 @@ Hooks.on("updateCombat", (combat) => {
     {
       let turn = combat.turns.find(t => t.tokenId == combat.current.tokenId)
   
-      if (game.settings.get("wfrp4e", "displayRoundSummary") && combat.current.turn == 0 && combat.current.round != 1)
-        WFRP_Utility.displayRoundSummary(combat)
+      if (game.settings.get("wng", "displayRoundSummary") && combat.current.turn == 0 && combat.current.round != 1)
+        WNG_Utility.displayRoundSummary(combat)
 
-      if (game.settings.get("wfrp4e", "statusOnTurnStart"))
-        WFRP_Utility.displayStatus(turn.token._id, combat.data.round);
+      if (game.settings.get("wng", "statusOnTurnStart"))
+        WNG_Utility.displayStatus(turn.token._id, combat.data.round);
   
-      if (game.settings.get("wfrp4e", "focusOnTurnStart"))
+      if (game.settings.get("wng", "focusOnTurnStart"))
       {
         canvas.tokens.get(turn.token._id).control();
         canvas.tokens.cycleTokens(1, true);  

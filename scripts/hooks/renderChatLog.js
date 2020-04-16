@@ -1,2 +1,2 @@
-// Activate chat listeners defined in dice-wfrp4e.js
-Hooks.on('renderChatLog', (log, html, data) => DiceWFRP.chatListeners(html));
+// Activate chat listeners defined in dice-wng.js
+Hooks.on('renderChatLog', (log, html, data) => DiceWNG.chatListeners(html));

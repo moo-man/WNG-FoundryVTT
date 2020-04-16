@@ -11,8 +11,8 @@ Hooks.on("getChatLogEntryContext", (html, options) => {
       callback: li => {
         let cardData = game.messages.get(li.attr("data-message-id")).data.flags.opposeData
         let defenderSpeaker = game.messages.get(li.attr("data-message-id")).data.flags.opposeData.speakerDefend;
-        let updateMsg = ActorWfrp4e.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.NORMAL)
-        OpposedWFRP.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
+        let updateMsg = ActorWNG.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.NORMAL)
+        OpposedWNG.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
       }
     },
     {
@@ -22,8 +22,8 @@ Hooks.on("getChatLogEntryContext", (html, options) => {
       callback: li =>  {
         let cardData = game.messages.get(li.attr("data-message-id")).data.flags.opposeData
         let defenderSpeaker = game.messages.get(li.attr("data-message-id")).data.flags.opposeData.speakerDefend;
-        let updateMsg = ActorWfrp4e.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_AP)
-        OpposedWFRP.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
+        let updateMsg = ActorWNG.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_AP)
+        OpposedWNG.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
       }
     },
     {
@@ -33,8 +33,8 @@ Hooks.on("getChatLogEntryContext", (html, options) => {
       callback: li =>  {
         let cardData = game.messages.get(li.attr("data-message-id")).data.flags.opposeData
         let defenderSpeaker = game.messages.get(li.attr("data-message-id")).data.flags.opposeData.speakerDefend;
-        let updateMsg = ActorWfrp4e.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_TB)
-        OpposedWFRP.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
+        let updateMsg = ActorWNG.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_TB)
+        OpposedWNG.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
       }
     },
     {
@@ -44,8 +44,8 @@ Hooks.on("getChatLogEntryContext", (html, options) => {
       callback: li =>  {
         let cardData = game.messages.get(li.attr("data-message-id")).data.flags.opposeData
         let defenderSpeaker = game.messages.get(li.attr("data-message-id")).data.flags.opposeData.speakerDefend;
-        let updateMsg = ActorWfrp4e.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_ALL)
-        OpposedWFRP.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
+        let updateMsg = ActorWNG.applyDamage(defenderSpeaker, cardData, DAMAGE_TYPE.IGNORE_ALL)
+        OpposedWNG.updateOpposedMessage(updateMsg, li.attr("data-message-id") );
       }
     })
   })
