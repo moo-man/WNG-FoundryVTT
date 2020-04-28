@@ -41,50 +41,25 @@
         </div>
       </div>
       {{#each actor.data.attributes as |atr a|}}
-      <div class="table-data ch-value" data-char="{{a}}"><a>{{atr.total}}</a></div>
+      <div class="table-data atr-value" data-atr="{{a}}"><a>{{atr.total}}</a></div>
       {{/each}}
     <!-- </div> -->
   </div>
 </div>
 
 <div class="main-row first">
-  <div class="movement row-section">
-    <div class="move-section">
-      <div class="move-value">
-        <input name="data.details.move.value" type="text" value="{{data.details.move.value}}">
+  <div class="speed row-section">
+    <div class="speed-section">
+      <div class="speed-value">
+        <input name="data.details.speed.value" type="text" value="{{data.details.speed.value}}">
       </div>
-      <div class="move-name">
-        <h4 id="movement-label">{{localize "Movement"}}</h4>
-      </div>
-    </div>
-    <div class="move-section">
-      <div class="move-value">
-        {{#if actor.flags.autoCalcWalk}}
-        <a class="auto-calc-toggle" toggle-type="walk">{{actor.data.details.move.walk}} yds</a>
-        {{else}}
-        <input class="auto-calc-toggle" toggle-type="walk" name="data.details.move.walk" type="text"
-          value="{{data.details.move.walk}}" data-dtype="String">
-        {{/if}}
-      </div>
-      <div class="move-name">
-        <h4 id="walk-label">{{localize "Walk"}}</h4>
-      </div>
-    </div>
-    <div class="move-section">
-      <div class="move-value">
-        {{#if actor.flags.autoCalcRun}}
-        <a class="auto-calc-toggle" toggle-type="run">{{actor.data.details.move.run}} yds</a>
-        {{else}}
-        <input class="auto-calc-toggle" toggle-type="run" name="data.details.move.run" type="text"
-          value="{{data.details.move.run}}" data-dtype="String">
-        {{/if}}
-      </div>
-      <div class="move-name">
-        <h4 id="run-label">{{localize "Run"}}</h4>
+      <div class="speed-name">
+        <h4 id="speed-label">{{localize "Speed"}}</h4>
       </div>
     </div>
   </div>
-
+</div>
+<!-- 
   <div class="fate-resilience row-section">
     <div class="fate-resilience-section">
       <span class="top label">{{localize "Fortune"}}</span>
@@ -133,7 +108,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="main-row second">
   <div class="criticalWounds row-section">

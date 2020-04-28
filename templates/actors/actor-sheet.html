@@ -2,30 +2,21 @@
 
   <span id="header-personal-details">{{localize "Personal Details"}}</span>
 
-  <header class="sheet-header" ondragstart="return false;" ondrop="return false;">
-    <h1 class="charname item">
-      <input class="input name" style="box-shadow: none !important;" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Character Name'}}" />
-      <span class="label name">{{localize "Name"}}</span>
-    </h1>
-
-    <div class="item">
-      <input class="input species" style="box-shadow: none !important;" name="data.details.species.value" type="text" value="{{data.details.species.value}}"
-        placeholder="{{localize 'Species'}}" />
-      <span class="label species">{{localize "Species"}}</span>
-    </div>
-
-    <div id="field-gender" class="item">
-      <input class="input gender" style="box-shadow: none !important;" name="data.details.gender.value" type="text" value="{{data.details.gender.value}}"
-        placeholder="{{localize 'Gender'}}" />
-      <span class="label gender">{{localize "Gender"}}</span>
-    </div>
-  </header>
-
   <section class="general" ondragstart="return false;" ondrop="return false;">
     <img class="charimg profile" src="{{actor.img}}" title="{{actor.name}}" height="95" width="95" data-edit="img">
 
     <div class="items">
       <div class="row">
+        <div id="field-name" class="item">
+          <input class="input-details name" style="box-shadow: none !important;" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Character Name'}}" />
+          <span class="label name">{{localize "Name"}}</span>
+        </div>
+    
+        <div id = "field-species" class="item">
+          <input class="input-details species" style="box-shadow: none !important;" name="data.details.species.value" type="text" value="{{data.details.species.value}}"
+            placeholder="{{localize 'Species'}}" />
+          <span class="label species">{{localize "Species"}}</span>
+        </div>
 
         <div id="field-tier" class="item">
           <input class="input-details" style="box-shadow: none !important;" type="text" value="{{data.details.tier.value}}"
@@ -55,36 +46,6 @@
           <input id="input-status" class="input-details" style="box-shadow: none !important;" name="status" type="text" value="{{data.keywords}}"
             placeholder="{{localize 'Keywords'}}" />
           <span id="label-status" class="label-details">{{localize "Keywords"}}</span>
-        </div>
-
-        <div id="field-age" class="item">
-          <input class="input-details" style="box-shadow: none !important;" name="data.details.age.value" type="text" value="{{data.details.age.value}}"
-            placeholder="{{localize 'Age'}}" />
-          <span class="label-details">{{localize "Age"}}<span>
-        </div>
-
-        <div id="field-height" class="item">
-          <input class="input-details" style="box-shadow: none !important;" name="data.details.height.value" type="text"
-            value="{{data.details.height.value}}" placeholder="{{localize 'Height'}}" />
-          <span class="label-details">{{localize "Height"}}</span>
-        </div>
-
-        <div id="field-weight" class="item">
-          <input class="input-details" style="box-shadow: none !important;" name="data.details.weight.value" type="text"
-            value="{{data.details.weight.value}}" placeholder="{{localize 'Weight'}}" />
-          <span class="label-details">{{localize "Weight"}}</span>
-        </div>
-
-        <div id="field-haircolour" class="item">
-          <input class="input-details" style="box-shadow: none !important;" name="data.details.haircolour.value" type="text"
-            value="{{data.details.haircolour.value}}" placeholder="{{localize 'Hair Colour'}}" />
-          <span class="label-details">{{localize "Hair Colour"}}</span>
-        </div>
-
-        <div id="field-eyecolour" class="item">
-          <input class="input-details" style="box-shadow: none !important;" name="data.details.eyecolour.value" type="text"
-            value="{{data.details.eyecolour.value}}" placeholder="{{localize 'Eye Colour'}}" />
-          <span class="label-details">{{localize "Eye Colour"}}</span>
         </div>
       </div>
 

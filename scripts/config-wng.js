@@ -2,7 +2,8 @@ const WNG = {}
 
 CONFIG.ChatMessage.template = "systems/wng/templates/chat/chat-message.html"
 
-CONFIG.statusEffects = ["systems/wng/icons/conditions/bleeding1.png",
+CONFIG.statusEffects = [
+	"systems/wng/icons/conditions/bleeding1.png",
 	"systems/wng/icons/conditions/bleeding2.png",
 	"systems/wng/icons/conditions/bleeding3.png",
 	"systems/wng/icons/conditions/bleeding4.png",

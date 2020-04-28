@@ -61,7 +61,7 @@
             "total" : 0
           }
         }
-      },
+      },  
       "skills":{
         "skills": {
           "ath": {
@@ -212,6 +212,7 @@
       },
       "objective": {
         "objective": {
+          "value" : "",
           "conviction" : 0,
           "size" : "",
           "resolve" : 0,
