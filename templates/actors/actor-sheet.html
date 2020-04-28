@@ -19,37 +19,49 @@
         </div>
 
         <div id="field-tier" class="item">
-          <input class="input-details" style="box-shadow: none !important;" type="text" value="{{data.details.tier.value}}"
+          <input class="input-details" style="box-shadow: none !important;" type="text" name="data.details.tier.value" value="{{data.details.tier.value}}"
             placeholder="{{localize 'Tier'}}"/>
           <span class="label-details">{{localize "Tier"}}</span>
         </div>
 
         <div id="field-archetype" class="item">
-          <input class="input-details" style="box-shadow: none !important;" type="text" value="{{actor.details.archetype.value}}"
+          <input class="input-details" style="box-shadow: none !important;" type="text" name="data.details.archetype.value" value="{{data.details.archetype.value}}"
             placeholder="{{localize 'Archetype'}}"/>
           <span class="label-details">{{localize "Archetype"}}</span>
         </div>
 
         <div id="field-rank" class="item">
-          <input class="input-details"  style="box-shadow: none !important;" type="text" value="{{actor.details.rank.value}}"
+          <input class="input-details"  style="box-shadow: none !important;" type="text"  name="data.details.rank.value" value="{{data.details.rank.value}}"
             placeholder="{{localize 'Rank'}}"/>
           <span class="label-details">{{localize "Rank"}}</span>
         </div>
 
         <div id="field-faction" class="item">
-            <input class="input-details"  style="box-shadow: none !important;" type="text" value="{{actor.details.rank.value}}"
-              placeholder="{{localize 'Faction'}}"/>
+            <input class="input-details"  style="box-shadow: none !important;" name="data.details.rank.value" type="text" value="{{data.details.rank.value}}"/>
             <span class="label-details">{{localize "Faction"}}</span>
           </div>
 
         <div id="field-keywords" class="item">
-          <input id="input-status" class="input-details" style="box-shadow: none !important;" name="status" type="text" value="{{data.keywords}}"
+          <input id="input-status" class="input-details" style="box-shadow: none !important;" name="data.details.keywords.value" type="text" value="{{data.details.keywords.value}}"
             placeholder="{{localize 'Keywords'}}" />
           <span id="label-status" class="label-details">{{localize "Keywords"}}</span>
         </div>
       </div>
-
-
+      </div>
+  </section>
+  <section class="general sub-row" ondragstart="return false;" ondrop="return false;">
+    <div class="items">
+  <div class="row">
+    <div id="field-gender" class="item">
+      <input class="input-details" style="box-shadow: none !important;" name="data.details.gender.value" type="text" value="{{data.details.gender.value}}"/>
+      <span class="label name">{{localize "Gender"}}</span>
+    </div>
+    <div id="field-background" class="item">
+      <input class="input-details" style="box-shadow: none !important;" name="data.details.background.value" type="text" value="{{data.details.background.value}}"/>
+      <span class="label name">{{localize "Background"}}</span>
+    </div>
+  </div>
+  </div>
   </section>
   <!-- TABS -->
   <section id="tab-sections">

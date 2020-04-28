@@ -3530,9 +3530,13 @@
   .app.window-app.sheet.wng.actor.character-sheet .general {
     display: flex;
     flex-direction: row;
-    height: 105px;
+    height: 100px;
     width: 100%;
     margin: 0px 0px 0px 0px;
+  }
+
+  .app.window-app.sheet.wng.actor.character-sheet .general.sub-row{
+    height: 39px;
   }
   .app.window-app.sheet.wng.actor.character-sheet .general input[type="text"]:hover,
   .app.window-app.sheet.wng.actor.character-sheet .general input[type="text"]:focus {
@@ -3629,6 +3633,12 @@
     }
     .app.window-app.sheet.wng.actor.character-sheet .general #field-keywords {
       width: 387px;
+    }
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-background {
+      width: 385px;
+    }
+    .app.window-app.sheet.wng.actor.character-sheet .general #field-gender {
+      width: 88px;
     }
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -3784,35 +3794,31 @@
     }
 
   /* ================== 2. FIRST ROW ========================== */
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row.first {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row {
       display: flex;
       height: 47px;
       margin: 6px 0px 0px 0px;
       /* background: var(--debug-background-color-blue); */
     }
 
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section {
       display: flex;
       width: 51px;
       margin: 0px 0px 0px 0px;
       border: 1px solid #736953a6;
       flex-grow: 1;
-      /* background: var(--debug-background-color-red); */
-    }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-section {
-      display: flex;
       flex-direction: column;
-      height: inherit;
-      width: inherit;
-      margin: 0px 0px 0px 0px;
-      border-right: 1px solid #736953a6;
-      flex-grow: 1;
-      /* background: var(--debug-background-color-green); */
+      margin-right: 5px
     }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section div:last-of-type {
+
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section:last-of-type {
+      margin-right: 0px
+    }
+
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section div:last-of-type {
       border-right: none;
     }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-value {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-value {
         border-right: none;
         border: none;
         height: 22px;
@@ -3825,20 +3831,20 @@
         padding: 0px;
         /* background: red; */
       }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-value > input {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-value > input {
           width: inherit;
           height: inherit;
           margin: 0px;
           padding: 5px 0px 0px 0px;
           text-align: center;
         }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-value .auto-calc-toggle {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-value .auto-calc-toggle {
           padding: 5px 0px 0px 0px;
           text-align: center;
           width: 100%;
           cursor: pointer;
         }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-name {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-name {
         border: none;
         border-top: 1px solid #736953a6;
         height: 23px;
@@ -3852,7 +3858,7 @@
         box-shadow: 0 0 10px #00000052 inset;
         /* background: blue; */
       }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .speed.row-section .speed-name h4 {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-name h4 {
           border: none;
           padding: 0px;
           margin: 0px;
@@ -9586,7 +9592,7 @@
   .app.window-app.sheet.wng.actor.npc-sheet .general {
     display: flex;
     flex-direction: row;
-    height: 105px;
+    height: 139px;
     width: 100%;
     margin: 0px 0px 0px 0px;
   }
@@ -9700,7 +9706,7 @@
     /* background: var(--debug-background-color-blue); */
   }
 
-  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section {
+  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section {
     display: flex;
     width: 51px;
     margin: 0px 0px 0px 0px;
@@ -9708,7 +9714,7 @@
     flex-grow: 1;
     /* background: var(--debug-background-color-red); */
   }
-  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-section {
+  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section{
     display: flex;
     flex-direction: column;
     height: inherit;
@@ -9718,10 +9724,10 @@
     flex-grow: 1;
     /* background: var(--debug-background-color-green); */
   }
-  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section div:last-of-type {
+  .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section div:last-of-type {
     border-right: none;
   }
-    .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-value {
+    .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value {
       border-right: none;
       border: none;
       height: 22px;
@@ -9734,20 +9740,20 @@
       padding: 0px;
       /* background: red; */
     }
-      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-value > input {
+      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value > input {
         width: inherit;
         height: inherit;
         margin: 0px;
         padding: 5px 0px 0px 0px;
         text-align: center;
       }
-      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-value .auto-calc-toggle {
+      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-value .auto-calc-toggle {
         padding: 5px 0px 0px 0px;
         text-align: center;
         width: 100%;
         cursor: pointer;
       }
-    .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-name {
+    .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-name {
       border: none;
       border-top: 1px solid #736953a6;
       height: 23px;
@@ -9761,7 +9767,7 @@
       box-shadow: 0 0 10px #00000052 inset;
       /* background: blue; */
     }
-      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .speed.row-section .speed-name h4 {
+      .app.window-app.sheet.wng.actor.npc-sheet  .main-row .row-section .attribute-name h4 {
         border: none;
         padding: 0px;
         margin: 0px;
@@ -11254,7 +11260,7 @@
     /* background: var(--debug-background-color-blue); */
   }
 
-  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section {
+  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section {
     display: flex;
     width: 51px;
     margin: 0px 0px 0px 0px;
@@ -11262,7 +11268,7 @@
     flex-grow: 1;
     /* background: var(--debug-background-color-red); */
   }
-  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-section {
+  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-box {
     display: flex;
     flex-direction: column;
     height: inherit;
@@ -11272,10 +11278,10 @@
     flex-grow: 1;
     /* background: var(--debug-background-color-green); */
   }
-  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section div:last-of-type {
+  .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section div:last-of-type {
     border-right: none;
   }
-    .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-value {
+    .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-value {
       border-right: none;
       border: none;
       height: 22px;
@@ -11288,20 +11294,20 @@
       padding: 0px;
       /* background: red; */
     }
-      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-value > input {
+      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-value > input {
         width: inherit;
         height: inherit;
         margin: 0px;
         padding: 5px 0px 0px 0px;
         text-align: center;
       }
-      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-value .auto-calc-toggle {
+      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-value .auto-calc-toggle {
         padding: 5px 0px 0px 0px;
         text-align: center;
         width: 100%;
         cursor: pointer;
       }
-    .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-name {
+    .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-name {
       border: none;
       border-top: 1px solid #736953a6;
       height: 23px;
@@ -11315,7 +11321,7 @@
       box-shadow: 0 0 10px #00000052 inset;
       /* background: blue; */
     }
-      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .speed.row-section .speed-name h4 {
+      .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-name h4 {
         border: none;
         padding: 0px;
         margin: 0px;
