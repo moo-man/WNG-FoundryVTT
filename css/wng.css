@@ -3846,7 +3846,8 @@
         }
       .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-name {
         border: none;
-        border-top: 1px solid #736953a6;
+        border-bottom: 1px solid #736953a6;
+        border-top: none;
         height: 23px;
         margin: 0px;
         padding: 2px 0px 0px 0px;
@@ -3858,6 +3859,7 @@
         box-shadow: 0 0 10px #00000052 inset;
         /* background: blue; */
       }
+
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .attribute-name h4 {
           border: none;
           padding: 0px;
@@ -3871,6 +3873,14 @@
           color: var(--actor-label-color);
           background: none;
         }
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section.influence,
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section.wealth,
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section.corruption,
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section.faith{
+        flex-grow: 0.1;
+      }
+
+      
 
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .fate-resilience.row-section {
       display: flex;
@@ -3968,29 +3978,18 @@
           text-align: center;
         }
 
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section {
-      display: flex;
-      width: 60px;
-      margin: 0px 0px 0px 6px;
-      border: 1px solid #736953a6;
-      flex-grow: 0;
-      flex-basis: 85px;
-      /* background: var(--debug-background-color-red); */
-    }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-section {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-box {
       display: flex;
       flex-direction: column;
       height: inherit;
-      width: inherit;
-      margin: 0px 0px 0px 0px;
       border-right: 1px solid #736953a6;
       flex-grow: 1;
       /* background: var(--debug-background-color-green); */
     }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section div:last-of-type {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section div:last-of-type {
       border-right: none;
     }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .top.label {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-label {
         border-right: none;
         border: none;
         height: 22px;
@@ -4004,7 +4003,7 @@
         padding: 2px 0px 0px 0px;
         /* background: red; */
       }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-values {
         border: none;
         border-top: 1px solid #736953a6;
         height: 23px;
@@ -4020,48 +4019,22 @@
         /* box-shadow: 0 0 10px #00000052 inset; */
         /* background: red; */
       }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #value {
-          width: 100%;
-          min-width: 39px;
-          max-width: 39px;
-          height: 100%;
-          flex-grow: 1;
-          /* background: red; */
-        }
-          .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #value > input {
-            width: inherit;
-            height: inherit;
+          .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-values .value {
             margin: 0px 0px 0px 0px;
             padding: 5px 0px 0px 0px;
             text-align: center;
           }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #divisor {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-values #divisor {
           width: fit-content;
           height: 22px;
           padding: 5px 0px 0px 0px;
           /* background: green; */
         }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #wounds-max {
-          flex-grow: 1;
-          min-width: 39px;
-          max-width: 39px;
-          height: 22px;
-          padding: 0px 0px 0px 0px;
-          /* background: blue; */
+        .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .row-section .minmax-values .max {
+          margin: 0px 0px 0px 0px;
+          padding: 5px 0px 0px 0px;
+          text-align: center;
         }
-          .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #wounds-max > a {
-            width: inherit;
-            height: inherit;
-            position: relative;
-            top: 5px;
-            text-align: center;
-          }
-          .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .wounds.row-section .wounds-value-box #wounds-max > input {
-            width: 100%;
-            height: 22px;
-            padding: 5px 0px 0px 0px;
-          }
-
   /* ================== 3. SECOND ROW ========================= */
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row.second {
       display: flex;
@@ -4161,13 +4134,12 @@
             padding: 5px 0px 0px 0px;
           }
 
-    .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section {
+    /* .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section {
       display: flex;
       margin: 0px 0px 0px 6px;
       border: 1px solid #736953a6;
       flex-grow: 0;
       flex-basis: 97px;
-      /* background: var(--debug-background-color-red); */
     }
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-section {
       display: flex;
@@ -4177,7 +4149,6 @@
       margin: 0px 0px 0px 0px;
       border-right: 1px solid #736953a6;
       flex-grow: 1;
-      /* background: var(--debug-background-color-green); */
     }
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section div:last-of-type {
       border-right: none;
@@ -4194,7 +4165,6 @@
         box-shadow: 0 0 10px #00000052 inset;
         margin: 0px;
         padding: 2px 0px 0px 0px;
-        /* background: red; */
       }
       .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-value-box {
         border: none;
@@ -4209,14 +4179,11 @@
         text-align: center;
         display: flex;
         flex-direction: row;
-        /* box-shadow: 0 0 10px #00000052 inset; */
-        /* background: red; */
       }
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-value-box #value {
           height: 100%;
           width: 50%;
           flex-grow: 1;
-          /* background: red; */
         }
           .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-value-box #value > input {
             width: 100%;
@@ -4230,14 +4197,12 @@
           height: 22px;
           padding: 5px 0px 0px 0px;
           flex-grow: 0;
-          /* background: green; */
         }
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-value-box #corruption-max {
           flex-grow: 1;
           height: 22px;
           width: 50%;
           padding: 0px 0px 0px 0px;
-          /* background: blue; */
         }
           .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .corruption.row-section .corruption-value-box #corruption-max > a {
             width: inherit;
@@ -4250,7 +4215,7 @@
             width: 100%;
             height: 22px;
             padding: 5px 0px 0px 0px;
-          }
+          } */
         
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .main-row .experience.row-section {
       display: flex;
@@ -11321,6 +11286,11 @@
       box-shadow: 0 0 10px #00000052 inset;
       /* background: blue; */
     }
+    .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .flipped .attribute-name{
+      border-bottom: 1px solid #736953a6;
+      border-top: none;
+    }
+
       .app.window-app.sheet.wng.actor.creature-sheet  .main-row .row-section .attribute-name h4 {
         border: none;
         padding: 0px;

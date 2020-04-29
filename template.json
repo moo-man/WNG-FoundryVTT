@@ -225,6 +225,10 @@
             "label": "Gender",
             "value": ""
           },
+          "influence": {
+            "label": "Influence",
+            "value": ""
+          },
           "tier": {
             "label": "Tier",
             "value": 1
