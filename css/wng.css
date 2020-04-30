@@ -4526,59 +4526,32 @@
       background: none;
       box-shadow: 0 0 10px #6b3a0f87 inset;
       text-align: left;
-      display: inline-block;
+      display: flex;
       flex-grow: 0;
     }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-header .name {
-        position: relative;
-        left: 0px;
-        height: 18px;
-        width: fit-content;
-        display: inline-block;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-header .char {
-        position: relative;
-        left: 74px;
-        height: 18px;
-        width: fit-content;
-        display: inline-block;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-header .adv {
-        position: relative;
-        left: 89px;
-        height: 18px;
-        width: fit-content;
-        display: inline-block;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-header .total {
-        position: relative;
-        left: 90px;
-        height: 18px;
-        width: fit-content;
-        display: inline-block;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-header .item-controls {
-        position: relative;
-        top: -1px;
-        left: 104px;
-        height: fit-content;
-        width: fit-content;
-        display: inline-block;
-        font-family: "Font Awesome 5 Free";
-        font-size: 10px;
-        color: var(--actor-label-color);
-        margin: 0px;
-        padding: 0px;
-      }
+    .app.window-app.sheet.wng.actor .skill-section .skill-type .inventory-header .name {
+      height: 18px;
+      flex: 0.8;
+    }
+    .app.window-app.sheet.wng.actor .skill-section .skill-type .inventory-header .attr {
+      height: 18px;
+      flex: 0.3;
+    }
+    .app.window-app.sheet.wng.actor .skill-section .skill-type .inventory-header .rating {
+      height: 18px;
+      flex: 0.25
+    }
+    .app.window-app.sheet.wng.actor .skill-section .skill-type .inventory-header .total {
+      height: 18px;
+    }
 
-    .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .skill-type .inventory-list {
+    .app.window-app.sheet.wng.actor .tab.skills.active .skill-section .skill-type .inventory-list {
       margin: 0px;
       padding: 0px;
       width: 250px;
-      height: 278px;
+      height: 200px;
       box-shadow: 0px 0px 1px inset black;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow: hidden;
       border: 1px solid #736953a6;
       border-top: none;
       font-family: var(--actor-input-font-family);
@@ -4617,12 +4590,6 @@
           flex: 1 0 0;
           text-align: left;
           /* background: red; */
-        }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .skill-name .advancement-indicator {
-          display: flex;
-          flex-direction: row;
-          flex-grow: 0;
-          /* background: green; */
         }
       .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .row-label {
         min-width: 26px;
@@ -10122,14 +10089,14 @@
         width: fit-content;
         display: inline-block;
       }
-      .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .char {
+      .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .attr {
         position: relative;
-        left: 74px;
+        left: 95px;
         height: 18px;
         width: fit-content;
         display: inline-block;
       }
-      .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .adv {
+      .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .skill-section .skill-type .inventory-header .rating {
         position: relative;
         left: 89px;
         height: 18px;
