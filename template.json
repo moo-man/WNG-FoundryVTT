@@ -229,10 +229,6 @@
             "label": "Influence",
             "value": ""
           },
-          "tier": {
-            "label": "Tier",
-            "value": 1
-          },
           "species": {
             "label": "Species",
             "value": ""
@@ -244,10 +240,6 @@
           "archetype": {
             "label": "Archetype",
             "value": ""
-          },
-          "keywords": {
-            "label": "Keywords",
-            "value": []
           },
           "background": {
             "label": "Background",
@@ -272,554 +264,116 @@
             "level": 0
           }
         }
-      }
+      },
+      "keywords" : [],
+      "tier": 1
     },
     "character": {
-      "templates": ["attributes","skills","survival", "objective", "details"],
+      "templates": ["attributes","skills","survival", "objective", "details", "keywords", "tier"],
       "wrath" : 0
       },
-    "npc": {
-      "templates": ["characteristics","status","details"]
+    "threat": {
+      "templates": ["attributes", "skills", "survival", "objective", "keywords", "tier"],
+      "threat": "",
+      "bonuses" : "",
+      "abilities" : "",
+      "battlecry" :"",
+      "action" : "",
+      "ruin" : "",
+      "wrath" : "",
+      "complication" : "",
+      "reaction" : "",
+      "determination" : "",
+      "annihilation" : ""
     }
   },
   "Item": {
     "types": [
       "ammunition",
       "armour",
-      "career",
-      "container",
-      "critical",
-      "disease",
+      "archetype",
+      "augmentics",
+      "equipment",
       "injury",
       "money",
       "mutation",
-      "prayer",
-      "psychology",
+      "power",
       "talent",
-      "trapping",
-      "skill",
-      "spell",
-      "trait",
+      "upgrade",
       "weapon"
     ],
     "templates": {
-      "quantity": {
-        "quantity": {
-        "type": "Number",
-        "label": "Quantity",
-        "value": 1
-        }
-      },
-      "encumbrance": {
-        "encumbrance": {
-        "type": "Number",
-        "label": "Encumbrance",
-        "value": 0
-        }
-      },
-      "price": {
-        "price": {
-        "type": "String",
-        "label": "Price",
-        "gc": 0,
-        "ss": 0,
-        "bp": 0
-        }
-      },
-      "availability": {
-        "availability": {
-        "type": "String",
-        "label": "Availability",
-        "value": ""
-        }
-      },
-      "description": {
-        "description": {
-        "type": "String",
-        "label": "Description",
-        "value": ""
-        },
-        "gmdescription": {
-          "type": "String",
-          "label": "Description",
-          "value": ""
-        }
-      },
-      "location": {
-        "location": {
-        "type": "Number",
-        "label": "Location",
-        "value": 0
-        }
-      }
+      "value" : 0,
+      "traits" : [],
+      "keywords": [],
+      "rarity" : "",
+      "effect" : "",
+      "XP" : 0
     },
-    "career": {
-      "templates": ["description"],
-      "careergroup": {
-        "type": "String",
-        "label": "Career Group",
-        "value": ""
-      },
-      "class": {
-        "type": "String",
-        "label": "Class",
-        "value": ""
-      },
-      "current": {
-        "type": "Boolean",
-        "value": false
-      },
-      "complete": {
-        "type": "Boolean",
-        "value": false
-      },
-      "level": {
-        "type": "String",
-        "label": "Career Level",
-        "value": 1
-      },
-      "status": {
-        "tier": "",
-        "standing": 0
-      },
-      "characteristics": [],
-      "skills": [],
-      "talents": [],
-      "trappings": [],
-      "incomeSkill": []
+    "data" : {
+      "description" : ""
     },
-    "weapon": {
-      "templates": ["description", "quantity", "encumbrance", "price", "availability", "location"],      
-      "availability": {
-        "type": "String",
-        "label": "Availability",
-        "value": ""
-      },
-      "damage": {
-        "type": "String",
-        "label": "Damage",
-        "value" : ""
-      },
-      "reach": {
-        "type": "String",
-        "label": "Reach",
-        "value": ""
-      },
-      "range": {
-        "type": "String",
-        "label": "Range",
-        "value": ""
-      },
-      "twohanded": {
-        "type": "Boolean",
-        "label": "Two-Handed",
-        "value": false
-      },
-      "ammunitionGroup": {
-        "type": "String",
-        "label": "Ammunition Group",
-        "value": ""
-      },
-      "currentAmmo": {
-        "type": "Number",
-        "value": 0
-      },
-      "weaponGroup": {
-        "type": "String",
-        "label": "Weapon Group",
-        "value": "basic"
-      },
-      "qualities": {
-        "type": "String",
-        "label": "Qualities",
-        "value": ""
-      },
-      "flaws": {
-        "type": "String",
-        "label": "Flaws",
-        "value": ""
-      },
-      "special": {
-        "type": "String",
-        "label": "Special",
-        "value": ""
-      },
-      "equipped": false
+    "ammunition" : {
+      "templates" : ["value", "rarity", "keywords", "effect"]
     },
-    "armour": {
-      "templates": ["description", "quantity", "encumbrance", "price", "availability", "location"],      
-      "worn": {
-        "type": "Boolean",
-        "label": "Worn",
-        "value": false
-      },
-      "armorType": {
-        "type": "String",
-        "label": "Armour Type",
-        "value": ""
-      },
-      "penalty": {
-        "type": "String",
-        "label": "Penalty",
-        "value": ""
-      },
-      "qualities": {
-        "type": "String",
-        "label": "Qualities",
-        "value": ""
-      },
-      "flaws": {
-        "type": "String",
-        "label": "Flaws",
-        "value": ""
-      },
-      "special": {
-        "type": "String",
-        "label": "Special",
-        "value": ""
-      },
-      "maxAP": {
-        "head": 0,
-        "lArm": 0,
-        "rArm": 0,
-        "lLeg": 0,
-        "rLeg": 0,
-        "body": 0
-      },
-      "currentAP": {
-        "head": -1,
-        "lArm": -1,
-        "rArm": -1,
-        "lLeg": -1,
-        "rLeg": -1,
-        "body": -1
-      },
-      "location": {
-        "type": "Number",
-        "label": "Location",
-        "value": 0
-      }
+    "armour" : {
+      "templates" : ["traits", "value", "rarity", "keywords", "traits"],
+      "AR" : 0
     },
-    "ammunition": {
-      "templates": ["description", "quantity", "encumbrance", "price", "availability", "location"],      
-      "ammunitionType": {
-        "type": "String",
-        "label": "Ammunition Type",
-        "value": ""
-      },
-      "range": {
-        "type": "String",
-        "label": "Range",
-        "value": ""
-      },
-      "damage": {
-        "type": "String",
-        "label": "Damage",
-        "value": ""
-      },
-      "qualities": {
-        "type": "String",
-        "label": "Qualities",
-        "value": ""
-      },
-      "flaws": {
-        "type": "String",
-        "label": "Flaws",
-        "value": ""
-      },
-      "special": {
-        "type": "String",
-        "label": "Special",
-        "value": ""
-      }
+    "archetype" : {
+      "templates" : ["keywords", "XP"],
+      "tier" : 1,
+      "species" : "",
+      "attributes" : [],
+      "skills" : [],
+      "ability" : "",
+      "wargear" : "",
+      "influence" : 0
     },
-    "container": {
-      "templates": ["description", "quantity", "encumbrance", "price", "availability", "location"],      
-      "worn": {
-        "type": "Boolean",
-        "label": "Worn",
-        "value": false
-      },
-      "wearable": {
-        "type": "Boolean",
-        "label": "Wearable",
-        "value": false
-      },
-      "carries": {
-        "type": "Number",
-        "label": "Carries",
-        "value": 0
-      },
-      "countEnc": {
-        "type": "Boolean",
-        "label": "Count Enc",
-        "value": true
-      }
+    "augmentics" : {
+      "templates" : ["effect", "value", "rarity", "keywords"]
     },
-    "trapping": {
-      "templates": ["description", "quantity", "encumbrance", "price", "availability", "location"],
-      "trappingType": {
-        "type": "String",
-        "label": "Trapping Type",
-        "value": ""
-      },
-      "worn": false,
-      "spellIngredient": {
-        "type": "String",
-        "value": ""
-      },
-      "location": {
-        "type": "Number",
-        "label": "Location",
-        "value": 0
-      }
+    "equipment" : {
+      "templates" : ["effect", "value", "rarit", "keywords"]
     },
-    "talent": {
-      "templates": ["description"],
-      "max": {
-        "type": "String",
-        "label": "Max Advances",
-        "value": "1"
-      },
-      "advances": {
-        "type": "Number",
-        "label": "Advances",
-        "value": 1
-      },
-      "career": {
-        "value": "",
-        "type": "String",
-        "label": "Career"
-      },
-      "tests": {
-        "type": "String",
-        "label": "Tests",
-        "value": null
-      }
-    },
-    "skill": {
-      "templates": ["description"],
-      "advanced": {
-        "value": "",
-        "type": "String"
-      },
-      "grouped": {
-        "value": "",
-        "type": "String"
-      },
-      "characteristic": {
-        "type": "String",
-        "label": "Characteristic",
-        "value": "ws"
-      },
-      "advances": {
-        "type": "Number",
-        "label": "Advances",
-        "value": 0
-      },
-      "total": {
-        "type": "Number",
-        "label": "Total"
-      }
-    },
-    "spell": {
-      "templates": ["description"],
-      "lore": {
-        "type": "String",
-        "label": "Lore",
-        "value": "",
-        "effect": ""
-      },
-      "range": {
-        "type": "String",
-        "label": "Range",
-        "value": ""
-      },
-      "target": {
-        "type": "String",
-        "label": "Target",
-        "value": "",
-        "aoe": false
-      },
-      "duration": {
-        "type": "String",
-        "label": "Duration",
-        "value": "",
-        "extendable": false
-      },
-      "damage": {
-        "type": "String",
-        "label": "Damage",
-        "value": ""
-      },
-      "cn": {
-        "type": "Number",
-        "label": "Casting Number",
-        "value": 0,
-        "SL": 0
-      },
-      "magicMissile": {
-        "type": "Boolean",
-        "label": "Magic Missile",
-        "value": false
-      },
-      "memorized": {
-        "type": "Boolean",
-        "label": "Memorized",
-        "value": false
-      },
-      "ingredients": [],
-      "currentIng": {
-        "type": "Number",
-        "label": "Ingredient",
-        "value": 0
-      },
-      "wind" : {
-        "value": ""
-      }
-    },
-    "prayer": {
-      "templates": ["description"],
-      "type": {
-        "type": "String",
-        "label": "Type",
-        "value": ""
-      },
-      "god": {
-        "type": "String",
-        "label": "God",
-        "value": ""
-      },
-      "range": {
-        "type": "String",
-        "label": "Range",
-        "value": ""
-      },
-      "duration": {
-        "type": "String",
-        "label": "Duration",
-        "value": ""
-      },
-      "target": {
-        "type": "String",
-        "label": "Target",
-        "value": "",
-        "aoe": false
-      },
-      "damage": {
-        "type": "String",
-        "label": "Damage",
-        "value": ""
-      }
-    },
-    "mutation": {
-      "templates": ["description"],
-      "mutationType": {
-        "label": "Type",
-        "type": "String",
-        "value": ""
-      },
-      "modifier": {
-        "value": "",
-        "type": "String",
-        "label": "Modifier"
-      },
-      "modifiesSkills": {
-        "value": false,
-        "type": "Boolean",
-        "label": "Skill Modifier?"
-      }
-    },
-    "injury": {
-      "templates": ["description"],
-      "location": {
-        "value": "",
-        "type": "String",
-        "label": "Location"
-      },
-      "penalty": {
-        "value": "",
-        "type": "String",
-        "label": "Penalty"
-      },
-      "duration": {
-        "label": "Duration",
-        "value": "",
-        "type": "String"
-      }
-    },
-    "critical": {
-      "templates": ["description"],
-      "wounds": {
-        "value": "1",
-        "type": "String",
-        "label": "Wounds"
-      },
-      "modifier" : {
-        "value" : "",
-        "type" : "String",
-        "label" : "Test Modifier"
-      },
-      "location": {
-        "value": "",
-        "type": "String",
-        "label": "Location"
-      }
-    },
-    "disease": {
-      "templates": ["description"],
-      "contraction": {
-        "label": "Contraction",
-        "value": "",
-        "type": "String"
-      },
-      "incubation": {
-        "label": "Incubation",
-        "value": "",
-        "type": "String"
-      },
-      "duration": {
-        "label": "Duration",
-        "value": "",
-        "type": "String"
-      },
-      "symptoms": {
-        "label": "Symptoms",
-        "value": "",
-        "type": "String"
-      },
-      "permanent": {
-        "label": "Permanent",
-        "value": "",
-        "type": "String"
-      }
-    },
-    "psychology": {
-      "templates": ["description"]
-    },
-    "trait": {
-      "templates": ["description"],
-      "rollable": {
-        "value": false,
-        "label": "Rollable",
-        "type": "Boolean",
-        "rollCharacteristic": "",
-        "bonusCharacteristic": "",
-        "defaultDifficulty" : "challenging"
-      },
-      "specification": {
-        "value": "",
-        "type": "String",
-        "label": "Specification"
-      }
+    "injury" : {
+
     },
     "money": {
-      "templates": ["description", "quantity", "encumbrance", "location"],
-      "coinValue": {
-        "label": "Value (in d)",
-        "type": "Number",
-        "value": 1
-      }
+
+    },
+    "mutation" : {
+      "templates" : ["effect"]
+    },
+    "power" : {
+      "templates" : ["XP", "keywords"],
+      "DN" : 0,
+      "activation": "",
+      "duration" : "",
+      "range" : "",
+      "multi": "false",
+      "potency" : ""
+    },
+    "talent" : {
+      "templates" : ["XP"],
+      "requirements" : ""      
+    },
+    "upgrade" : {
+      "templates" : ["value", "rarity", "keywords"]
+    },
+    "weapon" : {
+      "templates" : ["value", "rarity", "keywords", "traits"],
+      "type" : "",
+      "damage" : 0,
+      "ED" : 0,
+      "AP" : 0,
+      "range" : {
+        "melee" : 0,
+        "short" : 0,
+        "medium" : 0,
+        "long" : 0
+      },
+      "salvo" : 0
     }
   }
 }
