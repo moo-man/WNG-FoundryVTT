@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character","npc"],
+    "types": ["character","threat"],
     "templates": {
       "attributes":{
         "attributes": {
@@ -265,8 +265,8 @@
           }
         }
       },
-      "keywords" : [],
-      "tier": 1
+      "keywords" : {"keywords" : []},
+      "tier": {"tier" : 1}
     },
     "character": {
       "templates": ["attributes","skills","survival", "objective", "details", "keywords", "tier"],
@@ -303,16 +303,14 @@
       "weapon"
     ],
     "templates": {
-      "value" : 0,
-      "traits" : [],
-      "keywords": [],
-      "rarity" : "",
-      "effect" : "",
-      "XP" : 0
+      "value" : {"value" : 0},
+      "traits" : {"traits" : [] },
+      "keywords": {"keywords" : []} ,
+      "rarity" : {"rarity" : "" },
+      "effect" : {"effect" : ""},
+      "XP" : {"XP" : 0 }
     },
-    "data" : {
-      "description" : ""
-    },
+    "data" : {"description" : ""},
     "ammunition" : {
       "templates" : ["value", "rarity", "keywords", "effect"]
     },
@@ -335,12 +333,6 @@
     },
     "equipment" : {
       "templates" : ["effect", "value", "rarit", "keywords"]
-    },
-    "injury" : {
-
-    },
-    "money": {
-
     },
     "mutation" : {
       "templates" : ["effect"]

@@ -1,295 +1,223 @@
 <div class="attributes">
   <div class="attributes-table" cellpadding="0">
-    <!-- <div class="table-header table-row"> -->
-      <div class="table-header"></div>
-      {{#each actor.data.attributes as |atr a|}}
-      <div title="{{atr.label}}" class="table-header">
+     <!-- <div class="table-header table-row"> -->
+     <div class="table-header"></div>
+     {{#each actor.data.attributes as |atr a|}}
+     <div title="{{atr.label}}" class="table-header">
         <div class="header-block">
-          {{localize atr.abrev}}
+           {{localize atr.abrev}}
         </div>
-      </div>
-      {{/each}}
-    <!-- </div> -->
-    <!-- <div class="table-row"> -->
-      <div class="row-type table-data">
+     </div>
+     {{/each}}
+     <!-- </div> -->
+     <!-- <div class="table-row"> -->
+     <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Rating"}}
+           {{localize "Rating"}}
         </div>
-      </div>
-      {{#each actor.data.attributes as |atr a|}}
-      <div class="table-data">
+     </div>
+     {{#each actor.data.attributes as |atr a|}}
+     <div class="table-data">
         <input name="data.attributes.{{a}}.rating" type="text" value="{{atr.rating}}" data-dtype="Number">
-      </div>
-      {{/each}}
-    <!-- </div> -->
-    <!-- <div class="table-row"> -->
-      <div class="row-type table-data">
+     </div>
+     {{/each}}
+     <!-- </div> -->
+     <!-- <div class="table-row"> -->
+     <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Bonus"}}
+           {{localize "Bonus"}}
         </div>
-      </div>
-      {{#each actor.data.attributes as |atr a|}}
-      <div class="table-data">
+     </div>
+     {{#each actor.data.attributes as |atr a|}}
+     <div class="table-data">
         <input name="data.attributes.{{a}}.bonus" type="text" value="{{atr.bonus}}" data-dtype="Number">
-      </div>
-      {{/each}}
-    <!-- </div> -->
-    <!-- <div class="table-row bottom"> -->
-      <div class="row-type table-data">
+     </div>
+     {{/each}}
+     <!-- </div> -->
+     <!-- <div class="table-row bottom"> -->
+     <div class="row-type table-data">
         <div class="header-block">
-          {{localize "Total"}}
+           {{localize "Total"}}
         </div>
-      </div>
-      {{#each actor.data.attributes as |atr a|}}
-      <div class="table-data atr-value" data-atr="{{a}}"><a>{{atr.total}}</a></div>
-      {{/each}}
-    <!-- </div> -->
+     </div>
+     {{#each actor.data.attributes as |atr a|}}
+     <div class="table-data atr-value" data-atr="{{a}}"><a>{{atr.total}}</a></div>
+     {{/each}}
+     <!-- </div> -->
   </div>
 </div>
-
 <div class="main-row">
   <div class="speed row-section">
-    <div class="attribute-box">
-      <div class="attribute-name">
-        <h4 id="attribute-label">{{localize "Speed"}}</h4>
-      </div>
-      <div class="attribute-value">
-        <input name="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
-      </div>
-    </div>
-  </div>
-  <div class="conviction row-section">
-    <div class="attribute-box">
-      <div class="attribute-name">
-        <h4 id="attribute-label">{{localize "Conviction"}}</h4>
-      </div>
-      <div class="attribute-value">
-        <input name="data.objective.conviction.value" type="text" value="{{data.objective.conviction.value}}">
-      </div>
-    </div>
-  </div>
-  <div class="resolve row-section">
-    <div class="attribute-box">
-      <div class="attribute-name">
-        <h4 id="attribute-label">{{localize "Resolve"}}</h4>
-      </div>
-      <div class="attribute-value">
-        <input name="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
-      </div>
-    </div>
-  </div>
-  <div class="size row-section">
-    <div class="attribute-box">
-      <div class="attribute-name">
-        <h4 id="attribute-label">{{localize "Size"}}</h4>
-      </div>
-      <div class="attribute-value">
-        <input name="data.objective.size.value" type="text" value="{{data.objective.size.value}}">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="main-row">
-  <div class="wounds row-section">
-    <div class="minmax-box">
-      <span class="minmax-label">{{localize "Wounds"}}</span> 
-      <div class="minmax-values">
-          <input class="value" data-dtype="Number" type="text" value="{{data.survival.wounds.value}}">
-          <div id="divisor">/</div>
-          <input class="max" name="data.survival.wounds.max" type="text" value="{{data.survival.wounds.max}}" data-dtype="Number">
-        </div>
-      </div>
-    </div>
-    <div class="shock row-section">
-      <div class="minmax-box">
-        <span class="minmax-label">{{localize "Shock"}}</span> 
-        <div class="minmax-values">
-            <input class="value" data-dtype="Number" type="text" value="{{data.survival.shock.value}}">
-            <div id="divisor">/</div>
-            <input class="max" name="data.survival.shock.max" type="text" value="{{data.survival.shock.max}}" data-dtype="Number">
-          </div>
-        </div>
-      </div>
-      <div class="determination row-section">
-        <div class="attribute-box">
-          <div class="attribute-name">
-            <h4 id="attribute-label">{{localize "Determination"}}</h4>
-          </div>
-          <div class="attribute-value">
-            <input name="data.survival.determination.value" type="text" value="{{data.survival.determination.value}}">
-          </div>
-        </div>
-      </div>
-      <div class="determination row-section">
-        <div class="attribute-box">
-          <div class="attribute-name">
-            <h4 id="attribute-label">{{localize "Wrath"}}</h4>
-          </div>
-          <div class="attribute-value">
-            <input name="data.wrath" type="text" value="{{data.wrath}}">
-          </div>
-        </div>
-      </div>
-</div>
-
-<div class="main-row">
-  <div class="influence row-section">
-    <div class="attribute-box">
-      <div class="attribute-name">
-        <h4 id="attribute-label">{{localize "Influence"}}</h4>
-      </div>
-      <div class="attribute-value">
-        <input name="data.wrath" type="text" value="{{data.wrath}}">
-      </div>
-    </div>
-    </div>
-    <div class="wealth row-section">
-      <div class="attribute-box">
+     <div class="attribute-box">
         <div class="attribute-name">
-          <h4 id="attribute-label">{{localize "Wealth"}}</h4>
+           <h4 id="attribute-label">{{localize "Speed"}}</h4>
         </div>
         <div class="attribute-value">
-          <input name="data.wrath" type="text" value="{{data.wrath}}">
+           <input name="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
         </div>
-      </div>
-      </div>
-      <div class="corruption row-section">
-        <div class="attribute-box">
-          <div class="attribute-name">
-            <h4 id="attribute-label">{{localize "Corruption"}}</h4>
-          </div>
-          <div class="attribute-value">
-            <input name="data.survival.corruption.value" type="text" value="{{data.survival.corruption.value}}">
-          </div>
+     </div>
+  </div>
+  <div class="conviction row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Conviction"}}</h4>
         </div>
-      </div>
-      <div class="faith row-section">
-        <div class="minmax-box">
-          <span class="minmax-label">{{localize "Faith"}}</span> 
-          <div class="minmax-values">
-              <input class="value" data-dtype="Number" type="text" value="{{data.details.faith.value}}">
-              <div id="divisor">/</div>
-              <input class="max" name="data.details.faith.max" type="text" value="{{data.details.faith.max}}" data-dtype="Number">
-            </div>
-          </div>
+        <div class="attribute-value">
+           <input name="data.objective.conviction.value" type="text" value="{{data.objective.conviction.value}}">
         </div>
-      </div>
+     </div>
+  </div>
+  <div class="resolve row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Resolve"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
+        </div>
+     </div>
+  </div>
+  <div class="size row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Size"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.objective.size.value" type="text" value="{{data.objective.size.value}}">
+        </div>
+     </div>
+  </div>
 </div>
-
-<!-- 
-  <div class="fate-resilience row-section">
-    <div class="fate-resilience-section">
-      <span class="top label">{{localize "Fortune"}}</span>
-      <span class="bottom label">{{localize "Fate"}}</span>
-    </div>
-    <div class="fate-resilience-section values">
-      <div class="top value">
-        <a class = "metacurrency-value" data-point-type="fortune">{{data.status.fortune.value}}</a>
-      </div>
-      <div class="bottom value">
-        <a class = "metacurrency-value" data-point-type="fate">{{data.status.fate.value}}</a>
-      </div>
-    </div>
-    <div class="fate-resilience-section">
-      <span class="top label">{{localize "Resolve"}}</span>
-      <span class="bottom label">{{localize "Resilience"}}</span>
-    </div>
-    <div class="fate-resilience-section values">
-      <div class="top value">
-        <a class = "metacurrency-value" data-point-type="resolve">{{data.status.resolve.value}}</a>
-      </div>
-      <div class="bottom value">
-        <a class = "metacurrency-value" data-point-type="resilience">{{data.status.resilience.value}}</a>
-      </div>
-    </div>
-  </div>
-
+<div class="main-row">
   <div class="wounds row-section">
-    <div class="wounds-section">
-      <span class="top label">{{localize "Wounds"}}<a class = "rest-icon" title="Rest & Recover Wounds"><i class="fas fa-bed"></i></a> </span> 
-      <div class="wounds-value-box">
-        <div id="value">
-          <input class="wounds-value" data-dtype="{{data.status.wounds.type}}" type="text" value="{{data.status.wounds.value}}">
+     <div class="minmax-box">
+        <span class="minmax-label">{{localize "Wounds"}}</span> 
+        <div class="minmax-values">
+           <input class="value" data-dtype="Number" type="text" value="{{data.survival.wounds.value}}">
+           <div id="divisor">/</div>
+           <input class="max" name="data.survival.wounds.max" type="text" value="{{data.survival.wounds.max}}" data-dtype="Number">
         </div>
-        <div id="divisor">
-          /
-        </div>
-        <div id="wounds-max">
-          {{#if actor.flags.autoCalcWounds}}
-          <a class="auto-calc-toggle" toggle-type="wounds">{{data.status.wounds.max}}</a>
-          {{else}}
-          <input class="auto-calc-toggle" toggle-type="wounds" name="data.status.wounds.max" type="text"
-            value="{{data.status.wounds.max}}" data-dtype="{{data.status.wounds.type}}">
-          {{/if}}
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
-</div> -->
-
-<!-- <div class="main-row second">
-  <div class="criticalWounds row-section">
-    <div class="criticalWounds-section">
-      <span class="top label">{{localize "Critical Wounds"}}</span>
-      <div class="criticalWounds-value-box">
-        <div id="value">
-          <input name="data.status.criticalWounds.value" type="text" value="{{actor.criticalCount}}" readonly>
+  <div class="shock row-section">
+     <div class="minmax-box">
+        <span class="minmax-label">{{localize "Shock"}}</span> 
+        <div class="minmax-values">
+           <input class="value" data-dtype="Number" type="text" value="{{data.survival.shock.value}}">
+           <div id="divisor">/</div>
+           <input class="max" name="data.survival.shock.max" type="text" value="{{data.survival.shock.max}}" data-dtype="Number">
         </div>
-        <div id="divisor" class="divisor">
-          /
-        </div>
-        <div id="criticalWounds-max">
-          {{#if actor.flags.autoCalcCritW}}
-          <a class="auto-calc-toggle" toggle-type="critW">{{data.status.criticalWounds.max}}</a>
-          {{else}}
-          <input class="auto-calc-toggle" toggle-type="critW" name="data.status.criticalWounds.max" type="text"
-            value="{{data.status.criticalWounds.max}}">
-          {{/if}}
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
-
+  <div class="determination row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Determination"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.survival.determination.value" type="text" value="{{data.survival.determination.value}}">
+        </div>
+     </div>
+  </div>
+  <div class="wrath row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Wrath"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.wrath" type="text" value="{{data.wrath}}">
+        </div>
+     </div>
+  </div>
+</div>
+<div class="main-row custom-row">
+<div class="quad-section row-section">
+  <div class="influence row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Influence"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.wrath" type="text" value="{{data.wrath}}">
+        </div>
+     </div>
+  </div>
+  <div class="wealth row-section">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Wealth"}}</h4>
+        </div>
+        <div class="attribute-value">
+           <input name="data.wrath" type="text" value="{{data.wrath}}">
+        </div>
+     </div>
+  </div>
   <div class="corruption row-section">
-    <div class="corruption-section">
-      <span class="top label">{{localize "Corruption"}}</span>
-      <div class="corruption-value-box">
-        <div id="value">
-          <input name="data.status.corruption.value" type="text" value="{{data.status.corruption.value}}">
+     <div class="attribute-box">
+        <div class="attribute-name">
+           <h4 id="attribute-label">{{localize "Corruption"}}</h4>
         </div>
-        <div id="divisor" class="divisor">
-          /
+        <div class="attribute-value">
+           <input name="data.survival.corruption.value" type="text" value="{{data.survival.corruption.value}}">
         </div>
-        <div id="corruption-max">
-          {{#if actor.flags.autoCalcCorruption}}
-          <a class="auto-calc-toggle" toggle-type="corruption">{{data.status.corruption.max}}</a>
-          {{else}}
-          <input class="auto-calc-toggle" toggle-type="corruption" name="data.status.corruption.max" type="text"
-            value="{{data.status.corruption.max}}">
-          {{/if}}
-        </div>
-      </div>
-    </div>
+     </div>
   </div>
-
-  <div class="experience row-section">
-    <div class="experience-section">
-      <span class="top label">{{localize "Experience"}}</span>
-    </div>
-    <div class="experience-section">
-      <span class="bottom label">{{localize "Current"}}</span>
-      <div id="value">
-        <input name="data.details.experience.current" type="text" value="{{data.details.experience.current}}" data-dtype = "Number"/>
-      </div>
-      <span class="bottom label">{{localize "Spent"}}</span>
-      <div id="value">
-        <input name="data.details.experience.spent" type="text" value="{{data.details.experience.spent}}" data-dtype = "Number"/>
-      </div>
-      <span class="bottom label">{{localize "Total"}}</span>
-      <div id="value">
-        <input name="data.details.experience.total" type="text" value="{{data.details.experience.total}}" data-dtype = "Number"/>
-      </div>
-    </div>
+  <div class="faith row-section">
+     <div class="minmax-box">
+        <span class="minmax-label">{{localize "Faith"}}</span> 
+        <div class="minmax-values">
+           <input class="value" data-dtype="Number" type="text" value="{{data.details.faith.value}}">
+           <div id="divisor">/</div>
+           <input class="max" name="data.details.faith.max" type="text" value="{{data.details.faith.max}}" data-dtype="Number">
+        </div>
+     </div>
   </div>
-</div> -->
+</div>
+<div class="defence row-section">
+  <div class="attribute-box">
+     <div class="attribute-name">
+        <h4 id="attribute-label">{{localize "Defence"}}</h4>
+     </div>
+     <div class="attribute-value">
+        <input name="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
+     </div>
+  </div>
+</div>
+<div class = "resilience row-section">
+  <div class="attribute-name">
+     <h4 id="attribute-label">{{localize "Resilience"}}</h4>
+  </div>
+  <div class="subrow">
+     <div class="base row-section">
+        <div class="attribute-box">
+           <div class="attribute-name">
+              <h4 id="attribute-label">{{localize "Base"}}</h4>
+           </div>
+           <div class="attribute-value">
+              <input name="data.objective.conviction.value" type="text" value="{{data.objective.conviction.value}}">
+           </div>
+        </div>
+     </div>
+     <div class="armour row-section">
+        <div class="attribute-box">
+           <div class="attribute-name">
+              <h4 id="attribute-label">{{localize "Armour"}}</h4>
+           </div>
+           <div class="attribute-value">
+              <input name="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
+           </div>
+        </div>
+     </div>
+     <div class="total row-section">
+        <div class="attribute-box">
+           <div class="attribute-name">
+              <h4 id="attribute-label">{{localize "Total"}}</h4>
+           </div>
+           <div class="attribute-value">
+              <input name="data.objective.size.value" type="text" value="{{data.objective.size.value}}">
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+</div>
