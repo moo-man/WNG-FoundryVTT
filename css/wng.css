@@ -5,13 +5,13 @@
 /*   II. GENERAL USER INTERFACE                                   */
 /*   III. SIDEBAR                                                 */
 /*   IV. ITEM SHEET                                               */
-/*   V. ACTOR SHEET (CHARACTER)                                   */ 
+/*   V. ACTOR SHEET (CHARACTER)                                   */
 /*   VI. ACTOR SHEET (NPC)                                        */
 /*   VII. ACTOR SHEET (CREATURE)                                  */
 /*   VIII. ACTOR SHEET (TOKEN)                                    */
 /*   IX. PLAYERS LIST                                             */
 /*   X. NAVIGATION BAR                                            */
-/*   XI. SCENE CONTROLS                                           */ 
+/*   XI. SCENE CONTROLS                                           */
 /*   XII. GAME SETTINGS                                           */
 /*   XIII. ROLL DIALOG                                            */
 /*   XIV. HOTBAR                                                  */
@@ -62,7 +62,7 @@
 
 /* ==================== (A) AWESOME FONT ICON CHANGES ========= */
   .fa-check-circle:before {
-    content: "\f058" !important; 
+    content: "\f058" !important;
   }
   .fa-trash:before {
     content: "\f2ed" !important;
@@ -77,7 +77,7 @@
   button:hover {
     box-shadow: 0 0 5px #ff9f00 !important;
   }
-  input[type="text"]:focus, 
+  input[type="text"]:focus,
   input[type="password"]:focus {
     box-shadow: 0 0 5px #ff9f00 !important;
     outline: none;
@@ -268,7 +268,7 @@
     --actor-label-font-weight: 700;
     --actor-label-color: #464331c4;
 
-  /* =================== 2. DEBUGGING HIGHLIGHTERS ============ */ 
+  /* =================== 2. DEBUGGING HIGHLIGHTERS ============ */
     --debug-background-color-red: #ff000054;
     --debug-background-color-blue: #1d00ff54;
     --debug-background-color-green: #54ff0054;
@@ -281,7 +281,7 @@
 /* ==================== (F) SCROLLBAR ========================= */
   .app.window-app.sheet.wng.actor ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app.sheet.wng.actor ::-webkit-scrollbar-thumb {
     outline: none;
@@ -303,11 +303,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app.sheet.wng.actor ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.png) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -326,7 +326,7 @@
 
   .app.window-app .editor ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app .editor ::-webkit-scrollbar-thumb {
     outline: none;
@@ -348,11 +348,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app .editor ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.png) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -372,7 +372,7 @@
 
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar-thumb {
     outline: none;
@@ -394,11 +394,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .app.window-app.sheet.item-sheet ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-light-scrollbar-button-vertical-increment.png) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -414,7 +414,7 @@
     border-radius: 0px;
     /* background: blue; */
   }
-  
+
   #sidebar ::-webkit-scrollbar {
     width: 14px;
   }
@@ -437,13 +437,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   #sidebar ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   #sidebar ::-webkit-scrollbar-button:vertical:start:increment,
   #sidebar ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -478,13 +478,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app.form ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app.form ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app.form ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -499,7 +499,7 @@
 
   .window-app.app.filepicker ::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 
+    box-shadow: inset 0 0
   }
   .window-app.app.filepicker ::-webkit-scrollbar-thumb {
     outline: none;
@@ -521,11 +521,11 @@
     height: 16px;
     background-position-y: 0px;
     /* background: red; */
-  } 
+  }
   .window-app.app.filepicker ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.png) no-repeat;
     background-position-y: 0px;
-    box-shadow: none; 
+    box-shadow: none;
     height: 16px;
     /* background: red; */
   }
@@ -564,13 +564,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app.dialog ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app.dialog ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app.dialog ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -605,13 +605,13 @@
     background: url(../ui/scrollbars/scrollbar-button-vertical-decrement.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
-  } 
+    box-shadow: none;
+  }
   .app.window-app ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/scrollbar-button-vertical-increment.png) no-repeat;
     background-position: center;
     box-shadow: none;
-    box-shadow: none; 
+    box-shadow: none;
   }
   .app.window-app ::-webkit-scrollbar-button:vertical:start:increment,
   .app.window-app ::-webkit-scrollbar-button:vertical:end:decrement {
@@ -645,11 +645,11 @@
     box-shadow: none !important;
     height: 16px !important;
     background-position-y: 1px !important;
-  } 
+  }
   #sidebar #chat-form ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.png) no-repeat !important;
     background-position-y: -1px !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
     height: 16px !important;
   }
   #sidebar #chat-form ::-webkit-scrollbar-button:vertical:start:increment,
@@ -685,11 +685,11 @@
     box-shadow: none !important;
     height: 16px !important;
     background-position-y: 1px !important;
-  } 
+  }
   .window-app.dialog .talent-selector ::-webkit-scrollbar-button:end:increment {
     background: url(../ui/scrollbars/sheet-dark-scrollbar-button-vertical-increment.png) no-repeat !important;
     background-position-y: -1px !important;
-    box-shadow: none !important; 
+    box-shadow: none !important;
     height: 16px !important;
   }
   .window-app.dialog .talent-selector ::-webkit-scrollbar-button:vertical:start:increment,
@@ -705,10 +705,10 @@
   }
 
 /* ==================== (G) LIST STYLING ====================== */
-  .app.window-app.sheet.wng.actor .inventory-list > .item:nth-child(odd):not(.inventory-header) {
+  .app.window-app.sheet.wng.actor .items > .item:nth-child(odd):not(.inventory-header) {
     background-color: #7b733b29;
   }
-  .app.window-app.sheet.wng.actor .inventory-list > .item:nth-child(even):not(.inventory-header) {
+  .app.window-app.sheet.wng.actor .items > .item:nth-child(even):not(.inventory-header) {
     background-color: #9e856a0d;
   }
   .app.window-app.sheet.wng.actor .inventory-list .item .untrained {
@@ -831,7 +831,7 @@
     box-shadow: none;
     background: none;
   }
-  
+
   .sidebar-popout .directory-header,
     .sidebar-tab .directory-header {
     height: 38px;
@@ -924,12 +924,12 @@
     .sidebar-tab.sidebar-directory .directory-list li {
     border-bottom: 2px groove #333;
     margin-right: 1px;
-  }  
+  }
   .sidebar-popout.sidebar-directory .directory-list .subdirectory li,
     .sidebar-tab.sidebar-directory .directory-list .subdirectory li {
     border-bottom: 2px groove #333;
     margin-right: 0px;
-  }  
+  }
   .sidebar-popout.sidebar-directory .directory-list .subdirectory .directory-item,
     .sidebar-tab.sidebar-directory .directory-list .subdirectory .directory-item  {
     margin-left: 10px;
@@ -995,7 +995,7 @@
     padding: 0px 0px 0px 82px;
     border: none;
     box-shadow: none;
-    background: url(../ui/sidebar-border.png) repeat;  
+    background: url(../ui/sidebar-border.png) repeat;
   }
 
   #sidebar-tabs > .item {
@@ -1036,7 +1036,7 @@
     visibility: visible;
     background: url(../ui/sidebar-button-settings-active.png);
     background: url(../ui/sidebar-button-collapse.png);
-  }   
+  }
   #sidebar.collapsed .collapse {
     background: url(../ui/sidebar-button-collapse-active.png);
   }
@@ -1538,7 +1538,7 @@
       top: 2px;
       background: url(../ui/buttons/combat-button-delete-encounter.png);
     }
-    
+
   #combat-popout #combat-tracker , #sidebar #combat #combat-tracker {
     height: calc(100% - 73px - 50px);
     padding: 1px 0;
@@ -1652,7 +1652,7 @@
     top: 17px;
     position: relative;
   }
-  
+
 /* ==================== (G) SIDEBAR (ITEMS) =================== */
   #sidebar #items .directory-list .directory-item {
     padding: 1px 3px;
@@ -1952,7 +1952,7 @@
   }
 
 /******************************************************************/
-/******************************************************************/     
+/******************************************************************/
 
 
 
@@ -2466,13 +2466,13 @@
     flex-flow: column;
     height: calc(100% - 129px);
     overflow-y: scroll;
-  }      
+  }
   .app.window-app.sheet.item-sheet .tab.description.active {
     display: flex;
     flex-flow: column;
     height: calc(100% - 129px);
     overflow-y: hidden;
-  }    
+  }
     .app.window-app.sheet.item-sheet .editor {
       border: 1px solid #736953a6;
       box-shadow: 0px 0px 1px inset black;
@@ -2693,7 +2693,7 @@
     margin: -29px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.injury-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2783,7 +2783,7 @@
     border: 1px dotted #463a3a;
     box-shadow: none;
     }
-    
+
 /* ==================== (F) MUTATION ========================== */
   .app.window-app.sheet.item-sheet.mutation-sheet {
     /* font-family: CaslonAntique;
@@ -2800,7 +2800,7 @@
     margin: -29px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.mutation-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2846,7 +2846,7 @@
     margin: -29px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.creature-trait-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -2953,7 +2953,7 @@
     margin: -21px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.prayer-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3070,7 +3070,7 @@
     margin: -29px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.skill-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3177,7 +3177,7 @@
     margin: -29px 0px 0px 0px;
     height: 26px;
     position: relative;
-  } 
+  }
     .app.window-app.sheet.item-sheet.spell-sheet .sheet-tabs.edges.left {
       margin: 0px;
       height: 25px;
@@ -3267,11 +3267,11 @@
     border: 1px dotted #463a3a;
     box-shadow: none;
     }
-      
+
 /* ==================== (L) SIDEBAR CHAT FORM ================= */
 
 /******************************************************************/
-/******************************************************************/ 
+/******************************************************************/
 
 
 
@@ -3725,7 +3725,7 @@
       grid-gap: 0px;
       background: none;
       border: 1px solid #736953a6;
-    }   
+    }
 
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header {
       font-family: var(--actor-label-font-family);
@@ -3735,15 +3735,15 @@
       box-shadow: 0 0 10px #00000052 inset;
       text-align: center;
       width: 100%;
-      border-bottom: none;  
+      border-bottom: none;
       border-right: 1px solid #736953a6;
-    }  
+    }
       .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header .header-block {
         padding-top: 0px;
-      }  
+      }
       .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header:last-of-type {
         border-right: none;
-      } 
+      }
       .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-header .header-block .advancement-indicator {
         position: fixed;
         margin-top: -3px;
@@ -3761,7 +3761,7 @@
       min-height: 29px;
       max-height: 29px;
       padding-top: 5px;
-    }  
+    }
     .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .attributes-table .table-data {
       border-top: 1px solid #736953a6;
       border-right: 1px solid #736953a6;
@@ -3824,6 +3824,7 @@
         display: flex;
         margin: 0px;
         padding: 0px;
+        flex: 1
         /* background: red; */
       }
         .app.window-app.sheet.wng.actor.character-sheet  .row-section .attribute-value > input {
@@ -3832,13 +3833,28 @@
           margin: 0px;
           padding: 5px 0px 0px 0px;
           text-align: center;
+          height: 100%;
         }
+        .app.window-app.sheet.wng.actor.character-sheet  .defence.row-section .attribute-value > input {
+            font-size: 50px
+        }
+        .app.window-app.sheet.wng.actor.character-sheet  .resilience.row-section .attribute-value > input {
+          font-size: 30px
+      }
+
         .app.window-app.sheet.wng.actor.character-sheet  .row-section .attribute-value .auto-calc-toggle {
           padding: 5px 0px 0px 0px;
           text-align: center;
           width: 100%;
           cursor: pointer;
         }
+
+      .app.window-app.sheet.wng.actor.character-sheet  .row-section .attribute-box {
+        height: 100%;
+        display: flex;
+        flex-direction: column
+      }
+
       .app.window-app.sheet.wng.actor.character-sheet  .row-section .attribute-name {
         border: none;
         border-bottom: 1px solid #736953a6;
@@ -3874,101 +3890,6 @@
       .app.window-app.sheet.wng.actor.character-sheet  .row-section.faith{
         height: 47px
       }
-
-      
-
-    .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section {
-      display: flex;
-      width: 60px;
-      margin: 0px 0px 0px 6px;
-      border: 1px solid #736953a6;
-      flex-grow: 1;
-      /* background: var(--debug-background-color-red); */
-    }
-    .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .fate-resilience-section {
-      display: flex;
-      flex-direction: column;
-      height: inherit;
-      width: inherit;
-      margin: 0px 0px 0px 0px;
-      border-right: 1px solid #736953a6;
-      flex-grow: 1;
-      /* background: var(--debug-background-color-green); */
-    }
-    .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .fate-resilience-section.values {
-      flex-basis: 25px;
-      max-width: 25px;
-      min-width: 25px;
-    }
-      .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .top.label {
-        border-right: none;
-        border: none;
-        height: 22px;
-        font-family: var(--actor-label-font-family);
-        font-size: var(--actor-label-font-size);
-        font-weight: var(--actor-label-font-weight);
-        color: var(--actor-label-color);
-        text-align: center;
-        box-shadow: 0 0 10px #00000052 inset;
-        margin: 0px;
-        padding: 2px 0px 0px 0px;
-        /* background: red; */
-      }
-      .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .top.value {
-        border-right: none;
-        border: none;
-        height: 22px;
-        font-family: var(--actor-input-font-family);
-        font-size: var(--actor-input-font-size);
-        font-weight: var(--actor-input-font-weight);
-        color: var(--actor-input-color);
-        display: flex;
-        margin: 0px;
-        padding: 0px;
-        /* background: red; */
-      }
-        .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .top.value > input {
-          width: inherit;
-          height: inherit;
-          margin: 0px;
-          padding: 5px 0px 0px 0px;
-          text-align: center;
-        }
-      .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .bottom.label {
-        border: none;
-        border-top: 1px solid #736953a6;
-        height: 23px;
-        margin: 0px;
-        padding: 2px 0px 0px 0px;
-        font-family: var(--actor-label-font-family);
-        font-size: var(--actor-label-font-size);
-        font-weight: var(--actor-label-font-weight);
-        color: var(--actor-label-color);
-        text-align: center;
-        box-shadow: 0 0 10px #00000052 inset;
-        /* background: blue; */
-      }
-      .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .bottom.value {
-        border: none;
-        border-top: 1px solid #736953a6;
-        border-bottom: 1px solid #7369531c;
-        height: 22px;
-        font-family: var(--actor-input-font-family);
-        font-size: var(--actor-input-font-size);
-        font-weight: var(--actor-input-font-weight);
-        color: var(--actor-input-color);
-        display: flex;
-        margin: 0px;
-        padding: 0px;
-        /* background: red; */
-      }
-        .app.window-app.sheet.wng.actor.character-sheet  .fate-resilience.row-section .bottom.value > input {
-          width: inherit;
-          height: inherit;
-          margin: 0px 0px 1px 0px;
-          padding: 5px 0px 0px 0px;
-          text-align: center;
-        }
 
     .app.window-app.sheet.wng.actor.character-sheet  .row-section .minmax-box {
       display: flex;
@@ -4031,7 +3952,7 @@
           flex: 0.8
         }
 
-        
+
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .row-section.quad-section {
           display: flex;
           flex-direction: row;
@@ -4057,7 +3978,18 @@
           border-right: 0px;
         }
 
-}
+        .app.window-app.sheet.wng.actor.character-sheet  .row-section.stacked-section {
+          flex: 0.8;
+          display: flex;
+          flex-direction: column;
+          border: 0px;
+        }
+        .app.window-app.sheet.wng.actor.character-sheet  .row-section.stacked-section > * {
+          width: 100%
+        }
+        .app.window-app.sheet.wng.actor.character-sheet  .row-section.stacked-section div:last-of-type {
+          border-top: 0px;
+        }
 
 /* ==================== (G) SKILLS TAB ======================== */
   .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active {
@@ -4139,7 +4071,7 @@
       height: 18px;
     }
 
-    .app.window-app.sheet.wng.actor .tab.skills.active .skill-section .skill-type .inventory-list {
+    .app.window-app.sheet.wng.actor .tab.skills.active .skill-section .skill-type .items {
       margin: 0px;
       padding: 0px;
       width: 250px;
@@ -4153,7 +4085,7 @@
       font-weight: var(--actor-input-font-weight);
       color: var(--actor-input-color);
     }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section  .inventory-list .item {
+    .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section  .items .item {
       width: 100%;
       text-align: center;
       overflow-x: hidden;
@@ -4170,7 +4102,7 @@
       justify-content: space-between;
       /* background: var(--debug-background-color-green); */
     }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .skill-name {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .skill-name {
         display: flex;
         flex-direction: row;
         min-width: 100px;
@@ -4178,14 +4110,14 @@
         margin: 1px 0px 0px 0px;
         /* background: blue; */
       }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .skill-name .name {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .skill-name .name {
           display: flex;
           flex-direction: row;
           flex: 1 0 0;
           text-align: left;
           /* background: red; */
         }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .row-label {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .row-label {
         min-width: 26px;
         max-width: 26px;
         margin: 1px 0px 0px 0px;
@@ -4198,7 +4130,7 @@
         background: none;
         border: none;
       }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .row-value {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .row-value {
         min-width: 30px;
         max-width: 30px;
         margin: 1px 0px 0px 0px;
@@ -4211,7 +4143,7 @@
         background: none;
         border: none;
       }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .input-field.skill-advances {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .input-field.skill-advances {
         min-width: 30px;
         max-width: 30px;
         margin: 0px;
@@ -4222,7 +4154,7 @@
         font-weight: var(--actor-input-font-weight);
         color: var(--actor-input-color);
       }
-        .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .input-field.skill-advances input {
+        .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .input-field.skill-advances input {
           width: 100%;
           height: 17px;
           margin: 0px;
@@ -4233,7 +4165,7 @@
           font-weight: var(--actor-input-font-weight);
           color: var(--actor-input-color);
         }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .skill-total {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .skill-total {
         min-width: 30px;
         max-width: 30px;
         margin: 1px 0px 0px 0px;
@@ -4246,7 +4178,7 @@
         color: #672323;
         text-shadow: 1px 0px 1px #6e6e716e;
       }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .inventory-list .item .item-controls {
+      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .skill-section .items .item .item-controls {
         padding: 2px 2px 0px 0px;
         margin: 0px;
         font-family: "Font Awesome 5 Free";
@@ -4256,81 +4188,6 @@
         min-width: 20px;
         max-width: 20px;
         flex-grow: 0;
-      }
-
-  /* ================== 2. PENALTIES ========================== */
-    .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties {
-      height: 24px;
-      min-height: 24px;
-      max-height: 24px;
-      border: 1px solid #736953a6;
-      margin: 6px 0px 0px 0px;
-      padding: 0px;
-      display: flex;
-      flex-direction: row;
-      /* background: green; */
-    }
-    .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties > h3 {
-      font-family: var(--actor-label-font-family);
-      font-size: var(--actor-label-font-size);
-      font-weight: var(--actor-label-font-weight);
-      color: var(--actor-label-color);
-      text-align: center;
-      border: 1px solid #736953a6;
-      border-top: none;
-      border-left: none;
-      border-bottom: none;
-      margin: 0px;
-      padding: 3px 0px 0px 0px;
-      height: 22px;
-      min-width: 54px;
-      max-width: 54px;
-      box-shadow: 0 0 10px #00000052 inset;
-      background: none;
-    }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties .penalties {
-        width: fit-content;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties > div {
-        width: fit-content;
-        flex-shrink: 0;
-        margin: 4px 0px 0px 0px;
-        padding: 0px 2px 0px 2px;
-        overflow-wrap: unset;
-        text-overflow: unset;
-        white-space: nowrap;
-        overflow: hidden;
-        font-family: var(--actor-input-font-family);
-        font-size: var(--actor-input-font-size);
-        font-weight: var(--actor-input-font-weight);
-        color: var(--actor-input-color);
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties .custom-penalty {
-        width: inherit;
-        /* background: bisque; */
-        display: inline-flex;
-        flex-direction: row;
-        flex-grow: 1;
-        overflow-wrap: unset;
-        text-overflow: unset;
-        white-space: nowrap;
-        overflow: hidden;
-        margin: 0px 0px 0px 0px;
-      }
-      .app.window-app.sheet.wng.actor.character-sheet .tab.skills.active .penalties .custom-penalty .penalties-input {
-        min-width: 20px;
-        padding: 3px 3px 0px 3px;
-        margin: 0;
-        border-radius: 0px;
-        font-family: inherit;
-        font-size: inherit;
-        text-align: inherit;
-        line-height: inherit;
-        color: #111;
-        width: inherit;
-        display: inline-flex;
-        flex-direction: row;
-        flex-grow: 2;
       }
 
 /* ==================== (H) TALENTS TAB ======================= */
@@ -4345,62 +4202,32 @@
     /* background: blue; */
   }
 
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.talent-header {
-    width: 100%;
-    height: 20px;
-    margin: 0px;
+  .app.window-app.sheet.wng.actor .item-list .item-header {
     padding: 0px 6px;
     border: 1px solid #736953a6;
     font-family: var(--actor-label-font-family);
     font-size: var(--actor-label-font-size);
     font-weight: var(--actor-label-font-weight);
     color: var(--actor-label-color);
-    background: none;
     box-shadow: 0 0 10px #6b3a0f87 inset;
-    text-align: left;
-    display: inline-block;
-    flex-grow: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    display: flex;
+    margin-bottom:-7px;
   }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.talent-header #talent-name {
-      position: relative;
-      left: 0px;
+    .app.window-app.sheet.wng.actor .item-list .item-name {
       height: 18px;
-      width: fit-content;
       display: inline-block;
+      flex: 1;
     }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.talent-header #times-taken {
-      position: relative;
-      left: 146px;
-      height: 18px;
-      width: fit-content;
-      display: inline-block;
-      /* background: bisque; */
-    }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.talent-header #tests {
-      position: relative;
-      left: 240px;
-      height: 18px;
-      width: fit-content;
-      display: inline-block;
-      /* background: bisque; */
-    }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.talent-header .item-controls {
-      position: relative;
-      top: -1px;
-      left: 338px;
-      height: fit-content;
-      width: fit-content;
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: 10px;
+
+    .app.window-app.sheet.wng.actor  .item-list .item-controls {
+      font-size: 12px;
       color: var(--actor-label-color);
-      margin: 0px;
-      padding: 0px;
+      padding-top: 2px;
+      flex: 0 0 32px;
+      text-align: right;
     }
-    
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list {
+
+  .app.window-app.sheet.wng.actor  .item-list .items {
     overscroll-behavior-x: unset;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -4413,49 +4240,30 @@
     font-weight: var(--actor-input-font-weight);
     color: var(--actor-input-color);
     height: fit-content;
-    width: 100%;
-    margin: -5px 0px 0px 0px;
     padding: 0px;
   }
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item {
+  .app.window-app.sheet.wng.actor  .item-list .items .item {
     width: 100%;
     text-align: left;
     overflow-x: hidden;
     overflow-y: hidden;
-    margin: 0px 0px;
-    padding: 2px 2px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-shadow: 0px 0px 1px inset black;
-    font-family: var(--actor-input-font-family);
-    font-size: var(--actor-input-font-size);
-    font-weight: var(--actor-input-font-weight);
-    color: var(--actor-input-color);
     justify-content: space-between;
+    height: 38px;
+    padding: 3px;
     /* background: var(--debug-background-color-green); */
   }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content {
-      width: 100%;
-      text-align: center;
-      overflow-x: hidden;
-      overflow-y: hidden;
-      margin: 0px 0px;
-      padding: 0px 0px;
-      display: flex;
-      flex-direction: row;
-      font-family: var(--actor-input-font-family);
-      font-size: var(--actor-input-font-size);
-      font-weight: var(--actor-input-font-weight);
-      color: var(--actor-input-color);
-      justify-content: space-between;
-      /* background: var(--debug-background-color-green); */
-    }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .item-name {
+  .app.window-app.sheet.wng.actor  .item-list .items .item > * {
+    height: 100%
+  }
+      .app.window-app.sheet.wng.actor  .item-list .items .item  .item-name {
         display: flex;
         flex-direction: row;
         width: 180px;
       }
-        .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .image {
+        .app.window-app.sheet.wng.actor  .item-list .items .item  .image {
           background-size: 32px;
           background-repeat: no-repeat;
           min-height: 32px;
@@ -4463,161 +4271,17 @@
           min-width: 32px;
           max-width: 32px;
         }
-        .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .name {
+        .app.window-app.sheet.wng.actor  .item-list .items .item  .name {
           text-align: left;
           vertical-align: middle;
           padding: 11px 0px 0px 4px;
           overflow: hidden;
         }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .item-max {
-        min-width: 50px;
-        max-width: 50px;
-        padding: 11px 0px 0px 0px;
-        text-align: center;
-        flex-grow: 0;
-        flex-shrink: 0;
-        flex-basis: 0;
-        /* background: aqua; */
-      }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .item-tests {
-        min-width: 185px;
-        max-width: 185px;
-        padding: 11px 0px 0px 0px;
-        text-align: left;
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: 0;
-        /* background: aqua; */
-      }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.talent-list .item .content .item-controls {
+
+      .app.window-app.sheet.wng.actor  .item-list .items .item  .item-controls {
         padding: 5px 4px 0px 0px;
-        font-family: "Font Awesome 5 Free";
         font-size: 10px;
         color: #504f48a6;
-        text-align: right;
-        min-width: 30px;
-        max-width: 30px;
-        flex-grow: 0;
-      }
-
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.trait-header {
-    width: 100%;
-    height: 20px;
-    margin: 6px 0px 0px 0px;
-    padding: 0px 6px;
-    border: 1px solid #736953a6;
-    font-family: var(--actor-label-font-family);
-    font-size: var(--actor-label-font-size);
-    font-weight: var(--actor-label-font-weight);
-    color: var(--actor-label-color);
-    background: none;
-    box-shadow: 0 0 10px #6b3a0f87 inset;
-    text-align: left;
-    display: inline-block;
-    flex-grow: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.trait-header #trait-name {
-      position: relative;
-      left: 0px;
-      height: 18px;
-      width: fit-content;
-      display: inline-block;
-    }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-header.trait-header .item-controls {
-      position: relative;
-      top: -1px;
-      left: 395px;
-      height: fit-content;
-      width: fit-content;
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-size: 10px;
-      color: var(--actor-label-color);
-      margin: 0px;
-      padding: 0px;
-    }
-
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list {
-    overscroll-behavior-x: unset;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    border: 1px solid #736953a6;
-    border-top: none;
-    list-style: none;
-    box-shadow: 0px 0px 1px inset black;
-    font-family: var(--actor-input-font-family);
-    font-size: var(--actor-input-font-size);
-    font-weight: var(--actor-input-font-weight);
-    color: var(--actor-input-color);
-    height: fit-content;
-    width: 100%;
-    margin: -5px 0px 0px 0px;
-    padding: 0px;
-  }
-  .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item {
-    width: 100%;
-    text-align: left;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    margin: 0px 0px;
-    padding: 2px 2px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 1px inset black;
-    font-family: var(--actor-input-font-family);
-    font-size: var(--actor-input-font-size);
-    font-weight: var(--actor-input-font-weight);
-    color: var(--actor-input-color);
-    justify-content: space-between;
-    /* background: var(--debug-background-color-green); */
-  }
-    .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item .content {
-      width: 100%;
-      text-align: center;
-      overflow-x: hidden;
-      overflow-y: hidden;
-      margin: 0px 0px;
-      padding: 0px 0px;
-      display: flex;
-      flex-direction: row;
-      font-family: var(--actor-input-font-family);
-      font-size: var(--actor-input-font-size);
-      font-weight: var(--actor-input-font-weight);
-      color: var(--actor-input-color);
-      justify-content: space-between;
-      /* background: var(--debug-background-color-green); */
-    }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item .content .item-name {
-        display: flex;
-        flex-direction: row;
-        min-width: 180px;
-        max-width: 445px;
-      }
-        .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item .content .image {
-          background-size: 32px;
-          background-repeat: no-repeat;
-          min-height: 32px;
-          max-height: 32px;
-          min-width: 32px;
-          max-width: 32px;
-        }
-        .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item .content .name {
-          text-align: left;
-          vertical-align: middle;
-          padding: 11px 0px 0px 4px;
-          overflow: hidden;
-        }
-      .app.window-app.sheet.wng.actor .tab.talents.active .inventory-list.trait-list .item .content .item-controls {
-        padding: 5px 4px 0px 0px;
-        font-family: "Font Awesome 5 Free";
-        font-size: 10px;
-        color: #504f48a6;
-        text-align: right;
-        min-width: 30px;
-        max-width: 30px;
-        flex-grow: 0;
       }
 
 /* ==================== (I) COMBAT TAB ======================== */
@@ -4705,8 +4369,8 @@
         top: 2px;
         left: 3px;
       }
- 
- 
+
+
 
       .app.window-app.sheet.wng.actor .rest-icon{
         left: 5px;
@@ -4918,7 +4582,7 @@
           margin-right: 4px;
           padding: 2px 2px 0px 2px;
           background: #774e000f;
-          box-shadow: 0 0 3px #6b3a0f2b inset;        
+          box-shadow: 0 0 3px #6b3a0f2b inset;
         }
     .app.window-app.sheet.wng.creature-sheet .inventory-list.melee-weapon-list .item .weapon-property .label ,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property .label {
@@ -4957,7 +4621,7 @@
         .app.window-app.sheet.wng.creature-sheet .inventory-list.melee-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h2:last-of-type,
-        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h3:last-of-type, 
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h3:last-of-type,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.melee-weapon-list .item .weapon-property h4:last-of-type {
           visibility: hidden;
           margin: 0px 2px 0px 0px;
@@ -5208,7 +4872,7 @@
           margin-right: 4px;
           padding: 2px 2px 0px 2px;
           background: #774e000f;
-          box-shadow: 0 0 3px #6b3a0f2b inset;        
+          box-shadow: 0 0 3px #6b3a0f2b inset;
         }
         .app.window-app.sheet.wng.creature-sheet .inventory-list.ranged-weapon-list .item .weapon-property .label,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property .label {
@@ -5247,7 +4911,7 @@
         }
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property h1:last-of-type,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property h2:last-of-type,
-        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property h3:last-of-type, 
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property h3:last-of-type,
         .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.ranged-weapon-list .item .weapon-property h4:last-of-type {
           visibility: hidden;
           margin: 0px 2px 0px 0px;
@@ -5651,7 +5315,7 @@
         flex-grow: 0;
       }
 
-/* ==================== (J) MAGIC TAB ========================= */   
+/* ==================== (J) MAGIC TAB ========================= */
   .app.window-app.sheet.wng.actor.character-sheet .tab.magic.active {
     display: block;
     height: 352px;
@@ -5975,7 +5639,7 @@
         flex-grow: 0;
       }
 
-/* ==================== (K) RELIGION TAB ====================== */  
+/* ==================== (K) RELIGION TAB ====================== */
   .app.window-app.sheet.wng.actor .tab.religion.active {
     display: block;
     height: 352px;
@@ -5992,7 +5656,7 @@
     flex-direction: row;
     height: 25px;
     margin-top: 0px;
-  } 
+  }
   .app.window-app.sheet.wng.actor .tab.religion.active .religion-box-1 {
     display: flex;
     flex-direction: row;
@@ -6034,7 +5698,7 @@
       background: none;
       font-family: CaslonPro;
       font-weight: 500;
-      font-size: 14px;      
+      font-size: 14px;
     }
   .app.window-app.sheet.wng.actor .tab.religion.active .religion-box-2 {
     display: flex;
@@ -6324,7 +5988,7 @@
         flex-grow: 0;
       }
 
-/* ==================== (L) TRAPPING TAB ====================== */    
+/* ==================== (L) TRAPPING TAB ====================== */
   .app.window-app.sheet.wng.actor .tab.inventory.active {
     display: block;
     height: 352px;
@@ -6361,12 +6025,12 @@
     }
       .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header #encumbrance-text {
         justify-self: left;
-      } 
+      }
       .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header .encumbrance-counter-block {
         flex-grow: 2;
         text-align: right;
         justify-content: unset;
-      } 
+      }
         .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header .encumbrance-label {
           text-align: right;
           padding: 0px;
@@ -6385,7 +6049,7 @@
           height: 20px;
           /* background: red; */
         }
-        
+
     .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header {
       height: 21px;
       width: 493px;
@@ -6410,12 +6074,12 @@
     }
       .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header #encumbrance-text {
         justify-self: left;
-      } 
+      }
       .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-header .encumbrance-counter-block {
         flex-grow: 2;
         text-align: right;
         justify-content: unset;
-      } 
+      }
         .wng .tab.inventory.active .encumbrance-header .encumbrance-label {
           text-align: right;
           padding: 0px;
@@ -6474,7 +6138,7 @@
           max-width: 20px;
           text-align: center;
         }
-    
+
     .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance {
       margin-top: 0px;
       padding: 0px 1px 0px 1px;
@@ -6487,7 +6151,7 @@
       box-shadow: 0px 0px 1px inset black;
       background: none;
       height: 25px;
-    }   
+    }
     .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-text {
       margin-top: 0px;
       padding: 5px 1px 0px 4px;
@@ -6507,7 +6171,7 @@
       position: relative;
       top: -1px;
       left: -2px;
-    }     
+    }
       .app.window-app.sheet.wng.actor .tab.inventory.active .encumbrance-bar {
         background: none;
         height: 21px;
@@ -6536,7 +6200,7 @@
       }
       .app.window-app.sheet.wng.actor .tab.inventory.active .no-encumbrance {
         box-shadow: 0px 0px 8px inset #3c7173;
-        
+
       }
 
   /* ================== 2. GENERIC EQUIPMENT LISTS ============ */
@@ -8227,7 +7891,7 @@
           flex-grow: 0;
         }
 
-/* ==================== (M) NOTES TAB ========================= */  
+/* ==================== (M) NOTES TAB ========================= */
   .app.window-app.sheet.wng.actor .tab.notes.active {
     display: inline-block;
     height: 352px;
@@ -8237,7 +7901,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     /* background: blue; */
-  }    
+  }
 
   .app.window-app.item-sheet .note-section.label,
   .app.window-app.sheet.wng.actor .tab.notes.active .note-section.label {
@@ -8267,7 +7931,7 @@
   .app.window-app.sheet.wng.actor .tab.notes.active .note-section.label:last-of-type {
     margin: 6px 0px 0px 0px;
   }
-  
+
 .limited .tab.notes.active .note-section.biography .editor {
   height: 100%;
   width: 100%;
@@ -8297,7 +7961,7 @@
       /* background: aquamarine; */
     }
 
-  
+
 
   .app.window-app.sheet.wng.actor .tab.notes.active .ambition-section > h4 {
     width: 100%;
@@ -8464,7 +8128,7 @@
       color: var(--actor-label-color);
       margin: 0px;
       padding: 0px;
-    } 
+    }
   .app.window-app.sheet.wng.actor .tab.notes.active .inventory-list.psychology-list {
     overscroll-behavior-x: unset;
     overflow-x: hidden;
@@ -8702,7 +8366,7 @@
         max-width: 30px;
         flex-grow: 0;
       }
-       
+
   .app.window-app.sheet.wng.actor .tab.notes.active .inventory-header.disease-header {
     width: 100%;
     height: 20px;
@@ -8848,7 +8512,7 @@
         max-width: 30px;
         flex-grow: 0;
       }
-    
+
 /*************************************************************/
 /*************************************************************/
 
@@ -9164,7 +8828,7 @@
     grid-gap: 0px;
     background: none;
     border: 1px solid #736953a6;
-  }   
+  }
   .limited .general .attributes .attributes-table .table-header,
   .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header {
     font-family: var(--actor-label-font-family);
@@ -9174,18 +8838,18 @@
     box-shadow: 0 0 10px #00000052 inset;
     text-align: center;
     width: 100%;
-    border-bottom: none;  
+    border-bottom: none;
     border-right: 1px solid #736953a6;
-  }  
+  }
   .limited .general .attributes .attributes-table .table-header:nth-of-type(10),
   .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header:nth-of-type(10)  {
     border-right: none;
     /* background: red; */
-  }  
+  }
   .limited .general .attributes .attributes-table .table-header .table-header .header-block,
     .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block {
       padding-top: 0px;
-    }  
+    }
     .app.window-app.sheet.wng.actor.npc-sheet .general .attributes-table .table-header .header-block .advancement-indicator {
       position: fixed;
       margin-top: -3px;
@@ -9541,7 +9205,7 @@
       vertical-align: middle;
       box-shadow: 0 0 10px #00000052 inset;
       position: relative;
-      top: -1px;    
+      top: -1px;
     }
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -9840,7 +9504,7 @@
         min-width: 20px;
         max-width: 20px;
         flex-grow: 0;
-      }    
+      }
 
   /* ================== 2. CAREER LIST ======================== */
     .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list {
@@ -9915,7 +9579,7 @@
         margin: 0px;
         padding: 0px;
       }
-      
+
     .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .career-list .inventory-list {
       width: 100%;
       text-align: center;
@@ -10013,7 +9677,7 @@
           min-width: 30px;
           max-width: 30px;
           flex-grow: 0;
-        }        
+        }
 
   /* ================== 3. PENALTIES ========================== */
     .app.window-app.sheet.wng.actor.npc-sheet .tab.main.active .penalties {
@@ -10723,7 +10387,7 @@
     grid-gap: 0px;
     background: none;
     border: 1px solid #736953a6;
-  }   
+  }
 
   .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header {
     font-family: var(--actor-label-font-family);
@@ -10733,16 +10397,16 @@
     box-shadow: 0 0 10px #00000052 inset;
     text-align: center;
     width: 100%;
-    border-bottom: none;  
+    border-bottom: none;
     border-right: 1px solid #736953a6;
-  }  
+  }
   .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header:nth-of-type(10)  {
     border-right: none;
     /* background: red; */
-  }  
+  }
     .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header .header-block {
       padding-top: 0px;
-    }  
+    }
     .app.window-app.sheet.wng.actor.creature-sheet .general .attributes-table .table-header .header-block .advancement-indicator {
       position: fixed;
       margin-top: -3px;
@@ -10776,7 +10440,7 @@
     text-align: center;
   }
 
-  
+
   /* SECOND ROW */
   .app.window-app.sheet.wng.actor.creature-sheet .main-row {
     display: flex;
@@ -11100,7 +10764,7 @@
       vertical-align: middle;
       box-shadow: 0 0 10px #00000052 inset;
       position: relative;
-      top: -1px;    
+      top: -1px;
     }
 
 /* ==================== (E) TAB SELECTIONS ==================== */
@@ -11518,7 +11182,7 @@
           width: 22px;
         }
 
-/* ==================== (H) MAGIC TAB ========================= */   
+/* ==================== (H) MAGIC TAB ========================= */
   .app.window-app.sheet.wng.actor.creature-sheet .tab.magic.active {
     display: block;
     height: 352px;
@@ -11838,7 +11502,7 @@
         flex-grow: 0;
       }
 
-/* ==================== (K) NOTES TAB ========================= */  
+/* ==================== (K) NOTES TAB ========================= */
   .app.window-app.sheet.wng.actor.creature-sheet .tab.notes.active {
     display: inline-block;
     height: 352px;
@@ -11848,7 +11512,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     /* background: blue; */
-  }    
+  }
 
   .app.window-app.sheet.wng.actor.creature-sheet .tab.notes.active .note-section.label {
     width: 100%;
@@ -12010,7 +11674,7 @@
         min-width: 30px;
         max-width: 30px;
         flex-grow: 0;
-      }      
+      }
 /*************************************************************/
 /*************************************************************/
 
@@ -12527,7 +12191,7 @@ border-image-outset: 0px !important;
         background: #adadad !important;
         box-shadow: 0px 0px 3px black inset !important;
         position: relative;
-        top: 5px;    
+        top: 5px;
       }
 
 /*************************************************************/
@@ -12584,7 +12248,7 @@ border-image-outset: 0px !important;
   .window-app.dialog.skill-roll-dialog .window-header .window-title,
   .window-app.dialog.weapon-roll-dialog .window-header .window-title,
   .window-app.dialog.spell-roll-dialog .window-header .window-title,
-  .window-app.dialog.channel-roll-dialog .window-header .window-title, 
+  .window-app.dialog.channel-roll-dialog .window-header .window-title,
   .window-app.dialog.prayer-roll-dialog .window-header .window-title {
     display: block;
     position: absolute;
@@ -12868,7 +12532,7 @@ border-image-outset: 0px !important;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
 
   .window-app.dialog.characteristic-roll-dialog input[name="hitLocation"],
   .window-app.dialog.skill-roll-dialog input[name="hitLocation"],
@@ -13016,7 +12680,7 @@ border-image-outset: 0px !important;
       font-size: var(--actor-input-font-size);
       font-weight: var(--actor-input-font-weight);
     }
-    .app.window-app .form-group, 
+    .app.window-app .form-group,
     .app.window-app .form-group-stacked {
       clear: both;
       display: flex;
@@ -13035,7 +12699,7 @@ border-image-outset: 0px !important;
         border: 1px solid #5d513e;
         background: #080808;
       }
-      
+
       .trait-sheet .tab.details input[type="text"]{
         border: none;
         box-shadow: none;
@@ -13084,11 +12748,11 @@ border-image-outset: 0px !important;
         cursor: pointer;
         margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
         box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-      } 
+      }
       .app.window-app .form-group input[type="range"]::-webkit-slider-runnable-track {
         background-image: linear-gradient(to right, #820f0f , #82820d);
       }
-  
+
   .app.window-app.dialog .window-content .dialog-content h3 {
     margin: 3px 0px;
     padding: 4px 3px 1px 3px;
@@ -13231,7 +12895,7 @@ border-image-outset: 0px !important;
       background: #290a0ad9;
       text-align: center;
     }
-  
+
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(14) label,
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(15) label,
     .app.window-app.sheet.scene-sheet .form-group:nth-of-type(16) label,
@@ -13241,11 +12905,11 @@ border-image-outset: 0px !important;
     .app.window-app.sheet.scene-sheet .form-group label span {
       font-size: 14px;
       color: #7d7d7d;
-    } 
+    }
     .app.window-app.sheet.scene-sheet .form-group .file-picker {
       margin: 0 3px 0px 3px !important;
       box-shadow: 0px 0px 5px black inset;
-    } 
+    }
       .app.window-app.sheet.scene-sheet .form-group .file-picker i {
         display: contents;
         font-size: 16px;
@@ -13257,7 +12921,7 @@ border-image-outset: 0px !important;
     }
 
     /* Token Vision */
-    .app.window-app.sheet.scene-sheet .form-group input[type="checkbox"] { 
+    .app.window-app.sheet.scene-sheet .form-group input[type="checkbox"] {
       position: relative;
       top: 7px;
       margin-left: 6px;
@@ -13287,7 +12951,7 @@ border-image-outset: 0px !important;
       border: 1px solid #736953a6;
       padding: 4px;
     }
-  
+
 
   /* ================== 5. CREATE ACTOR ENTITY ================ */
     .app.window-app.dialog .dialog-content #entity-create .form-group .notes {
@@ -13452,7 +13116,7 @@ border-image-outset: 0px !important;
       margin: 4px 0px 0px 0px;
       padding: 4px 5px;
       border: 1px solid #5d513e;
-      background: #1f1f1fb5;    
+      background: #1f1f1fb5;
     }
     #token-config .tab[data-tab="image"] button {
       margin: 0 3px 0px 3px !important;
@@ -13481,7 +13145,7 @@ border-image-outset: 0px !important;
       cursor: pointer;
       margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
       box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-    } 
+    }
     #token-config .tab[data-tab="image"] input[type="range"]::-webkit-slider-runnable-track {
       background-image: linear-gradient(to right, #820f0f , #82820d);
     }
@@ -13524,7 +13188,7 @@ border-image-outset: 0px !important;
       opacity: 0.75;
       box-shadow: 0px 0px 4px inset black;
     }
-    
+
     #token-config .tab[data-tab="vision"] .notes {
       font-family: var(--actor-input-font-family);
       font-size: var(--actor-input-font-size);
@@ -13604,7 +13268,7 @@ border-image-outset: 0px !important;
       border-left: none;
       border-right: none;
       box-shadow: 0px 0px 10px inset black;
-      background: #352516;  
+      background: #352516;
     }
 
   /* ================== 10. DRAWING CONFIG ==================== */
@@ -13698,7 +13362,7 @@ border-image-outset: 0px !important;
       cursor: pointer;
       margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
       box-shadow: 1px 1px 1px #000000 inset, 0px 0px 2px #0d0d0d; /* Add cool effects to your sliders! */
-    } 
+    }
     #drawing-config .tab[data-tab="image"] input[type="range"]::-webkit-slider-runnable-track {
       background-image: linear-gradient(to right, #820f0f , #82820d);
     }
@@ -13731,7 +13395,7 @@ border-image-outset: 0px !important;
       opacity: 0.75;
       box-shadow: 0px 0px 4px inset black;
     }
-    
+
     #drawing-config .tab[data-tab="vision"] .notes {
       text-align: center;
     }
@@ -13792,7 +13456,7 @@ border-image-outset: 0px !important;
       border-left: none;
       border-right: none;
       box-shadow: 0px 0px 10px inset black;
-      background: #352516;  
+      background: #352516;
     }
 
   /* ================== 11. JOUNRAL ENTRIES =================== */
@@ -13913,8 +13577,8 @@ border-image-outset: 0px !important;
         opacity: 0.9;
         background: none;
         width: 100%;
-        margin: 0px;    
-      }      
+        margin: 0px;
+      }
       .window-app.app.journal-sheet .window-content select[name="folder"] {
         background: none;
         border: 1px solid #5a5a5a;
@@ -13951,7 +13615,7 @@ border-image-outset: 0px !important;
       /* box-shadow: inset 0 0 20px #000000; */
       background: url(../ui/sidebar_button-background_red.png) repeat;
       background-origin: padding-box;
-    } 
+    }
 
     .window-app.app.journal-sheet form.editable .editor {
       height: calc(100% - 126px);
@@ -14013,7 +13677,7 @@ border-image-outset: 0px !important;
       /* box-shadow: inset 0 0 20px #000000; */
       background: url(../ui/sidebar_button-background_red.png) repeat;
       background-origin: padding-box;
-    }    
+    }
       .window-app.journal-sheet.image-popout .form-group button i {
         display: block;
       }
@@ -14154,7 +13818,7 @@ border-image-outset: 0px !important;
 
 
 
-  
+
 /******************************************************************/
 /******************************************************************/
 
@@ -14173,7 +13837,7 @@ border-image-outset: 0px !important;
       font-size: 14px;
       width: 600px;
       height: 60px;
-    }    
+    }
 
     #hotbar #action-bar {
       flex: 1;
@@ -14198,7 +13862,7 @@ border-image-outset: 0px !important;
         border-image-width: 6px 6px 6px 6px;
         border-image-outset: 0px 0px 0px 0px;
         border-radius: 0px;
-      }   
+      }
         #hotbar .macro .macro-key {
           position: absolute;
           top: 2px;
@@ -14225,7 +13889,7 @@ border-image-outset: 0px !important;
         position: relative;
         top: 4px;
       }
-    
+
 /******************************************************************/
 /******************************************************************/
 
@@ -14315,7 +13979,7 @@ font-style : normal;
   line-height: 30px;
   border: none;
   background: url(../ui/window-app-dialog-header.png) repeat;
-} 
+}
   .window-app.dialog.cast-channel .window-header .window-title {
     position: absolute;
     top: 60px;
@@ -14428,7 +14092,7 @@ font-style : normal;
     border-image-outset: 0px;
     background: url(../ui/sidebar_button-background_red.png) repeat;
     background-origin: padding-box;
-  } 
+  }
 
   .window-content .notes {
     color: #BBB;
@@ -14446,7 +14110,7 @@ font-style : normal;
     width: 50px;
     height: 50px;
     border: none;
-    margin: -5px 5px 2px 0px;  
+    margin: -5px 5px 2px 0px;
   }
 
   h4.message-sender.sender-image {
@@ -14820,7 +14484,7 @@ font-style : normal;
       .app.window-app.sheet.item-sheet .configure-sheet {
         background: url(../ui/buttons/button-configure-sheet.png);
       }
-      
+
       .compendium .entry-name {
         color: #CCC;
       }
@@ -14896,7 +14560,7 @@ font-style : normal;
   position: relative;
   top: 5px;
   cursor: pointer;
-}  
+}
 
 .chat-buttons {
   position: relative;
@@ -14974,7 +14638,7 @@ font-style : normal;
 }
 
 .filepicker .tabs {
-  color: #CCC 
+  color: #CCC
 }
 #sidebar #tables .directory-list .directory-item {
   padding: 3px 3px;
@@ -15047,7 +14711,7 @@ font-style : normal;
 }
 .attribute-career-buttons .chargen-button {
   left : 0px;
-  
+
 }
 
 .attribute-career-buttons .chargen-button.careerReroll {
@@ -15072,7 +14736,7 @@ font-style : normal;
   width: fit-content;
   padding: 3px;
   margin: 5px;
-} 
+}
 
 .gen-talents,
 .gen-skills {
@@ -15241,7 +14905,7 @@ top: 25px;
     top: 8px;
 }
 
-#wng-browser .window-content 
+#wng-browser .window-content
 {
   background: url(../ui/frames/window-app-background-bookshelf.png);
   color: white;
@@ -15256,7 +14920,7 @@ top: 25px;
   flex: 1;
 }
 
-#wng-browser .item-filter 
+#wng-browser .item-filter
 {
   display: flex;
   flex-direction: column;
@@ -15498,7 +15162,7 @@ top: 25px;
   color: #CCC
 }
 
-#calendar  { 
+#calendar  {
   bottom: 122px !important;
     left: 14px !important;
 }

@@ -292,7 +292,7 @@
       "ammunition",
       "armour",
       "archetype",
-      "augmentics",
+      "augmetics",
       "equipment",
       "injury",
       "money",
@@ -315,7 +315,7 @@
       "templates" : ["value", "rarity", "keywords", "effect"]
     },
     "armour" : {
-      "templates" : ["traits", "value", "rarity", "keywords", "traits"],
+      "templates" : ["traits", "value", "rarity", "keywords"],
       "AR" : 0
     },
     "archetype" : {
@@ -328,11 +328,11 @@
       "wargear" : "",
       "influence" : 0
     },
-    "augmentics" : {
+    "augmetics" : {
       "templates" : ["effect", "value", "rarity", "keywords"]
     },
     "equipment" : {
-      "templates" : ["effect", "value", "rarit", "keywords"]
+      "templates" : ["effect", "value", "rarity", "keywords"]
     },
     "mutation" : {
       "templates" : ["effect"]
