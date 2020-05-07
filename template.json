@@ -210,8 +210,8 @@
           }
         }
       },
-      "combattraits" : {
-        "combattraits" : {
+      "combat" : {
+        "combat" : {
           "wounds" : {
             "value" : 0,
             "bonus" : 0,
@@ -240,8 +240,8 @@
           }
         }
       },
-      "mentaltraits" : {
-        "mentaltraits" : {
+      "mental" : {
+        "mental" : {
           "passaware" : {
             "label" : "Passive Awareness",
             "value" : 0,
@@ -267,8 +267,8 @@
           }
         }
       },
-      "socialtraits" : {
-        "socialtraits" : {
+      "social" : {
+        "social" : {
           "influence" : {
             "label" : "Influence",
             "value" : 0,
@@ -337,14 +337,15 @@
         }
       },
       "keywords" : {"keywords" : []},
-      "tier" : {"tier" : 1}
+      "tier" : {"tier" : 1},
+      "rank" : {"rank" : 1}
     },
     "character" : {
-      "templates" : ["attributes", "skills", "combattraits", "mentaltraits", "socialtraits", "objective", "details", "keywords", "tier"],
+      "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],
       "wrath" : 0
       },
     "threat" : {
-      "templates" : ["attributes", "skills", "combattraits", "mentaltraits", "keywords", "tier"],
+      "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
       "threat" : "",
       "bonuses" : "",
       "abilities" : "",
