@@ -367,7 +367,6 @@
       "augmetics",
       "equipment",
       "injury",
-      "misc",
       "mutation",
       "power",
       "species",
@@ -381,15 +380,16 @@
       "keywords" : {"keywords" : []} ,
       "rarity" : {"rarity" : "" },
       "effect" : {"effect" : ""},
+      "group" : {"group" : ""},
       "quantity" : {"quantity" : 0},
       "XP" : {"XP" : 0 }
     },
     "data" : {"description" : ""},
     "ammunition" : {
-      "templates" : ["value", "rarity", "keywords", "effect", "quantity"]
+      "templates" : ["value", "rarity", "keywords", "effect", "group", "quantity"]
     },
     "armour" : {
-      "templates" : ["traits", "value", "rarity", "keywords"],
+      "templates" : ["traits", "value", "rarity", "keywords", "group"],
       "AR" : 0
     },
     "archetype" : {
@@ -411,14 +411,11 @@
       "templates" : ["effect"],
       "severity" : ""
     },
-    "misc" : {
-      "templates" : ["quantity"]
-    },
     "mutation" : {
       "templates" : ["effect"]
     },
     "power" : {
-      "templates" : ["XP", "keywords", "effect"],
+      "templates" : ["XP", "keywords", "effect", "group"],
       "DN" : 0,
       "activation" : "",
       "duration" : "",
@@ -442,7 +439,7 @@
       "templates" : ["value", "rarity", "keywords", "effect"]
     },
     "weapon" : {
-      "templates" : ["value", "rarity", "keywords", "traits"],
+      "templates" : ["value", "rarity", "keywords", "traits", "group"],
       "type" : "",
       "damage" : 0,
       "ED" : 0,
