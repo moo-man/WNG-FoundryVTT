@@ -204,6 +204,7 @@
             "determination" : 0
           },
           "defence" : {
+            "value" : 0,
             "base" : 0,
             "armour" : 0,
             "total" : 0
@@ -295,7 +296,6 @@
       "augmetics",
       "equipment",
       "injury",
-      "money",
       "mutation",
       "power",
       "talent",
