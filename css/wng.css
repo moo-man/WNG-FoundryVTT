@@ -2359,14 +2359,15 @@
         position: relative;
         left: 0px;
       }
-      .app.window-app.sheet.item-sheet .tab .input-box.skills-textarea {
-        height: unset;
+       .app.window-app.sheet.item-sheet  .input-box.textarea {
+        height: 100%;
       }
-      .app.window-app.sheet.item-sheet .tab .input-box.skills-textarea textarea {
+      .app.window-app.sheet.item-sheet  .input-box.textarea textarea {
         resize: none;
-        text-align: unset;
+        height: 100%;
+        text-align: unset
       }
-      .app.window-app.sheet.item-sheet .tab .label-text.skills-textarea {
+      .app.window-app.sheet.item-sheet  .label-text.textarea {
         height: unset;
       }
         .app.window-app.sheet.item-sheet .tab .input-text:focus {

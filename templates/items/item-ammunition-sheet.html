@@ -9,12 +9,17 @@
       <input class="input-text" style="border-radius: 0px;" type="text" name="data.quantity.value" value="{{data.quantity.value}}"
         data-dtype="{{data.quantity.type}}" />
     </div>
-    <label class="label-text" style="margin-left: 3px;">{{localize "Encumbrance"}}</label>
-    <div class="input-box">
-      <input class="input-text" style="border-radius: 0px;" type="text" name="data.encumbrance.value" value="{{data.encumbrance.value}}"
-        data-dtype="{{data.encumbrance.type}}" />
-    </div>
+    
+    <label class="label-text">{{localize "Rarity"}}</label>
+    <select name="data.raity" data-dtype="String">
+      {{#select data.rarity}}
+      {{#each rarities as |rarity r|}}
+      <option value="{{r}}">{{rarity}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
   </div>
+
 
   <div class="item-details row2">
     <label class="label-text" style="flex-grow: 0; width: 69px;">{{localize "Category"}}</label>
@@ -22,19 +27,13 @@
       {{localize "Ammunition"}}
     </div>
 
-    <label class="label-text" style="margin-left: 3px;">{{localize "Price"}}</label>
+    <label class="label-text" style="margin-left: 3px;">{{localize "Value"}}</label>
     <div style="margin-right: 0px;" class="input-box">
-      <input class="input-text" title="Gold Crowns" style="border-radius: 0px; color: #b18619;" type="text" name="data.price.gc" value="{{data.price.gc}}"
-        data-dtype="{{data.price.type}}" placeholder="GC" />
-    </div>
-    <div style="margin-right: 0px;" class="input-box">
-      <input class="input-text" title="Silver Shillings" style="border-radius: 0px; color: #7d7b7b;" type="text" name="data.price.ss" value="{{data.price.ss}}"
-        data-dtype="{{data.price.type}}" placeholder="SS" />
-    </div>
-    <div style="margin-right: 0px;" class="input-box">
-      <input class="input-text" title="Brass Pennies" style="border-radius: 0px; color: #a04b00;" type="text" name="data.price.bp" value="{{data.price.bp}}"
-        data-dtype="{{data.price.type}}" placeholder="BP" />
-    </div>    
+      <input class="input-text style="border-radius: 0px; color: #b18619;" type="text" name="data.value" value="{{data.value}}"
+        data-dtype="Number" />
+    </div>  
+
+
   </div>
 
   <nav class="sheet-tabs tabs" data-tab-container="primary">
@@ -47,69 +46,22 @@
   {{> systems/wng/templates/items/item-description.html}}
 
 
-  <div class="tab details" data-tab="details">
-    <div class="form-group">
-      <label class="label-text">{{localize "ITEM.AmmunitionType"}}</label>
-      <select name="data.ammunitionType.value" data-dtype="{{data.ammunitionType.type}}">
-        {{#select data.ammunitionType.value}}
-        <option value=""></option>
-        {{#each ammunitionGroups as |group g|}}
-        <option value="{{g}}">{{group}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
 
-    <div class="form-group">
-      <label class="label-text">{{localize "Availability"}}</label>
-      <select name="data.availability.value" data-dtype={{data.availability.type}}>
-        {{#select data.availability.value}}
-        {{#each availability as |avail a|}}
-        <option value="{{a}}">{{avail}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label class="label-text">{{localize "Damage"}}</label>
-      <div class="input-box">
-        <input class="input-text" title="+X -X *X /X accepted" type="text" name="data.damage.value" value="{{data.damage.value}}"
-          data-dtype="{{data.damage.type}}" />
+    <div class="form-group skills">
+      <label class="label-text textarea">{{localize "Keywords (comma separated)"}}</label>
+      <div class="input-box textarea">
+        <textarea class="input-text csv-input" data-dest="skills" type="text" data-dtype="String">{{keywords}}</textarea>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="label-text">{{localize "Range"}}</label>
-      <div class="input-box">
-        <input class="input-text" title="+X -X *X /X accepted" type="text" name="data.range.value" value="{{data.range.value}}"
-          data-dtype="{{data.range.type}}" />
+    <div class="form-group skills">
+      <label class="label-text textarea">{{localize "Effect"}}</label>
+      <div class="input-box textarea">
+        <textarea class="input-text csv-input" name="item.data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
       </div>
     </div>
 
-    <div class="form-group-stacked">
-      <label class="label-text">{{localize "Qualities"}} (comma-separated)</label>
-      <div class="input-box">
-        <input class="input-text" type="text" name="data.qualities.value" value="{{data.qualities.value}}"
-          data-dtype="{{data.properties.type}}" />
-      </div>
-    </div>
 
-    <div class="form-group-stacked">
-      <label class="label-text">{{localize "Flaws"}} (comma-separated)</label>
-      <div class="input-box">
-        <input class="input-text" type="text" name="data.flaws.value" value="{{data.flaws.value}}"
-          data-dtype="{{data.properties.type}}" />
-      </div>
-    </div>
-
-    <div class="form-group-stacked">
-      <label class="label-text">{{localize "Special"}}</label>
-      <div class="input-box">
-        <input class="input-text" type="text" name="data.special.value" value="{{data.special.value}}"
-          data-dtype="{{data.special.type}}" />
-      </div>
-    </div>
 
   </div>
 </form>

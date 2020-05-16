@@ -343,7 +343,7 @@
       "activation": "",
       "duration" : "",
       "range" : "",
-      "multi": "false",
+      "multi": false,
       "potency" : ""
     },
     "talent" : {
