@@ -1,281 +1,352 @@
 {
-  "Actor": {
-    "types": ["character","threat"],
-    "templates": {
-      "attributes":{
-        "attributes": {
-          "s": {
-            "type": "Number",
-            "label": "ATR.S",
-            "abrev": "ATRAbbrev.S",
-            "rating": 0,
-            "bonus": 0,
+  "Actor" : {
+    "types" : ["character","threat"],
+    "templates" : {
+      "attributes" :{
+        "attributes" : {
+          "s" : {
+            "type" : "Number",
+            "label" : "ATR.S",
+            "abrev" : "ATRAbbrev.S",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "t": {
-            "type": "Number",
-            "label": "ATR.T",
-            "abrev": "ATRAbbrev.T",
-            "rating": 0,
-            "bonus": 0,
+          "t" : {
+            "type" : "Number",
+            "label" : "ATR.T",
+            "abrev" : "ATRAbbrev.T",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "a": {
-            "type": "Number",
-            "label": "ATR.A",
-            "abrev": "ATRAbbrev.A",
-            "rating": 0,
-            "bonus": 0,
+          "a" : {
+            "type" : "Number",
+            "label" : "ATR.A",
+            "abrev" : "ATRAbbrev.A",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "i": {
-            "type": "Number",
-            "label": "ATR.I",
-            "abrev": "ATRAbbrev.I",
-            "rating": 0,
-            "bonus": 0,
+          "i" : {
+            "type" : "Number",
+            "label" : "ATR.I",
+            "abrev" : "ATRAbbrev.I",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "wil": {
-            "type": "Number",
-            "label": "ATR.Will",
-            "abrev": "ATRAbbrev.Will",
-            "rating": 0,
-            "bonus": 0,
+          "wil" : {
+            "type" : "Number",
+            "label" : "ATR.Will",
+            "abrev" : "ATRAbbrev.Will",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "int": {
-            "type": "Number",
-            "label": "ATR.Int",
-            "abrev": "ATRAbbrev.Int",
-            "rating": 0,
-            "bonus": 0,
+          "int" : {
+            "type" : "Number",
+            "label" : "ATR.Int",
+            "abrev" : "ATRAbbrev.Int",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "fel": {
-            "type": "Number",
-            "label": "ATR.Fel",
-            "abrev": "ATRAbbrev.Fel",
-            "rating": 0,
-            "bonus": 0,
+          "fel" : {
+            "type" : "Number",
+            "label" : "ATR.Fel",
+            "abrev" : "ATRAbbrev.Fel",
+            "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           }
         }
       },  
-      "skills":{
-        "skills": {
-          "ath": {
-            "type": "Number",
+      "skills" :{
+        "skills" : {
+          "ath" : {
+            "type" : "Number",
             "label" : "SKILL.Ath",
             "attribute" : "s",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "aw": {
-            "type": "Number",
+          "aw" : {
+            "type" : "Number",
             "label" : "SKILL.Aw",
             "attribute" : "int",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "bs": {
-            "type": "Number",
+          "bs" : {
+            "type" : "Number",
             "label" : "SKILL.BS",
             "attribute" : "a",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "cun": {
-            "type": "Number",
+          "cun" : {
+            "type" : "Number",
             "label" : "SKILL.Cun",
             "attribute" : "fel",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "dec": {
-            "type": "Number",
+          "dec" : {
+            "type" : "Number",
             "label" : "SKILL.Dec",
             "attribute" : "fel",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "ins": {
-            "type": "Number",
+          "ins" : {
+            "type" : "Number",
             "label" : "SKILL.Ins",
             "attribute" : "fel",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "int": {
-            "type": "Number",
+          "int" : {
+            "type" : "Number",
             "label" : "SKILL.Int",
             "attribute" : "wil",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "inv": {
-            "type": "Number",
+          "inv" : {
+            "type" : "Number",
             "label" : "SKILL.Inv",
             "attribute" : "int",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "lead": {
-            "type": "Number",
+          "lead" : {
+            "type" : "Number",
             "label" : "SKILL.Lead",
             "attribute" : "wil",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "med": {
-            "type": "Number",
+          "med" : {
+            "type" : "Number",
             "label" : "SKILL.Med",
             "attribute" : "int",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "per": {
-            "type": "Number",
+          "per" : {
+            "type" : "Number",
             "label" : "SKILL.Per",
             "attribute" : "fel",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "pil": {
-            "type": "Number",
+          "pil" : {
+            "type" : "Number",
             "label" : "SKILL.Pil",
             "attribute" : "a",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "psy": {
-            "type": "Number",
+          "psy" : {
+            "type" : "Number",
             "label" : "SKILL.Psy",
             "attribute" : "wil",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "sch": {
-            "type": "Number",
+          "sch" : {
+            "type" : "Number",
             "label" : "SKILL.Sch",
             "attribute" : "int",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "sth": {
-            "type": "Number",
+          "sth" : {
+            "type" : "Number",
             "label" : "SKILL.Sth",
             "attribute" : "a",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "surv": {
-            "type": "Number",
+          "surv" : {
+            "type" : "Number",
             "label" : "SKILL.Surv",
             "attribute" : "wil",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "tech": {
-            "type": "Number",
+          "tech" : {
+            "type" : "Number",
             "label" : "SKILL.Tech",
             "attribute" : "int",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           },
-          "ws": {
-            "type": "Number",
+          "ws" : {
+            "type" : "Number",
             "label" : "SKILL.WS",
             "attribute" : "i",
             "rating" : 0,
+            "bonus" : 0,
             "total" : 0
           }
         }
       },
-      "survival": {
-        "survival": {
-          "wounds": {
-            "value": 0,
-            "max": 0
+      "combat" : {
+        "combat" : {
+          "wounds" : {
+            "value" : 0,
+            "bonus" : 0,
+            "max" : 0
           },
-          "shock": {
-            "value": 0,
-            "max": 0,
-            "determination" : 0
+          "shock" : {
+            "value" : 0,
+            "bonus" : 0,
+            "max" : 0
           },
           "defence" : {
             "value" : 0,
-            "base" : 0,
+            "bonus" : 0,
+            "total" : 0
+          },
+          "resilience" : {
+            "value" : 0,
+            "bonus" : 0,
             "armour" : 0,
+            "total" : 0
+          },
+          "determination" : {
+            "value" : 0,
+            "bonus" : 0,
             "total" : 0
           }
         }
       },
-      "objective": {
-        "objective": {
-          "value" : "",
-          "conviction" : 0,
-          "size" : "",
-          "resolve" : 0,
-          "speed" : 0
+      "mental" : {
+        "mental" : {
+          "passaware" : {
+            "label" : "Passive Awareness",
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
+          },
+          "corruption" : {
+            "label" : "Corruption",
+            "current" : 0,
+            "level" : 0
+          },
+          "conviction" : {
+            "label" : "Conviction",
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
+          },
+          "resolve" : {
+            "label" : "Resolve",
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
+          }
+        }
+      },
+      "social" : {
+        "social" : {
+          "influence" : {
+            "label" : "Influence",
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
+          },
+          "wealth" : {
+            "label" : "Wealth",
+            "value" : 0
+          }
+        }
+      },
+      "objective" : {
+        "objective" : {
+          "objective" : [],
+          "focus" : "",
+          "complete" : ""
         }
       },
       "details" : {
         "details" :{
-          "gender": {
-            "label": "Gender",
-            "value": ""
+          "gender" : {
+            "label" : "Gender",
+            "value" : ""
           },
-          "influence": {
-            "label": "Influence",
-            "value": ""
+          "species" : {
+            "label" : "Species",
+            "value" : ""
           },
-          "species": {
-            "label": "Species",
-            "value": ""
+          "faction" : {
+            "label" : "Faction",
+            "value" : ""
           },
-          "faction": {
-            "label": "Faction",
-            "value": ""
+          "archetype" : {
+            "label" : "Archetype",
+            "value" : ""
           },
-          "archetype": {
-            "label": "Archetype",
-            "value": ""
+          "background" : {
+            "label" : "Background",
+            "value" : ""
           },
-          "background": {
-            "label": "Background",
-            "value": ""
+          "size" : {
+            "label" : "Size",
+            "value" : ""
           },
-          "notes": {
-            "label": "Notes",
-            "value": ""
+          "speed" : {
+            "label" : "Speed",
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
           },
-          "faith": {
-            "label": "Faith",
-            "max": 0,
-            "current": 0
+          "notes" : {
+            "label" : "Notes",
+            "value" : ""
           },
-          "xp": {
-            "label": "XP",
-            "current": 0,
-            "total": 0
+          "faith" : {
+            "label" : "Faith",
+            "max" : 0,
+            "current" : 0
           },
-          "corruption": {
-            "label": "Corruption",
-            "level": 0
+          "xp" : {
+            "label" : "XP",
+            "current" : 0,
+            "total" : 0
           }
         }
       },
       "keywords" : {"keywords" : []},
-      "tier": {"tier" : 1}
+      "tier" : {"tier" : 1},
+      "rank" : {"rank" : 1}
     },
-    "character": {
-      "templates": ["attributes","skills","survival", "objective", "details", "keywords", "tier"],
+    "character" : {
+      "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],
       "wrath" : 0
       },
-    "threat": {
-      "templates": ["attributes", "skills", "survival", "objective", "keywords", "tier"],
-      "threat": "",
+    "threat" : {
+      "templates" : ["attributes", "skills", "combat", "mental", "keywords", "tier"],
+      "threat" : "",
       "bonuses" : "",
       "abilities" : "",
       "battlecry" :"",
@@ -288,8 +359,8 @@
       "annihilation" : ""
     }
   },
-  "Item": {
-    "types": [
+  "Item" : {
+    "types" : [
       "ammunition",
       "armour",
       "archetype",
@@ -298,30 +369,32 @@
       "injury",
       "mutation",
       "power",
+      "species",
       "talent",
       "upgrade",
       "weapon"
     ],
-    "templates": {
+    "templates" : {
       "value" : {"value" : 0},
       "traits" : {"traits" : [] },
-      "keywords": {"keywords" : []} ,
+      "keywords" : {"keywords" : []} ,
       "rarity" : {"rarity" : "" },
       "effect" : {"effect" : ""},
+      "group" : {"group" : ""},
+      "quantity" : {"quantity" : 0},
       "XP" : {"XP" : 0 }
     },
     "data" : {"description" : ""},
     "ammunition" : {
-      "templates" : ["value", "rarity", "keywords", "effect"]
+      "templates" : ["value", "rarity", "keywords", "effect", "group", "quantity"]
     },
     "armour" : {
-      "templates" : ["traits", "value", "rarity", "keywords"],
+      "templates" : ["traits", "value", "rarity", "keywords", "group"],
       "AR" : 0
     },
     "archetype" : {
       "templates" : ["keywords", "XP"],
       "tier" : 1,
-      "species" : "",
       "attributes" : [],
       "skills" : [],
       "ability" : "",
@@ -329,32 +402,44 @@
       "influence" : 0
     },
     "augmetics" : {
-      "templates" : ["effect", "value", "rarity", "keywords"]
+      "templates" : ["value", "rarity", "keywords", "effect"]
     },
     "equipment" : {
-      "templates" : ["effect", "value", "rarity", "keywords"]
+      "templates" : ["value", "rarity", "keywords", "effect", "quantity"]
+    },
+    "injury" : {
+      "templates" : ["effect"],
+      "severity" : ""
     },
     "mutation" : {
       "templates" : ["effect"]
     },
     "power" : {
-      "templates" : ["XP", "keywords"],
+      "templates" : ["XP", "keywords", "effect", "group"],
       "DN" : 0,
-      "activation": "",
+      "activation" : "",
       "duration" : "",
       "range" : "",
       "multi": false,
       "potency" : ""
     },
+    "species" : {
+      "templates" : ["keywords", "XP"],
+      "attributes" : [],
+      "skills" : [],
+      "ability" : "",
+      "speed" : 0,
+      "size" : ""
+    },
     "talent" : {
-      "templates" : ["XP"],
-      "requirements" : ""      
+      "templates" : ["XP", "effect"],
+      "requirements" : ""
     },
     "upgrade" : {
-      "templates" : ["value", "rarity", "keywords"]
+      "templates" : ["value", "rarity", "keywords", "effect"]
     },
     "weapon" : {
-      "templates" : ["value", "rarity", "keywords", "traits"],
+      "templates" : ["value", "rarity", "keywords", "traits", "group"],
       "type" : "",
       "damage" : 0,
       "ED" : 0,
