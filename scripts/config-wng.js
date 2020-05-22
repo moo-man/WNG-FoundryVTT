@@ -2,7 +2,7 @@ const WNG = {}
 
 CONFIG.ChatMessage.template = "systems/wng/templates/chat/chat-message.html"
 
-// Should this be updated to the conditions below??
+// To be updated
 CONFIG.statusEffects = [
 	"systems/wng/icons/conditions/bleeding1.png",
 	"systems/wng/icons/conditions/bleeding2.png",
