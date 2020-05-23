@@ -4,48 +4,28 @@ CONFIG.ChatMessage.template = "systems/wng/templates/chat/chat-message.html"
 
 // To be updated
 CONFIG.statusEffects = [
-	"systems/wng/icons/conditions/bleeding1.png",
-	"systems/wng/icons/conditions/bleeding2.png",
-	"systems/wng/icons/conditions/bleeding3.png",
-	"systems/wng/icons/conditions/bleeding4.png",
-	"systems/wng/icons/conditions/poisoned1.png",
-	"systems/wng/icons/conditions/poisoned2.png",
-	"systems/wng/icons/conditions/poisoned3.png",
-	"systems/wng/icons/conditions/poisoned4.png",
-	"systems/wng/icons/conditions/ablaze1.png",
-	"systems/wng/icons/conditions/ablaze2.png",
-	"systems/wng/icons/conditions/ablaze3.png",
-	"systems/wng/icons/conditions/ablaze4.png",
-	"systems/wng/icons/conditions/deafened1.png",
-	"systems/wng/icons/conditions/deafened2.png",
-	"systems/wng/icons/conditions/deafened3.png",
-	"systems/wng/icons/conditions/deafened4.png",
-	"systems/wng/icons/conditions/stunned1.png",
-	"systems/wng/icons/conditions/stunned2.png",
-	"systems/wng/icons/conditions/stunned3.png",
-	"systems/wng/icons/conditions/stunned4.png",
-	"systems/wng/icons/conditions/entangled1.png",
-	"systems/wng/icons/conditions/entangled2.png",
-	"systems/wng/icons/conditions/entangled3.png",
-	"systems/wng/icons/conditions/entangled4.png",
-	"systems/wng/icons/conditions/fatigued1.png",
-	"systems/wng/icons/conditions/fatigued2.png",
-	"systems/wng/icons/conditions/fatigued3.png",
-	"systems/wng/icons/conditions/fatigued4.png",
-	"systems/wng/icons/conditions/blinded1.png",
-	"systems/wng/icons/conditions/blinded2.png",
-	"systems/wng/icons/conditions/blinded3.png",
-	"systems/wng/icons/conditions/blinded4.png",
-	"systems/wng/icons/conditions/broken1.png",
-	"systems/wng/icons/conditions/broken2.png",
-	"systems/wng/icons/conditions/broken3.png",
-	"systems/wng/icons/conditions/broken4.png",
-	"systems/wng/icons/conditions/prone.png",
-	"systems/wng/icons/conditions/fear.png",
-	"systems/wng/icons/conditions/surprised.png",
-	"systems/wng/icons/conditions/unconscious.png",
-	"systems/wng/icons/conditions/grappling.png",
-	"systems/wng/icons/defeated.png",
+    "systems/wng/icons/conditions/bleeding.png",
+    "systems/wng/icons/conditions/blinded.png",
+    "systems/wng/icons/conditions/defeated.png",
+    "systems/wng/icons/conditions/dying.png",
+    "systems/wng/icons/conditions/exhausted.png",
+    "systems/wng/icons/conditions/fear.png",
+    "systems/wng/icons/conditions/frenzied.png",
+    "systems/wng/icons/conditions/grappled.png",
+    "systems/wng/icons/conditions/hindered.png",
+    "systems/wng/icons/conditions/hold.png",
+    "systems/wng/icons/conditions/onfire.png",
+    "systems/wng/icons/conditions/pinned.png",
+    "systems/wng/icons/conditions/poisoned.png",
+    "systems/wng/icons/conditions/prone.png",
+    "systems/wng/icons/conditions/radpoison.png",
+    "systems/wng/icons/conditions/restrained.png",
+    "systems/wng/icons/conditions/suffocating.png",
+    "systems/wng/icons/conditions/staggered.png",
+    "systems/wng/icons/conditions/stealthed.png",
+    "systems/wng/icons/conditions/terror.png",
+    "systems/wng/icons/conditions/vulnerable.png",
+    "systems/wng/icons/conditions/wounded.png"
 ]
 
 CONFIG.controlIcons.defeated = "systems/wng/icons/defeated.png";
@@ -517,27 +497,6 @@ WNG.rank = {
     "champion" : 80
 };
 
-// Originally groupToType. Given a type, what's the primary range, melee or ranged
-WNG.groupToRange = {
-	"melee" : "Melee",
-	"chain" : "Melee",
-	"exotic" : "Melee",
-	"force" : "Melee",
-	"power" : "Melee",
-	"aeldarimelee" : "Melee",
-	"orkmelee" : "Melee",
-	"bolt" : "Ranged",
-	"las" : "Ranged",
-	"plasma" : "Ranged",
-	"melta" : "Ranged",
-	"projectile" : "Ranged",
-	"flame" : "Ranged",
-	"admecranged" : "Ranged",
-	"grenademissile" : "Ranged",
-	"aeldariranged" : "Ranged",
-	"orkranged" : "Ranged"
-};
-
 // Weapon Type
 WNG.weaponType = {
 	"melee" : "Melee",
@@ -559,25 +518,25 @@ WNG.weaponType = {
 	"orkranged" : "Ork Ranged"
 };
 
-// Weapon Type Descriptions
-WNG.weaponTypeDesc = {
+// Originally groupToType. Given a type, what's the primary range, melee or ranged
+WNG.groupToRange = {
 	"melee" : "Melee",
-	"chain" : "Overt in their savage appearance and the grating roar the emit when activated, chain weapons chew through armour and rend flesh with violently spinning chains of serrated metal teeth.",
-	"exotic" : "Unusual weapons that require specific training to master or are notably rare, these weapons turn heads and mark the wielder out.",
-	"force" : "In the hands of an attuned Psyker, Force weapons crackle with power and emit the acrid stench of the Warp. Drawing upon a Psyker’s intimate connection to the Empyrean, they channel devastating immaterial energies directly into their target, shattering minds and sundering flesh with every blow. You must have the PSYKER Keyword to optimally wield a force weapon. If you don’t have the PSYKER Keyword, a weapon’s Force Trait doesn’t function and its Damage is reduced by 2.",
-	"power" : "Rare and revered, power weapons resemble mundane but well-crafted weapons when dormant. When ignited, a crackling field of pale-blue energy is projected along the weapon’s edge, emitting a sinister hum and the sharp smell of burning ozone as it rips apart matter on impact.",
-	"aeldarimelee" : "Carved from bone or grown from crystal, Aeldari melee weapons are elegant instruments that facilitate the inhumane dance of death the Aeldari are renown for.",
-	"orkmelee" : "Ork melee weapons are as brutal and effective as their Greenskin owners. Custom built, heavily modified, and hand painted, many Orks have a downright unhealthy obsession with their favourite blood spiller, to the point where warbands have fought battles over the theft of a prized Choppa.",
-	"bolt" : "Thundering with the righteous fury of the God-Emperor himself, bolt weapons promise a swift and bloody end to the enemies of the Imperium. Firing armour piercing micro-missiles the size of ration cans, these fearsome firearms are synonymous with the Adeptus Astartes, who have wielded them for millennia.",
-	"las" : "Firing focused beams of searing light across even the darkest battlefield, the ubiquitous Las weaponry of the Imperium embodies the self-righteous spirit of Humanity. Like their wielders, what Las weapons lack in individual might, they more than make up for in durability, variety, and overwhelming numbers.",
-	"plasma" : "Barely understood, notoriously unstable, and yet widely used, plasma weapons are some of the most potent and dangerous weapons any dare to carry. Projecting pulses of superheated matter, they vaporise targets on impact — provided they don’t misfire and do the same to their wielder first.",
-	"melta" : "Ancient weapons that utilise sub-atomic reactions to generate tight beams of concentrated heat that rival the fury of a star, Melta weapons are rare and highly coveted weapons of absolute annihilation.",
-	"projectile" : "Primitive in design and principle, slug-throwers predate even the Dark Age of Technology. Using chemical accelerants to fire metallic slugs of all shapes and sizes, solid projectile weapons are effective implements of destruction despite their simplicity.",
-	"flame" : "Flame Ranged weapons.",
-	"admecranged" : "The arcane technological mysteries known only to the most pious of the Omnissiah’s devout worshippers are manifest in these holy tools of war. The technology of Arc weapons has been almost entirely lost to time, and only few relics remain.",
-	"grenademissile" : "Sometimes all the precision and skill in the universe simply cannot halt the overwhelming hoards of the heretic and xenos. At times like this, desperate warriors turn to more explosive methods.",
-	"aeldariranged" : "The Aeldari favour lightweight weapons of elegant design, whose form and function make even the finest Imperial weapon seem primitive and cumbersome.",
-	"orkranged" : "Ork Ranged weapons."
+	"chain" : "Melee",
+	"exotic" : "Melee",
+	"force" : "Melee",
+	"power" : "Melee",
+	"aeldarimelee" : "Melee",
+	"orkmelee" : "Melee",
+	"bolt" : "Ranged",
+	"las" : "Ranged",
+	"plasma" : "Ranged",
+	"melta" : "Ranged",
+	"projectile" : "Ranged",
+	"flame" : "Ranged",
+	"admecranged" : "Ranged",
+	"grenademissile" : "Ranged",
+	"aeldariranged" : "Ranged",
+	"orkranged" : "Ranged"
 };
 
 // Weapon Group
@@ -595,11 +554,11 @@ WNG.weaponGroup = {
 WNG.weaponGroupDesc = {
 	"melee" : "Standard melee weapons that add strength to the base damage.",
 	"force" : "Standard melee weapons that add strength and half willpower to the base damage.",
-	"pistol" : "Ranged weapons that can be used in melee with a Ballistic Skill (A) Test.",
+	"pistol" : "Ranged weapons that can be used in melee with a Ballistic Skill (A) Test at a +2 DN penalty.",
 	"basic" : "Standard range weapons.",
-	"heavy" : "Heavy weaponry and typically requires bracing.",
+	"heavy" : "Heavy weaponry have strength requirements to fire without brace, or else suffer a +2 DN penalty.",
 	"launcher" : "Requires a missile or grenade for its damage profile.",
-	"thrown" : "Medium effective range is based on strength multiplied."
+	"thrown" : "Medium effective range is based on strength multiplied by X."
 };
 
 // Weapon Traits
@@ -691,16 +650,6 @@ WNG.armourTypes = {
 	"astartesarmour" : "Astartes Armour",
 	"aeldariarmour" : "Aeldari Armour",
 	"orkarmour" : "Ork Armour"
-};
-
-// Armour Types Descriptions
-WNG.armourTypesDesc = {
-	"armour" : "Armour",
-	"poweredarmour" : "The pinnacle of Imperial personal defense, Power Armour is an all-encompassing exoskeleton of thick ceramite plates that empowers the user to inhuman strength via a rig of fusion-powered servo actuators.",
-	"powerfields" : "Almost invisible until needed, these powerful devices project protective fields that have turned aside blade and blast for centuries, succeeding where ceramite and armaplas have failed.",
-	"astartesarmour" : "Towering suits of battle-hardened Power Armour, Astartes armour is specifically designed to interface with the enhanced physique and genetically engineered organs of the transhuman warriors of the Adeptus Astartes, that no other mortal could hope to utilise it.",
-	"aeldariarmour" : "Aeldari armour perfectly melds the Species’ sense of form and function. Fitted to the wearer and allowing for maximum range of motion, suits of Aeldari armour are true works of art.<br><br>Embedded in the chest of every suit of Aeldari armour is a Spirit Stone, an egg-sized gem that absorbs and protects a warrior’s soul upon death. This prevents them from falling into the Warp and the hungry maw of the great enemy Slaanesh.",
-	"orkarmour" : "Often bizarre and brutal in appearance, Ork armour is hammered and welded together from whatever scrap the Ork can get their hands on. While their armour may be simple, Orks carry a lot of it."
 };
 
 // Armour Groups
@@ -897,40 +846,54 @@ WNG.stealthReduction = {
 
 // Conditions
 WNG.conditions = {
-	"bleeding" : "Bleeding",
-	"blinded" : "Blinded",
-	"exhausted" : "Exhausted",
-	"fear" : "Fear",
-	"frenzied" : "Frenzied",
-	"hindered" : "Hindered",
-	"onfire" : "On Fire",
-	"pinned" : "Pinned",
-	"poisoned" : "Poisoned",
-	"prone" : "Prone",
-	"restrained" : "Restrained",
-	"staggered" : "Staggered",
-	"terror" : "Terror",
-	"vulnerable" : "Vulnerable",
-	"wounded" : "Wounded"
+    "bleeding" : "Bleeding",
+    "blinded" : "Blinded",
+    "defeated" : "Defeated",
+    "dying" : "Dying",
+    "exhausted" : "Exhausted",
+    "fear" : "Fear",
+    "frenzied" : "Frenzied",
+    "grappled" : "Grappled",
+    "hindered" : "Hindered",
+    "hold" : "Hold Action",
+    "onfire" : "On Fire",
+    "pinned" : "Pinned",
+    "poisoned" : "Poisoned",
+    "prone" : "Prone",
+    "radpoison" : "Rad Poison",
+    "restrained" : "Restrained",
+    "suffocating" : "Suffocating",
+    "staggered" : "Staggered",
+    "stealthed" : "Stealthed",
+    "terror" : "Terror",
+    "vulnerable" : "Vulnerable",
+    "wounded" : "Wounded"
 };
 
 // Condition Descriptions
 WNG.conditionDesc = {
-	"bleeding" : "You’re bleeding, afflicted with a grievous wound that is difficult to treat. You suffer one Mortal Wound at the end of your Turn. Bleeding can be stopped with a successful Toughness Test (DN 4), or if another character aids you with the Medicae Skill. You can attempt to use Medicae on yourself but do so at +1DN.",
-	"blinded" : "You’re unable to see properly. Increase the DN for any sight-related task (including all combat Tests) by 4, replacing any lesser vision penalties.<br><br>At the GM’s discretion you may use a Combat Action to remove the Blinded condition, using a narratively appropriate Skill.",
-	"exhausted" : "You are weary from battle or persistent effort and suffer from fatigue. On your Turn, you can only Walk or Crawl, perform a basic Combat Action (attack with no combat options, such as Aim or Multi-Attack), or Fall Back. Additionally, you may not roll Determination. Any Shock suffered by an Exhausted character is immediately converted into Mortal Wounds.<br><br>Certain circumstances directly inflict Exhaustion. You are automatically Exhausted if your Shock increases beyond your Maximum Shock. Certain weapons, psychic powers, or Ruin Actions can also cause you to become Exhausted even while you are below your Maximum Shock.<br><br>If you are Exhausted from a source other than exceeding your Maximum Shock, that effect determines how you remove the Exhausted condition. Otherwise, the Exhausted condition is removed whenever you recover Shock.",
-	"fear" : "You’re scared. Whatever is causing your Fear might also make you anxious, or trigger physical reactions like rapid breathing, shaking, and a lack of focus.<br><br>When you encounter something that causes Fear, you roll your Resolve against a DN dictated by the source of Fear. Success allows you to act normally. If you fail, you suffer +2DN to all Tests. The penalty lasts until the end of the scene or until an ally passes a Leadership (Fel) Test of DN 2 + the source’s Fear value.<br><br>A being that causes Fear is immune to Fear and Intimidation Interaction Attacks.",
-	"frenzied" : "Whether whipped into a zealous fury or auto injecting Frenzon combat stims, you’re Frenzied. You lose all sense of self-preservation and throw yourself into the thick of combat.<br><br>When you become Frenzied, you may choose to embrace the frenzy or attempt to resist it. If you choose to resist, at the start of your Turn make a DN 3 Willpower Test. If you pass, the rage subsides and you resist the frenzy.<br><br>If the effect is triggered, embraced, or otherwise not resisted, you are Frenzied and must try to get into close combat as quickly as possible, charging the nearest visible enemy. If you are in cover, you break cover and move towards the nearest enemy.<br><br>While Frenzied, you are immune to Fear and cannot be Pinned and must always use the All-Out Attack option, if possible. You gain +1 to your Strength Attribute While Frenzied.",
-	"hindered" : "Something’s holding you back. While Hindered increase the DN for all Tests by +1, or higher if the rules of whatever is hindering you say so. Hindered lasts for one Round, unless otherwise stated.",
-	"onfire" : "You’re on fire! You take 1d3 Mortal Wounds at the start of each of your Turns. After taking the Mortal Wound, you must pass a DN 3 Willpower Test or be Hindered until the end of the Round.",
-	"pinned" : "You’re under heavy fire, and there’s a chance your Resolve breaks under the pressure. If you are targeted with a Pinning Attack attack, you may be Pinned.<br><br>To see if you are Pinned, make a Resolve Test with a DN equal to the Salvo value of the weapon, and add +1 DN for each additional enemy targeting you with a Pinning Attack (a Mob counts as a single attacker). If you fail, you lose your Movement and either hunker down behind existing cover or use your Movement to move towards the nearest cover on your next Turn.<br><br>While Pinned, you can’t Charge or leave cover. You suffer a +2 DN penalty to Ballistic Skill (A) Tests against the enemies using Pinning Attack While you are Pinned.<br><br>An ally may attempt to rally their comrades on their Turn by making a Leadership (Fel) Test with the same DN as the Resolve Test, adding an extra +1DN if a Pinned character has taken any damage during the combat. If the Test is successful, the character successfully rallies any Pinned allies within 5 metres, ending the effect.",
-	"poisoned" : "You’ve been inflicted with one of the galaxy’s countless pathogens, plagues, or viruses. You could be suffering from neurotoxins injected into your system, alien acid splashed on you, or Nurgle’s contagions. All of these dangers leave you Poisoned.<br><br>You suffer a +2 DN penalty to all Tests while Poisoned. Some poisons also inflict damage based on the poison. Some poisons may affect your ability to function instead of, or in addition to, causing damage. The Poisoned condition ends when you are treated using the Medicae Skill or you succeed on a Toughness Test (DN based on the poison) at the beginning of your Turn.",
-	"prone" : "You’re knocked down on the ground. Your Defence is reduced by 2 against any attack made by a Threat within 5 metres of you. Your Defence is increased by 1 when you’re attacked from 6 or more metres away. If you become Prone while flying, you fall to the ground and suffer falling damage.<br><br>Standing up when Prone is a Free Action on your Turn. If you stand up in this way, you can only use the Standard Movement option; you can’t use combat options such as Brace or Aim. An adjacent character may use their Movement to help you stand up immediately when you’re Prone.",
-	"restrained" : "You’re bound, possibly by some form of entangling attack such as an Genestealer Cultist Webber, a Barbed Strangler, or a good old-fashioned net.<br><br>While Restrained you lose your Movement action for that Turn and your Defence is reduced by 2.",
-	"staggered" : "You’re off balance; you’ve run too fast over rough terrain, ordnance has impacted nearby, or you’ve been clipped by a stray bullet.<br><br>When you move while Staggered, your Speed is reduced by half. You can’t Run or Sprint unless otherwise stated. The Staggered condition ends at the beginning of the next Round.",
-	"terror" : "You’re overcome with a sense of intense dread and rational thought becomes impossible: this is allconsuming Terror.<br><br>Make a Resolve Test against the DN of the source of Terror. If you pass, you may act normally on your Turn. If you fail, you suffer all of the effects of Fear, and you must use every action available on each of your Turns to move as far away as possible until you no longer have line of sight to the source of Terror.<br><br>Terror lasts until the end of the scene or until an ally passes a Leadership (Fel) Test of DN 2 + the Terror value.<br><br>Any effect that grants a bonus to Fear Tests also applies to Terror Tests. Any effect that grants immunity to Fear grants one extra Icon on your Resolve Test against Terror. A being that causes Terror is immune to Fear, Terror, and Intimidation Interaction Attacks.",
-	"vulnerable" : "Your defences are open! While Vulnerable, you suffer −1 to your Defence. Certain abilities and effects increase this penalty. Being Vulnerable lasts until the end of your next Turn.",
-	"wounded" : "If you have suffered any Wounds, you are Wounded. Wounded characters suffer a +1 DN penalty to all Tests."
+    "bleeding" : "You’re bleeding, afflicted with a grievous wound that is difficult to treat. You suffer one Mortal Wound at the end of your Turn. Bleeding can be stopped with a successful Toughness Test (DN 4), or if another character aids you with the Medicae Skill. You can attempt to use Medicae on yourself but do so at +1DN.",
+    "blinded" : "You’re unable to see properly. Increase the DN for any sight-related task (including all combat Tests) by 4, replacing any lesser vision penalties. At the GM’s discretion you may use a Combat Action to remove the Blinded condition, using a narratively appropriate Skill.",
+    "defeated" : "Defeated.",
+    "dying" : "If you suffer more Wounds than your Maximum Wounds, you are Dying. You are on the verge of expiration, unable to move or fight properly, and will perish if you do not receive medical attention soon.<br><br>When you are Dying, you immediately suffer a Memorable Injury and fall Prone. You cannot stand up While you are Dying.<br><br>Whenever you take any amount of damage that would cause you to suffer a Wound While Dying, you suffer a Traumatic Injury instead. If you suffer more Traumatic Injuries than your Tier + 1, you die.<br><br>You may roll Determination when you take damage While Dying; if you use Determination to reduce any damage you take to 0, you do not suffer a Traumatic Injury.<br><br>A Dying character can be moved by another character if they use a Combat Action to drag or lift a fallen comrade.<br><br>If you recover any Wounds, you are no longer Dying.",
+    "exhausted" : "You are weary from battle or persistent effort and suffer from fatigue. On your Turn, you can only Walk or Crawl, perform a basic Combat Action (attack with no combat options, such as Aim or Multi-Attack), or Fall Back. Additionally, you may not roll Determination. Any Shock suffered by an Exhausted character is immediately converted into Mortal Wounds. Certain circumstances directly inflict Exhaustion. You are automatically Exhausted if your Shock increases beyond your Maximum Shock. Certain weapons, psychic powers, or Ruin Actions can also cause you to become Exhausted even while you are below your Maximum Shock. If you are Exhausted from a source other than exceeding your Maximum Shock, that effect determines how you remove the Exhausted condition. Otherwise, the Exhausted condition is removed whenever you recover Shock.",
+    "fear" : "You’re scared. Whatever is causing your Fear might also make you anxious, or trigger physical reactions like rapid breathing, shaking, and a lack of focus. When you encounter something that causes Fear, you roll your Resolve against a DN dictated by the source of Fear. Success allows you to act normally. If you fail, you suffer +2DN to all Tests. The penalty lasts until the end of the scene or until an ally passes a Leadership (Fel) Test of DN 2 + the source’s Fear value. A being that causes Fear is immune to Fear and Intimidation Interaction Attacks.",
+    "frenzied" : "Whether whipped into a zealous fury or auto injecting Frenzon combat stims, you’re Frenzied. You lose all sense of self-preservation and throw yourself into the thick of combat. When you become Frenzied, you may choose to embrace the frenzy or attempt to resist it. If you choose to resist, at the start of your Turn make a DN 3 Willpower Test. If you pass, the rage subsides and you resist the frenzy. If the effect is triggered, embraced, or otherwise not resisted, you are Frenzied and must try to get into close combat as quickly as possible, charging the nearest visible enemy. If you are in cover, you break cover and move towards the nearest enemy. While Frenzied, you are immune to Fear and cannot be Pinned and must always use the All-Out Attack option, if possible. You gain +1 to your Strength Attribute While Frenzied.",
+    "grappled" : "You can use your Combat Action to try to grapple a target you are Engaged with. Make an Opposed Strength Test with the target. If you win, you grapple the target.<br><br>Once grappled, a character is Restrained and may only use one-handed weapons. To break free from a grapple, a character must succeed an Opposed Strength Test using a Combat Action.<br><br>You may attempt to grapple multiple targets using a Multi-Attack, but you must be Engaged with all targets and you can’t grapple more targets than you have arms.<br><br>Size plays an important role in grappling. A target gains +2 bonus dice to the Opposed Strength Test for every size category it is larger than you.",
+    "hindered" : "Something’s holding you back. While Hindered increase the DN for all Tests by +1, or higher if the rules of whatever is hindering you say so. Hindered lasts for one Round, unless otherwise stated.",
+    "hold" : "You may choose to wait and act later in the Round. To do so, announce you are holding your Combat Action instead of taking it during your Turn. You may announce you are using your held Combat Action at any point later in the Round.<br><br>If you wish to Interrupt another character, you must succeed at an opposed Initiative Test. Failure means that the acting character takes their action first before you have the chance to intervene. If you don’tuse your held Combat Action by the end of the Round it is lost.",
+    "onfire" : "You’re on fire! You take 1d3 Mortal Wounds at the start of each of your Turns. After taking the Mortal Wound, you must pass a DN 3 Willpower Test or be Hindered until the end of the Round.",
+    "pinned" : "You’re under heavy fire, and there’s a chance your Resolve breaks under the pressure. If you are targeted with a Pinning Attack attack, you may be Pinned. To see if you are Pinned, make a Resolve Test with a DN equal to the Salvo value of the weapon, and add +1 DN for each additional enemy targeting you with a Pinning Attack (a Mob counts as a single attacker). If you fail, you lose your Movement and either hunker down behind existing cover or use your Movement to move towards the nearest cover on your next Turn. While Pinned, you can’t Charge or leave cover. You suffer a +2 DN penalty to Ballistic Skill (A) Tests against the enemies using Pinning Attack While you are Pinned. An ally may attempt to rally their comrades on their Turn by making a Leadership (Fel) Test with the same DN as the Resolve Test, adding an extra +1DN if a Pinned character has taken any damage during the combat. If the Test is successful, the character successfully rallies any Pinned allies within 5 metres, ending the effect.",
+    "poisoned" : "You’ve been inflicted with one of the galaxy’s countless pathogens, plagues, or viruses. You could be suffering from neurotoxins injected into your system, alien acid splashed on you, or Nurgle’s contagions. All of these dangers leave you Poisoned. You suffer a +2 DN penalty to all Tests while Poisoned. Some poisons also inflict damage based on the poison. Some poisons may affect your ability to function instead of, or in addition to, causing damage. The Poisoned condition ends when you are treated using the Medicae Skill or you succeed on a Toughness Test (DN based on the poison) at the beginning of your Turn.",
+    "prone" : "You’re knocked down on the ground. Your Defence is reduced by 2 against any attack made by a Threat within 5 metres of you. Your Defence is increased by 1 when you’re attacked from 6 or more metres away. If you become Prone while flying, you fall to the ground and suffer falling damage. Standing up when Prone is a Free Action on your Turn. If you stand up in this way, you can only use the Standard Movement option; you can’t use combat options such as Brace or Aim. An adjacent character may use their Movement to help you stand up immediately when you’re Prone.",
+    "radpoison" : "If you are exposed to radiation for a significant time, or a particularly abundant source, you may contract rad poisoning. See Rad Poisoning Intensity to determine check and damage.",
+    "restrained" : "You’re bound, possibly by some form of entangling attack such as an Genestealer Cultist Webber, a Barbed Strangler, or a good old-fashioned net. While Restrained you lose your Movement action for that Turn and your Defence is reduced by 2.",
+    "suffocating" : "When deprived of oxygen underwater, in a smokefilled manufactorum, or in the void outside a Space Hulk, the consequence is the same — you suffocate.<br><br>You can attempt to hold your breath to conserve oxygen for a number of minutes equal to your Toughness Attribute. Certain enhancements and equipment can extend this time, such as the Adeptus Astartes Imbiber or multi-lung.<br><br>If you attempt to hold your breath during combat or any other Round-based encounter, you can do so for a number of Rounds equal to double your Toughness Attribute. If you reach the end of either of these times without breathing, you fall unconscious.<br><br>You must pass a DN 3 Toughness Attribute Test every minute or Round you hold your breath. If you fail the Test, you suffer 1d3 Shock damage. If suffocation causes you to suffer more Shock than your maximum, you fall unconscious. If you do not breathe oxygen before the allotted time runs out, then you automatically fall unconscious, even if you do not exceed your Maximum Shock. If you are deprived of oxygen and unconscious, you die after a number of Rounds equal to your Toughness Attribute.",
+    "staggered" : "You’re off balance; you’ve run too fast over rough terrain, ordnance has impacted nearby, or you’ve been clipped by a stray bullet. When you move While Staggered, your Speed is reduced by half. You can’t Run or Sprint unless otherwise stated. The Staggered condition ends at the beginning of the next Round.",
+    "stealthed" : "You can make a Stealth (A) Test as a Combat Action. Whenever you do this (or whenever the GM calls for a Stealth (A) Test), write down the number of Icons you roll. This is your Stealth Score for the scene. Whenever another character uses their Passive Awareness or makes an Awareness (Int) Test, they use your Stealth Score for the DN of their Test. If the enemy discovers you, you lose your Stealth Score for the scene. You can’t roll Stealth (A) again until the next scene, as dictated by the GM. This means you can’t hide and may need to confront (or run from) whatever you were trying to avoid.<br><br>Your Stealth Score can be decreased through various actions, and is ultimately adjudicated by the GM. The GM can award bonuses to your Stealth Score or your enemies’ Awareness (Int) Tests based on light sources, terrain, or other circumstances at their discretion. Below is a guideline for how various actions could reduce a Stealth Score.",
+    "terror" : "You’re overcome with a sense of intense dread and rational thought becomes impossible: this is allconsuming Terror. Make a Resolve Test against the DN of the source of Terror. If you pass, you may act normally on your Turn. If you fail, you suffer all of the effects of Fear, and you must use every action available on each of your Turns to move as far away as possible until you no longer have line of sight to the source of Terror. Terror lasts until the end of the scene or until an ally passes a Leadership (Fel) Test of DN 2 + the Terror value. Any effect that grants a bonus to Fear Tests also applies to Terror Tests. Any effect that grants immunity to Fear grants one extra Icon on your Resolve Test against Terror. A being that causes Terror is immune to Fear, Terror, and Intimidation Interaction Attacks.",
+    "vulnerable" : "Your defences are open! While Vulnerable, you suffer −1 to your Defence. Certain abilities and effects increase this penalty. Being Vulnerable lasts until the end of your next Turn.",
+    "wounded" : "If you have suffered any Wounds, you are Wounded. Wounded characters suffer a +1 DN penalty to all Tests."
 };
 
 // Hazards
@@ -945,12 +908,12 @@ WNG.hazards = {
 
 // Hazard Descriptions
 WNG.hazardDesc = {
-	"suffocation" : "When deprived of oxygen underwater, in a smokefilled manufactorum, or in the void outside a Space Hulk, the consequence is the same — you suffocate.<br><br> You can attempt to hold your breath to conserve oxygen for a number of minutes equal to your Toughness Attribute. Certain enhancements and equipment can extend this time, such as the Adeptus Astartes Imbiber or multi-lung.<br><br>If you attempt to hold your breath during combat or any other Round-based encounter, you can do so for a number of Rounds equal to double your Toughness Attribute. If you reach the end of either of these times without breathing, you fall unconscious.<br><br> You must pass a DN 3 Toughness Attribute Test every minute or Round you hold your breath. If you fail the Test, you suffer 1d3 Shock damage. If suffocation causes you to suffer more Shock than your maximum, you fall unconscious. If you do not breathe oxygen before the allotted time runs out, then you automatically fall unconscious, even if you do not exceed your Maximum Shock. If you are deprived of oxygen and unconscious, you die after a number of Rounds equal to your Toughness Attribute.",
-	"electricity" : "Nature can be as deadly as any foe imaginable. Weaponised by countless militaries throughout the long and grim history of the galaxy, electrical currents can Turn armour against its wearer, reduce a tank to molten slag, and cook an Ork from the inside out.<br><br> Anyone struck by an electrical discharge faces the same devastating effects. First, you suffer damage equal to the intensity of the electricity. All electricity damage is Agonising.<br><br> After resolving the effects of the damage, you must then make a Toughness Attribute Test. If you fail, you are Restrained for one Round and knocked Prone on a Complication. If you pass, the electrical charge dissipates and you may act normally.",
-	"extremeheatcold" : "Countless planets possess extreme environments that are far too hostile to support life, but the need for resources and defensible positions means there are Imperium colonies on almost every kind of world. Sometimes extreme temperatures occur naturally. Other temperature changes are caused by destructive weaponry, such as the Exterminatus, or the terraforming process of the Tyranid bio-fleets.<br><br> When you find yourself exposed to extreme hot or cold temperatures, you must pass a Toughness Attribute Test with a DN determined by the GM. During narrative time, you make a Test every hour. During combat time, you make a Toughness Test after a number of Rounds equal to your Toughness.<br><br> If you fail the Toughness Test, you become Exhausted until you Regroup or seek Respite.",
-	"falling" : "Gravity is inevitable, indiscriminate, and often has painful consequences. When you fall a distance of 5 metres or more you suffer falling damage. You suffer 1 Mortal Wound, plus 1d3 Mortal Wounds for every extra 5 metres you fall.",
-	"fire" : "Forge World furnaces, prometheum tank explosions, overheating Plasma weaponry; the 41st Millennium is filled with flammable situations. You must make an Athletics (A) Test every Round you are exposed to a hazard that could set you On Fire. The GM determines the DN of this Test. If you fail, you’re On Fire.<br><br> While On Fire, you take 1d3 Mortal Wounds at the start of each of your Turns. You must then pass a DN 3 Willpower Test to act normally on your Turn. If you fail, you are Pinned until the end of the Round as you spend your Turn crying out in pain or flailing around in an attempt to put out the fire. As an action, you can attempt to put out someone who is On Fire by passing an DN 3 Agility Test.<br><br> Anything that doesn’t have an Agility Attribute automatically passes Agility Attribute Tests to avoid being ignited or to put out a fire.<br><br> The cleansing purity and destructive power of fire makes it a popular weapon in the Imperium and beyond, with even energy weapons able to cause combustion. When you are hit by a FIRE weapon, follow this procedure:<br><ol><li>If hit, resolve the weapon’s damage first.</li><li>If desired, toll Determination against the damage.</li><li>Make a DN 3 Agility Attribute Test. The DN can be modified by weapon traits as follows:</li><ul><li>+1 for the Blast [Small] trait</li><li>+2 for the Blast [Medium] trait</li><li>+3 for the Blast [Large] trait</li><li>+4 for the Blast [Very Large] trait</li><li>+5 for the Blast [Huge] trait</li></ul><li>If you fail the Test, you’re On Fire.</li></ol>",
-	"radiation" : "Radiation comes in many different forms, and is one of the most lethal and hardest to detect of all environmental hazards. The fuel of a crippled void ship, journeying the irradiated plains of a Death World, or encountering a sabotaged reactor on a Forge World can all lead to radiation exposure. A few weapons in the 41st Millennium even harness this dangerous and volatile power.<br><br> Detecting radiation is difficult. Without the correct equipment, a high DN Survival Test (minimum 9) is required to detect any source of radiation.<br><br> You must immediately take a Toughness Attribute Test whenever exposed to radiation. The GM decides on the DN — it should never be easy. If you fail the Test, the results are severe:<br><ul><li>You take 1d3 Mortal Wounds.</li><li>You take 1d6 Shock damage.</li><li>You are Staggered for 1 Round.</li></ul><br><br><br>Rad Poison<br><br> If you are exposed to radiation for a significant time, or a particularly abundant source, you may contract rad poisoning. The GM should use the following table to select an intensity and apply the effects listed."
+    "suffocation" : "When deprived of oxygen underwater, in a smokefilled manufactorum, or in the void outside a Space Hulk, the consequence is the same — you suffocate.<br><br> You can attempt to hold your breath to conserve oxygen for a number of minutes equal to your Toughness Attribute. Certain enhancements and equipment can extend this time, such as the Adeptus Astartes Imbiber or multi-lung.<br><br>If you attempt to hold your breath during combat or any other Round-based encounter, you can do so for a number of Rounds equal to double your Toughness Attribute. If you reach the end of either of these times without breathing, you fall unconscious.<br><br> You must pass a DN 3 Toughness Attribute Test every minute or Round you hold your breath. If you fail the Test, you suffer 1d3 Shock damage. If suffocation causes you to suffer more Shock than your maximum, you fall unconscious. If you do not breathe oxygen before the allotted time runs out, then you automatically fall unconscious, even if you do not exceed your Maximum Shock. If you are deprived of oxygen and unconscious, you die after a number of Rounds equal to your Toughness Attribute.",
+    "electricity" : "Nature can be as deadly as any foe imaginable. Weaponised by countless militaries throughout the long and grim history of the galaxy, electrical currents can Turn armour against its wearer, reduce a tank to molten slag, and cook an Ork from the inside out.<br><br> Anyone struck by an electrical discharge faces the same devastating effects. First, you suffer damage equal to the intensity of the electricity. All electricity damage is Agonising.<br><br> After resolving the effects of the damage, you must then make a Toughness Attribute Test. If you fail, you are Restrained for one Round and knocked Prone on a Complication. If you pass, the electrical charge dissipates and you may act normally.",
+    "extremeheatcold" : "Countless planets possess extreme environments that are far too hostile to support life, but the need for resources and defensible positions means there are Imperium colonies on almost every kind of world. Sometimes extreme temperatures occur naturally. Other temperature changes are caused by destructive weaponry, such as the Exterminatus, or the terraforming process of the Tyranid bio-fleets.<br><br> When you find yourself exposed to extreme hot or cold temperatures, you must pass a Toughness Attribute Test with a DN determined by the GM. During narrative time, you make a Test every hour. During combat time, you make a Toughness Test after a number of Rounds equal to your Toughness.<br><br> If you fail the Toughness Test, you become Exhausted until you Regroup or seek Respite.",
+    "falling" : "Gravity is inevitable, indiscriminate, and often has painful consequences. When you fall a distance of 5 metres or more you suffer falling damage. You suffer 1 Mortal Wound, plus 1d3 Mortal Wounds for every extra 5 metres you fall.",
+    "fire" : "Forge World furnaces, prometheum tank explosions, overheating Plasma weaponry; the 41st Millennium is filled with flammable situations. You must make an Athletics (A) Test every Round you are exposed to a hazard that could set you On Fire. The GM determines the DN of this Test. If you fail, you’re On Fire.<br><br> While On Fire, you take 1d3 Mortal Wounds at the start of each of your Turns. You must then pass a DN 3 Willpower Test to act normally on your Turn. If you fail, you are Pinned until the end of the Round as you spend your Turn crying out in pain or flailing around in an attempt to put out the fire. As an action, you can attempt to put out someone who is On Fire by passing an DN 3 Agility Test.<br><br> Anything that doesn’t have an Agility Attribute automatically passes Agility Attribute Tests to avoid being ignited or to put out a fire.<br><br> The cleansing purity and destructive power of fire makes it a popular weapon in the Imperium and beyond, with even energy weapons able to cause combustion. When you are hit by a FIRE weapon, follow this procedure:<br><ol><li>If hit, resolve the weapon’s damage first.</li><li>If desired, toll Determination against the damage.</li><li>Make a DN 3 Agility Attribute Test. The DN can be modified by weapon traits as follows:</li><ul><li>+1 for the Blast [Small] trait</li><li>+2 for the Blast [Medium] trait</li><li>+3 for the Blast [Large] trait</li><li>+4 for the Blast [Very Large] trait</li><li>+5 for the Blast [Huge] trait</li></ul><li>If you fail the Test, you’re On Fire.</li></ol>",
+    "radiation" : "Radiation comes in many different forms, and is one of the most lethal and hardest to detect of all environmental hazards. The fuel of a crippled void ship, journeying the irradiated plains of a Death World, or encountering a sabotaged reactor on a Forge World can all lead to radiation exposure. A few weapons in the 41st Millennium even harness this dangerous and volatile power.<br><br> Detecting radiation is difficult. Without the correct equipment, a high DN Survival Test (minimum 9) is required to detect any source of radiation.<br><br> You must immediately take a Toughness Attribute Test whenever exposed to radiation. The GM decides on the DN — it should never be easy. If you fail the Test, the results are severe:<br><ul><li>You take 1d3 Mortal Wounds.</li><li>You take 1d6 Shock damage.</li><li>You are Staggered for 1 Round.</li></ul><br><br><br>Rad Poison<br><br> If you are exposed to radiation for a significant time, or a particularly abundant source, you may contract rad poisoning. See Rad Poisoning Intensity to determine check and damage."
 };
 
 // Hazard Electricity Sub Group
@@ -992,6 +955,6 @@ const DAMAGE_TYPE = {
 const PSEUDO_ENTITIES = [
 	"Table",
 	"Keywords",
-	"Condition",
+    "Condition",
 	"Roll"
 ];
