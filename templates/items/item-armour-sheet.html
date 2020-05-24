@@ -3,12 +3,6 @@
 
   <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
 
-  <div class="item-details row1">
-    <label class="label-text">{{localize "Quantity"}}</label>
-    <div class="input-box" style="margin-right: 3px;">
-      <input class="input-text" style="border-radius: 0px;" type="text" name="data.quantity.value" value="{{data.quantity.value}}"
-        data-dtype="{{data.quantity.type}}" />
-    </div>
     
     <label class="label-text">{{localize "Rarity"}}</label>
     <select name="data.raity" data-dtype="String">
@@ -47,17 +41,25 @@
 
 
 
-    <div class="form-group skills">
+    <div class="form-group">
       <label class="label-text textarea">{{localize "Keywords (comma separated)"}}</label>
       <div class="input-box textarea">
         <textarea class="input-text csv-input" data-dest="skills" type="text" data-dtype="String">{{keywords}}</textarea>
       </div>
     </div>
 
-    <div class="form-group skills">
+    <div class="form-group">
       <label class="label-text textarea">{{localize "Effect"}}</label>
       <div class="input-box textarea">
-        <textarea class="input-text csv-input" name="item.data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
+        <textarea class="input-text" name="data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <label class="label-text textarea">{{localize "Traits (comma separated"}}</label>
+      <div class="input-box textarea">
+        <textarea class="input-text csv-input" data-dest="traits" type="text" data-dtype="String">{{data.traits}}</textarea>
       </div>
     </div>
 

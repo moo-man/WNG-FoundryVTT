@@ -22,23 +22,29 @@
   <!-- Ability Details -->
   <div class="tab details" data-tab="details">
 
+
     <div class="form-group">
-      <label class="label-text">{{localize "Max"}}</label>
-      <select name="data.max.value" data-dtype="{{data.max.type}}">
-        {{#select data.max.value}}
-        {{#each talentMaxs as |Max max|}}
-        <option value="{{max}}">{{Max}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
+      <label class="label-text">{{localize "XP"}}</label>
+      <div class="input-box">
+        <input class="input-text" name="data.xp" data-dtype="Number" value="{{data.xp}}" />
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="label-text textarea">{{localize "Effect"}}</label>
+      <div class="input-box textarea">
+        <textarea class="input-text" name="data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
+      </div>
     </div>
 
     <div class="form-group">
-      <label class="label-text">{{localize "Skill Type"}}</label>
-      <div class="input-box">
-        <input class="input-text" name="data.tests.value" data-dtype="{{data.tests.type}}" value="{{data.tests.value}}" />
+      <label class="label-text textarea">{{localize "Requirements"}}</label>
+      <div class="input-box textarea">
+        <textarea class="input-text" name="data.requirements" type="text" data-dtype="String">{{data.requirements}}</textarea>
       </div>
     </div>
+
+
   </div>
 </form>
 
