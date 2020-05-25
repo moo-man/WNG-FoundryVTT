@@ -416,6 +416,7 @@
     },
     "power" : {
       "templates" : ["XP", "keywords", "effect", "group"],
+      "requirements" : "",
       "DN" : 0,
       "activation" : "",
       "duration" : "",
