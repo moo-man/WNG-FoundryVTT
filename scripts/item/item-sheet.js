@@ -14,6 +14,12 @@ class ItemSheetWNG extends ItemSheet
     super(item, options);
     this.mce = null;
   }
+  
+  static get defaultOptions() {
+    const options = super.defaultOptions;
+    options.tabs = [{navSelector: ".sheet-tabs", contentSelector: ".content", initial: "description"}]
+	  return options;
+  }
 
   /**
    * Override header buttons to add custom ones.
@@ -68,103 +74,8 @@ class ItemSheetWNG extends ItemSheet
   {
     const data = super.getData();
 
-    if (this.item.type === "skill")
-    {
-      data['characteristics'] = WNG.characteristics;
-      data['skillGroup'] = WNG.skillGroup;
-      data['skillTypes'] = WNG.skillTypes;
-    }
-    else if (this.item.type === "talent")
-    {
-      data['talentMaxs'] = WNG.talentMax;
-    }
-    else if (this.item.type == "weapon")
-    {
-      data['weaponGroups'] = WNG.weaponGroups;
-      data['availability'] = WNG.availability;
-      data['weaponReaches'] = WNG.weaponReaches
-      data['ammunitionGroups'] = WNG.ammunitionGroups;
-      data['weaponTypes'] = WNG.weaponTypes;
-      data.isMelee = WNG.groupToType[this.item.data.data.weaponGroup.value] == "melee"
-    }
-    else if (this.item.type == "ammunition")
-    {
-      data['availability'] = WNG.availability;
-      data['ammunitionGroups'] = WNG.ammunitionGroups;
-    }
-    else if (this.item.type == "armour")
-    {
-      data['armorTypes'] = WNG.armorTypes;
-      data['availability'] = WNG.availability;
-    }
-    else if (this.item.type == "spell")
-    {
-      if (WNG.magicLores[this.item.data.data.lore.value])
-      {
-        data["loreValue"] = WNG.magicLores[this.item.data.data.lore.value]
-      }
-      else
-      {
-        data["loreValue"] = this.item.data.data.lore.value;
-      }
-      data["descriptionAndLore"] = WNG_Utility._spellDescription(this.item.data)
-
-    }
-    else if (this.item.type == "prayer")
-    {
-      data['prayerTypes'] = WNG.prayerTypes;
-    }
-
-
-    else if (this.item.type == "career")
-    {
-      data['statusTiers'] = WNG.statusTiers;
-      data['skills'] = data.data.skills.join(", ").toString();
-      data['earningSkills'] = data.data.incomeSkill.map(function (item)
-      {
-        return data.data.skills[item];
-      });
-      data['talents'] = data.data.talents.toString();
-      data['trappings'] = data.data.trappings.toString();
-      let characteristicList = duplicate(WNG.characteristicsAbbrev);
-      for (let char in characteristicList)
-      {
-        if (data.data.characteristics.includes(char))
-          characteristicList[char] = {
-            abrev: WNG.characteristicsAbbrev[char],
-            checked: true
-          };
-        else
-          characteristicList[char] = {
-            abrev: WNG.characteristicsAbbrev[char],
-            checked: false
-          };
-      }
-      data['characteristicList'] = characteristicList;
-
-    }
-
-    else if (this.item.type == "trapping")
-    {
-      data['trappingTypes'] = WNG.trappingTypes;
-      data['availability'] = WNG.availability;
-    }
-
-    else if (this.item.type == "trait")
-    {
-      data['characteristics'] = WNG.characteristics;
-      data['difficultyLabels'] = WNG.difficultyLabels;
-    }
-
-    else if (this.item.type == "container")
-    {
-      data['availability'] = WNG.availability;
-    }
-
-    else if (this.item.type == "mutation")
-    {
-      data['mutationTypes'] = WNG.mutationTypes;
-    }
+    data.rarities = WNG.rarities
+    data.weaponGroups = WNG.weaponGroup
 
     data.isGM = game.user.isGM;
     return data;
@@ -179,13 +90,6 @@ class ItemSheetWNG extends ItemSheet
   activateListeners(html)
   {
     super.activateListeners(html);
-
-    // Activate tabs
-    new Tabs(html.find(".tabs"),
-    {
-      initial: this.item.data.flags["_sheetTab"],
-      callback: clicked => this.item.data.flags["_sheetTab"] = clicked.attr("data-tab")
-    });
 
     // Checkbox changes
     html.find('input[type="checkbox"]').change(event => this._onSubmit(event));

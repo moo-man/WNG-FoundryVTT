@@ -4,6 +4,7 @@
   <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64" />
 
     
+  <div class="item-details row1">
     <label class="label-text">{{localize "Rarity"}}</label>
     <select name="data.raity" data-dtype="String">
       {{#select data.rarity}}
@@ -30,17 +31,15 @@
 
   </div>
 
-  <nav class="sheet-tabs tabs" data-tab-container="primary">
-    <a class="item active" data-tab="description">{{localize "Description"}}</a>
+
+  <nav class="sheet-tabs tabs">
+    <a class="item" data-tab="description">{{localize "Description"}}</a>
     <a class="item" data-tab="details">{{localize "Details"}}</a>
   </nav>
-  <div class="sheet-tabs edges left" ></div>
-  <div class="sheet-tabs edges right" ></div>
+  <section class="content">
+      {{> systems/wng/templates/items/item-description.html}}
 
-  {{> systems/wng/templates/items/item-description.html}}
-
-
-
+      <div class = "tab details" data-tab="details">
     <div class="form-group">
       <label class="label-text textarea">{{localize "Keywords (comma separated)"}}</label>
       <div class="input-box textarea">
@@ -57,15 +56,15 @@
 
     
     <div class="form-group">
-      <label class="label-text textarea">{{localize "Traits (comma separated"}}</label>
+      <label class="label-text textarea">{{localize "Traits (comma separated)"}}</label>
       <div class="input-box textarea">
         <textarea class="input-text csv-input" data-dest="traits" type="text" data-dtype="String">{{data.traits}}</textarea>
       </div>
     </div>
-
-
+  
 
   </div>
+  </section>
 </form>
 
 

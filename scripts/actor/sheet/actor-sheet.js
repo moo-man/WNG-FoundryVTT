@@ -23,7 +23,13 @@ class ActorSheetWNG extends ActorSheet {
   get actorType() {
     return this.actor.data.type;
   }
-
+  
+  static get defaultOptions() {
+    const options = super.defaultOptions;
+    options.tabs = [{navSelector: ".tabs", contentSelector: ".content", initial: "main"}]
+    options.width = 576;
+	  return options;
+  }
   /**
    * Overrides the default ActorSheet.render to add functionality.
    * 
@@ -139,13 +145,6 @@ class ActorSheetWNG extends ActorSheet {
   activateListeners(html)
   {
     super.activateListeners(html);
-
-    // Activate tabs
-    new Tabs(html.find(".tabs"), {
-      initial: this.actor.data.flags["_sheetTab"],
-      callback: clicked => this.actor.data.flags["_sheetTab"] = clicked.attr("data-tab")
-    });
-  
 
     // Item summaries - displays a customized dropdown description
     html.find('.item-dropdown').click(event => this._onItemSummary(event));

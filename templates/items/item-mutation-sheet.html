@@ -14,21 +14,16 @@
     <a class="item active" data-tab="description">{{localize "Description"}}</a>
     <a class="item" data-tab="details">{{localize "Details"}}</a>
   </nav>
-  <div class="sheet-tabs edges left" ></div>
-  <div class="sheet-tabs edges right" ></div>
+  <section class="content">
+      {{> systems/wng/templates/items/item-description.html}}
 
-  {{> systems/wng/templates/items/item-description.html}}
-
-
-    <div class="form-group">
+    <div class = "tab details" data-tab="details">
+      <div class="form-group">
       <label class="label-text textarea">{{localize "Effect"}}</label>
       <div class="input-box textarea">
-        <textarea class="input-text csv-input" name="item.data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
+        <textarea class="input-text csv-input" name="data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
       </div>
     </div>
-
-
-
   </div>
 </form>
 

@@ -1245,6 +1245,11 @@ class ActorWNG extends Actor {
   prepare()
   {
     let preparedData = duplicate(this.data)
+    console.log(preparedData)
+    for(let sk in preparedData.data.skills)
+    {
+      preparedData.data.skills[sk].attribute = WNG.attributeAbbrev[preparedData.data.skills[sk].attribute]
+    }
     // Call prepareItems first to organize and process OwnedItems
     mergeObject(preparedData, this.prepareItems())
 
@@ -1475,7 +1480,6 @@ class ActorWNG extends Actor {
     const inContainers = []; // inContainers is the temporary storage for items within a container
 
 
-    let totalEnc = 0;         // Total encumbrance of items
     let hasSpells = false;    // if the actor has atleast a single spell - used to display magic tab
     let hasPrayers = false;   // if the actor has atleast a single prayer - used to display religion tab
     let defensiveCounter = 0; // Counter for weapons with the defensive quality

@@ -34,10 +34,10 @@
     <a class="item active" data-tab="description">{{localize "Description"}}</a>
     <a class="item" data-tab="details">{{localize "Details"}}</a>
   </nav>
-  <div class="sheet-tabs edges left" ></div>
-  <div class="sheet-tabs edges right" ></div>
+  <section class="content">
+      {{> systems/wng/templates/items/item-description.html}}
 
-  {{> systems/wng/templates/items/item-description.html}}
+    <div class = "tab details" data-tab="details">
 
 
 
@@ -109,9 +109,8 @@
       <input class="input-text" name="data.salvo" data-dtype="Number" value="{{data.salvo}}" />
     </div>
   </div>
-
-
   </div>
+  </section>
 </form>
 
 

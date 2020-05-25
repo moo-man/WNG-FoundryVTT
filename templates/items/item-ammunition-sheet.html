@@ -6,8 +6,8 @@
   <div class="item-details row1">
     <label class="label-text">{{localize "Quantity"}}</label>
     <div class="input-box" style="margin-right: 3px;">
-      <input class="input-text" style="border-radius: 0px;" type="text" name="data.quantity.value" value="{{data.quantity.value}}"
-        data-dtype="{{data.quantity.type}}" />
+      <input class="input-text" style="border-radius: 0px;" type="text" name="data.quantity" value="{{data.quantity}}"
+        data-dtype="Number" />
     </div>
     
     <label class="label-text">{{localize "Rarity"}}</label>
@@ -36,34 +36,30 @@
 
   </div>
 
-  <nav class="sheet-tabs tabs" data-tab-container="primary">
-    <a class="item active" data-tab="description">{{localize "Description"}}</a>
+  <nav class="sheet-tabs tabs">
+    <a class="item" data-tab="description">{{localize "Description"}}</a>
     <a class="item" data-tab="details">{{localize "Details"}}</a>
   </nav>
-  <div class="sheet-tabs edges left" ></div>
-  <div class="sheet-tabs edges right" ></div>
+  
+  <section class="content">
+      {{> systems/wng/templates/items/item-description.html}}
 
-  {{> systems/wng/templates/items/item-description.html}}
+      <div class = "tab details" data-tab="details">
+        <div class="form-group">
+          <label class="label-text textarea">{{localize "Keywords (comma separated)"}}</label>
+          <div class="input-box textarea">
+            <textarea class="input-text csv-input" data-dest="keywords" type="text" data-dtype="String">{{keywords}}</textarea>
+          </div>
+        </div>
 
-
-
-    <div class="form-group">
-      <label class="label-text textarea">{{localize "Keywords (comma separated)"}}</label>
-      <div class="input-box textarea">
-        <textarea class="input-text csv-input" data-dest="skills" type="text" data-dtype="String">{{keywords}}</textarea>
+        <div class="form-group">
+          <label class="label-text textarea">{{localize "Effect"}}</label>
+          <div class="input-box textarea">
+            <textarea class="input-text csv-input" name="data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="form-group">
-      <label class="label-text textarea">{{localize "Effect"}}</label>
-      <div class="input-box textarea">
-        <textarea class="input-text csv-input" name="item.data.effect" type="text" data-dtype="String">{{data.effect}}</textarea>
-      </div>
-    </div>
-
-
-
-  </div>
+  </section>
 </form>
 
 

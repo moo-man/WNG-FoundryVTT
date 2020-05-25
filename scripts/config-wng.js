@@ -540,7 +540,7 @@ WNG.groupToRange = {
 };
 
 // Weapon Group
-WNG.weaponGroup = {
+WNG.weaponGroups = {
 	"melee" : "Melee",
 	"force" : "Force",
 	"pistol" : "Pistol",
@@ -753,7 +753,7 @@ WNG.difficultyDN = {
 };
 
 //  Rarity
-WNG.rarity = {
+WNG.rarities = {
 	"common" : "Common",
 	"uncommon" : "Uncommon",
 	"rare" : "Rare",
