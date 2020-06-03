@@ -1,3 +1,8 @@
+Handlebars.registerHelper('isMed', function (value) {
+  return value == "SKILL.Med";
+});
+
+
 /**
  * Provides the main Actor data computation and organization.
  *
