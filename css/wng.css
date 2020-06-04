@@ -11868,6 +11868,7 @@ border-image-outset: 0px !important;
 /*************************************************************/
 
   /* ================== 1. MANAGE MODULES ===================== */
+  
     #module-management {
       max-width: 600px;
       max-height: 65vh;
@@ -11895,6 +11896,8 @@ border-image-outset: 0px !important;
         line-height: normal;
         background: #0b1115b5;
       }
+	  
+	  
       #module-management .window-content .modules-list .module h1,
       #module-management .window-content .modules-list .module h2,
       #module-management .window-content .modules-list .module h3,
@@ -11902,7 +11905,13 @@ border-image-outset: 0px !important;
       #module-management .window-content .modules-list .module p {
         border: none;
         background: none;
+		color: #CCC;
       }
+	  
+	  #module-management .package-list .package-title, #module-management .package-list .package-metadata, #module-management .package-list .package-description {
+		  color: #CCC;
+	  }
+	  
       #module-management .window-content .modules-list .module header {
         border: none;
       }
@@ -11987,7 +11996,10 @@ border-image-outset: 0px !important;
       #module-management .module-description {
         color:#CCC
       }
-
+	  
+	  #module-management .package-list .package-description {
+		color: #CCC;
+	  }
   /* ================== 2. CONFIGURE SETTINGS ================= */
     #client-settings {
       border: 1px solid blue;
