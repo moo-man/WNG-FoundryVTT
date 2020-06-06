@@ -3377,6 +3377,30 @@
     /* box-shadow: var(--debug-box-shadow-red); */
   }
 
+
+/* ============================================================ */
+
+.character-sheet .roll {
+    padding: 2px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.character-sheet .roll input {
+    width: 20px;
+    text-align: center;
+}
+
+.character-sheet .roll .button-roll {
+    padding: 5px;
+    border: 2px solid black;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    margin-bottom: 5px;
+}
+
+
 /* ==================== (D) PERSONAL DETAILS ================== */
   .app.window-app.sheet.wng.actor.character-sheet .window-content form #header-personal-details {
     position: absolute;
@@ -11868,7 +11892,7 @@ border-image-outset: 0px !important;
 /*************************************************************/
 
   /* ================== 1. MANAGE MODULES ===================== */
-  
+
     #module-management {
       max-width: 600px;
       max-height: 65vh;
@@ -11896,8 +11920,8 @@ border-image-outset: 0px !important;
         line-height: normal;
         background: #0b1115b5;
       }
-	  
-	  
+
+
       #module-management .window-content .modules-list .module h1,
       #module-management .window-content .modules-list .module h2,
       #module-management .window-content .modules-list .module h3,
@@ -11907,11 +11931,11 @@ border-image-outset: 0px !important;
         background: none;
 		color: #CCC;
       }
-	  
+
 	  #module-management .package-list .package-title, #module-management .package-list .package-metadata, #module-management .package-list .package-description {
 		  color: #CCC;
 	  }
-	  
+
       #module-management .window-content .modules-list .module header {
         border: none;
       }
@@ -11996,7 +12020,7 @@ border-image-outset: 0px !important;
       #module-management .module-description {
         color:#CCC
       }
-	  
+
 	  #module-management .package-list .package-description {
 		color: #CCC;
 	  }

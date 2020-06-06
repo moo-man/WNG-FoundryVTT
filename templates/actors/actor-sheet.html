@@ -11,7 +11,7 @@
           <input class="input-details name" style="box-shadow: none !important;" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Character Name'}}" />
           <span class="label name">{{localize "Name"}}</span>
         </div>
-    
+
         <div id = "field-species" class="item">
           <input class="input-details species" style="box-shadow: none !important;" name="data.details.species.value" type="text" value="{{data.details.species.value}}"
             placeholder="{{localize 'Species'}}" />
@@ -63,6 +63,18 @@
   </div>
   </div>
   </section>
+  <section>
+    <div class="roll">
+      <b>dice</b>
+      <input id="dice" type="text" value="1" data-dtype="Number"/>
+      <!--<b>DN</b>
+      <input id="difficulty" type="text" value="1" data-dtype="Number"/>
+      <b>:</b>
+      <input id="complexity" type="text" value="1" data-dtype="Number"/>
+      -->
+      <div class="button-roll">ROLL !</div>
+    </div>
+  </section>
   <!-- TABS -->
   <section id="tab-sections">
     <nav id="wng-primarytabs" class="sheet-tabs tabs" data-group="primary" ondragstart="return false;" ondrop="return false;">
@@ -103,7 +115,7 @@
         </div>
         <div class="tab notes save-scroll" data-tab="notes" data-group="primary">
           {{> systems/wng/templates/actors/actor-notes.html}}
-        </div>  
+        </div>
     </section>
   </section>
 </form>
