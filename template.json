@@ -375,21 +375,23 @@
       "weapon"
     ],
     "templates" : {
-      "value" : {"value" : 0},
-      "traits" : {"traits" : [] },
       "keywords" : {"keywords" : []} ,
-      "rarity" : {"rarity" : "" },
+      "value" : {"value" : 0},
+      "rarity" : {"rarity" : ""},
+      "traits" : {"traits" : []},
       "effect" : {"effect" : ""},
       "group" : {"group" : ""},
       "quantity" : {"quantity" : 0},
-      "XP" : {"XP" : 0 }
+      "XP" : {"XP" : 0}
     },
     "data" : {"description" : ""},
     "ammunition" : {
-      "templates" : ["value", "rarity", "keywords", "effect", "group", "quantity"]
+      "templates" : ["keywords", "value", "rarity", "effect", "group", "quantity"],
+      "type" : ""
     },
     "armour" : {
-      "templates" : ["traits", "value", "rarity", "keywords", "group"],
+      "templates" : ["keywords", "value", "rarity", "traits", "group"],
+      "type" : "",
       "AR" : 0
     },
     "archetype" : {
@@ -402,10 +404,11 @@
       "influence" : 0
     },
     "augmetics" : {
-      "templates" : ["value", "rarity", "keywords", "effect"]
+      "templates" : ["keywords", "value", "rarity", "effect"],
+      "type" : ""
     },
     "equipment" : {
-      "templates" : ["value", "rarity", "keywords", "effect", "quantity"]
+      "templates" : ["keywords", "value", "rarity", "effect", "group", "quantity"]
     },
     "injury" : {
       "templates" : ["effect"],
@@ -415,7 +418,8 @@
       "templates" : ["effect"]
     },
     "power" : {
-      "templates" : ["XP", "keywords", "effect", "group"],
+      "templates" : [ "keywords", "effect", "group", "XP"],
+      "type" : "",
       "requirements" : "",
       "DN" : 0,
       "activation" : "",
@@ -433,14 +437,14 @@
       "size" : ""
     },
     "talent" : {
-      "templates" : ["XP", "effect"],
+      "templates" : ["effect", "XP"],
       "requirements" : ""
     },
     "upgrade" : {
-      "templates" : ["value", "rarity", "keywords", "effect"]
+      "templates" : ["keywords", "value", "rarity", "effect"]
     },
     "weapon" : {
-      "templates" : ["value", "rarity", "keywords", "traits", "group"],
+      "templates" : ["keywords", "value", "rarity", "traits", "group"],
       "type" : "",
       "damage" : 0,
       "ED" : 0,

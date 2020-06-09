@@ -484,21 +484,21 @@ WNG.augmeticsKeywords = ["any", "imperium", "adeptusmechanicus", "adeptusministo
 WNG.psychicKeywords = ["fire", "kinetic", "psychic", "telepathy", "auditory", "light", "chaos", "aeldari"];
 
 // Rank
-WNG.rank = {
+WNG.ranks = {
     "initiate" : "Initiate",
     "veteran" : "Veteran",
     "champion" : "Champion"
 };
 
 // Rank XP Min
-WNG.rank = {
+WNG.rankMinXP = {
     "initiate" : 0,
     "veteran" : 40,
     "champion" : 80
 };
 
 // Weapon Type
-WNG.weaponType = {
+WNG.weaponTypes = {
 	"melee" : "Melee",
 	"chain" : "Chain",
 	"exotic" : "Exotic",
@@ -519,7 +519,7 @@ WNG.weaponType = {
 };
 
 // Originally groupToType. Given a type, what's the primary range, melee or ranged
-WNG.groupToRange = {
+WNG.typeToRange = {
 	"melee" : "Melee",
 	"chain" : "Melee",
 	"exotic" : "Melee",
@@ -589,7 +589,7 @@ WNG.weaponTraits = {
 };
 
 // Weapon Traits Descriptions
-WNG.weaponDesc = {
+WNG.weaponTraitDesc = {
 	"agonising" : "Designed to inflict maximum pain, these weapons damage mind and morale as much as body.<br><br>Every Wound inflicted by an Agonising weapon also inflicts 1 Shock.",
 	"arc" : "The deadly electrical discharge of Arc weapons scrambles vehicle technology.<br><br>Arc weapons gain +ED equal to their rating when you use them to attack a vehicle.",
 	"assault" : "Optimised for firing whilst rushing righteously towards the enemy.<br><br>You can fire an Assault weapon as part of a Run, but take a +2 DN penalty when you do so.",
@@ -635,7 +635,7 @@ WNG.ammunitionGroups = {
 };
 
 // Ammo Groups Descriptions
-WNG.ammunitionGroupsDesc = {
+WNG.ammunitionGroupDesc = {
 	"explosive" : "Explosive",
 	"standard" : "Whether it is a fistful of loose cartridges or a fully juiced charge pack, a single point of Ammo represents an abstract amount of ammunition.",
 	"specialbolt" : "These ammunition types can only be used with weapons that have the BOLT Keyword.",
@@ -659,7 +659,7 @@ WNG.armourGroups = {
 };
 
 // Armour Groups Descriptions
-WNG.armourGroupsDesc = {
+WNG.armourGroupDesc = {
 	"stdArmour" : "Standard Armour is ignored with Armour Piercing (AP).",
 	"invarmour" : "Any Armour Rating marked with an asterisk (*) is Invulnerable. Armour Piercing (AP) does not affect Invulnerable Armour."
 };
@@ -675,13 +675,64 @@ WNG.armourTraits = {
 };
 
 // Armour Traits Descriptions
-WNG.armourDesc = {
+WNG.armourTraitDesc = {
 	"bulk" : "Heavy and restrictive armour possesses the Bulk trait.<br><br>Bulk reduces the Speed of the wearer by a number of metres equal to its rating.",
 	"cumbersome" : "Large suits of armour can severely restrict movement.<br><br>You cannot Run or Sprint in Cumbersome armour.",
 	"erewego" : "The latent psychic power of an Ork empowers their armour, allowing them to fight harder when harmed.<br><br>An Ork wearing armour with this Trait ignores the Bulk and Cumbersome Traits when Wounded.",
 	"powerfield" : "Wonders of archeotech, personal Power Fields envelope their user in a protective barrier of energy.<br><br>Armour with this Trait allows you to roll Determination against Mortal Wounds.",
 	"powered" : "This armour is designed to augment the wearer’s might through the marvels of mechanisation.<br><br>Whilst wearing armour with this Trait you gain a Strength bonus equal to the rating. Additionally, you are not knocked Prone when firing an unsecured Heavy weapon.",
 	"shield" : "Wielded like a defensive weapon, shields are carried instead of worn, and used to deflect incoming attacks.<br><br>Armour with this Trait adds its AR to your Defence and Resilience, provided the GM agrees you can manoeuvre the shield to block the attack."
+};
+
+// Equipment Groups (there are no types)
+WNG.equipGroups = {
+    "equipment" : "Equipment",
+    "tools" : "Tools",
+    "consumables" : "Consumables",
+    "misc" : "Misc"
+};
+
+// Equipment Group Descriptions
+WNG.equipGroupDesc = {
+    "equipment" : "Must be worn/equipped to use.",
+    "tools" : "Can be readied and used multiple times.",
+    "consumables" : "Can be readied and used one time.",
+    "misc" : "Misc."
+};
+
+// Augmetic Types
+WNG.augmeticTypes = {
+"reconstruction" : "Reconstruction",
+"enhancement" : "Enhancement",
+"implant" : "Implant"
+};
+
+// Power Types
+WNG.powerTypes = {
+    "runesofbattle" : "Runes of Battle",
+    "telepathy" : "Telepathy",
+    "telekinesis" : "Telekinesis",
+    "pyromancy" : "Pyromancy",
+    "divination" : "Divination",
+    "biomancy" : "Biomancy",
+    "minor" : "Minor",
+    "universal" : "Universal",
+    "universalability" : "Universal Ability",
+    "maleficarum" : "Maleficarum"
+};
+
+// Power Groups
+WNG.powerGroups = {
+    "dn" : "DN",
+    "target" : "Target",
+    "opposed" : "Opposed"
+};
+
+// Power Groups Descriptions
+WNG.powerGroupDesc = {
+    "dn" : "Powers DN",
+    "target" : "Powers DN is Targets Attribute or Trait",
+    "opposed" : "Opposed Roll against Target"
 };
 
 // Weapon Ranges
@@ -781,7 +832,7 @@ WNG.actorSizes = {
 };
 
 // Actor Size Modifier (Attack and Detection)
-WNG.actorSizesMod = {
+WNG.actorSizeMod = {
 	"tiny" : "2DN",
 	"small" : "1DN",
 	"average" : "0",
@@ -791,7 +842,7 @@ WNG.actorSizesMod = {
 };
 
 // Actor Size Examples/Descriptions
-WNG.actorSizesEx = {
+WNG.actorSizeDesc = {
 	"tiny" : "Servo Skull, Cherub, Tyranid Ripper",
 	"small" : "Gun Drone, Grot, Ratling, Gyrinx",
 	"average" : "Human, Eldar, T’au, Space Marine",
@@ -809,7 +860,7 @@ WNG.visionPenalties = {
 };
 
 // Vision Penalties Range (BS and Aware)
-WNG.visionPenaltiesRange = {
+WNG.visionPenaltyRange = {
 	"mist" : 1,
 	"fog" : 2,
 	"smoke" : 3,
@@ -817,7 +868,7 @@ WNG.visionPenaltiesRange = {
 };
 
 // Vision Penalties Melee
-WNG.visionPenaltiesMelee = {
+WNG.visionPenaltyMelee = {
 	"mist" : 0,
 	"fog" : 1,
 	"smoke" : 2,
@@ -825,7 +876,7 @@ WNG.visionPenaltiesMelee = {
 };
 
 // Stealth Score Action (there is no proper name for these in the book, this is an approximation)
-WNG.stealthAction = {
+WNG.stealthActions = {
 	"whisper" : "Whispering, readying a quiet weapon.",
 	"soft" : "Talking softly, readying a weapon with moving parts (racking a stub gun), Reloading.",
 	"speaking" : "Speaking, using any light-emitting gear, attacking an unaware sentry with a knife, shooting aMelta weapon.",
@@ -835,7 +886,7 @@ WNG.stealthAction = {
 };
 
 // Stealth Score Reduction
-WNG.stealthReduction = {
+WNG.stealthReductions = {
 	"whisper" : -1,
 	"soft" : -2,
 	"speaking" : -3,
@@ -931,7 +982,7 @@ WNG.hazardRadiation = {
 };
 
 // Condition and Hazard Intensity
-WNG.intensity = {
+WNG.intensities = {
 	"light" : "Light",
 	"moderate" : "Moderate",
 	"intense" : "Intense"
