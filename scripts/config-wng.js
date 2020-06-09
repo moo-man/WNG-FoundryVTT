@@ -661,13 +661,13 @@ WNG.armourTypes = {
 
 // Armour Groups
 WNG.armourGroups = {
-	"stdArmour" : "Standard Armour",
+	"stdarmour" : "Standard Armour",
 	"invarmour" : "Invulnerable Armour"
 };
 
 // Armour Groups Descriptions
 WNG.armourGroupDesc = {
-	"stdArmour" : "Standard Armour is ignored with Armour Piercing (AP).",
+	"stdarmour" : "Standard Armour is ignored with Armour Piercing (AP).",
 	"invarmour" : "Any Armour Rating marked with an asterisk (*) is Invulnerable. Armour Piercing (AP) does not affect Invulnerable Armour."
 };
 
