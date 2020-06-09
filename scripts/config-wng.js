@@ -497,6 +497,13 @@ WNG.rankMinXP = {
     "champion" : 80
 };
 
+// Rank Modifier
+WNG.rankMod = {
+    "initiate" : 1,
+    "veteran" : 2,
+    "champion" : 3
+};
+
 // Weapon Type
 WNG.weaponTypes = {
 	"melee" : "Melee",
