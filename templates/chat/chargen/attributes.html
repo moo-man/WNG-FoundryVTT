@@ -3,9 +3,9 @@
 
 <p>{{localize "CHARGEN.AttrInstructions1"}} <b><a class = "chargen-button-nostyle" data-button = "rerollAttributes" data-species="{{speciesKey}}" data-exp="{{exp}}">{{localize "Reroll"}}</a></b> {{localize "CHARGEN.AttrInstructions2"}}</p>
 
-{{#each characteristics as |characteristic key|}}
+{{#each attributes as |attributes key|}}
 <div>
-  <b>{{key}}</b>: {{characteristic}}
+  <b>{{key}}</b>: {{attributes}}
 </div>
 {{/each}}
 

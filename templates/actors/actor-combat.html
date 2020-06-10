@@ -3,9 +3,9 @@
      <div class="minmax-box">
         <span class="minmax-label">{{localize "Wounds"}}</span> 
         <div class="minmax-values">
-           <input class="value" data-dtype="Number" type="text" value="{{data.survival.wounds.value}}">
+           <input class="value" data-dtype="Number" type="text" value="{{data.combat.wounds.value}}">
            <div id="divisor">/</div>
-           <input class="max" name="data.survival.wounds.max" type="text" value="{{data.survival.wounds.max}}" data-dtype="Number">
+           <input class="max" name="data.combat.wounds.max" type="text" value="{{data.combat.wounds.max}}" data-dtype="Number">
         </div>
      </div>
   </div>
@@ -13,9 +13,9 @@
      <div class="minmax-box">
         <span class="minmax-label">{{localize "Shock"}}</span> 
         <div class="minmax-values">
-           <input class="value" data-dtype="Number" type="text" value="{{data.survival.shock.value}}">
+           <input class="value" data-dtype="Number" type="text" value="{{data.combat.shock.value}}">
            <div id="divisor">/</div>
-           <input class="max" name="data.survival.shock.max" type="text" value="{{data.survival.shock.max}}" data-dtype="Number">
+           <input class="max" name="data.combat.shock.max" type="text" value="{{data.combat.shock.max}}" data-dtype="Number">
         </div>
      </div>
   </div>
@@ -25,7 +25,7 @@
            <h4 id="attribute-label">{{localize "Determination"}}</h4>
         </div>
         <div class="attribute-value">
-           <input name="data.survival.determination.value" type="text" value="{{data.survival.determination.value}}">
+           <input name="data.combat.determination.value" type="text" value="{{data.combat.determination.value}}">
         </div>
      </div>
   </div>
@@ -35,7 +35,7 @@
           <h4 id="attribute-label">{{localize "Resolve"}}</h4>
        </div>
        <div class="attribute-value">
-          <input name="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
+          <input name="data.mental.resolve.value" type="text" value="{{data.mental.resolve.value}}">
        </div>
     </div>
  </div>
@@ -45,7 +45,7 @@
         <h4 id="attribute-label">{{localize "Speed"}}</h4>
      </div>
      <div class="attribute-value">
-        <input name="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
+        <input name="data.details.speed.value" type="text" value="{{data.details.speed.value}}">
      </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
           <h4 id="attribute-label">{{localize "Defence"}}</h4>
        </div>
        <div class="attribute-value">
-          <input name="data.survival.defence.value" type="text" value="{{data.survival.defence.value}}">
+          <input name="data.combat.defence.value" type="text" value="{{data.combat.defence.value}}">
        </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
                 <h4 id="attribute-label">{{localize "Base"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.base" type="text" value="{{data.surival.defence.base}}">
+                <input name="data.combat.resilience.value" type="text" value="{{data.combat.resilience.value}}">
              </div>
           </div>
        </div>
@@ -105,7 +105,7 @@
                 <h4 id="attribute-label">{{localize "Armour"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.armour" type="text" value="{{data.surival.defence.armour}}">
+                <input name="data.combat.resilience.armour" type="text" value="{{data.combat.resilience.armour}}">
              </div>
           </div>
        </div>
@@ -115,7 +115,7 @@
                 <h4 id="attribute-label">{{localize "Total"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.total" type="text" value="{{data.surival.defence.total}}">
+                <input name="data.combat.resilience.total" type="text" value="{{data.combat.resilience.total}}">
              </div>
           </div>
        </div>
@@ -353,48 +353,6 @@
   </li>
   {{/each}}
 </ol>
-
-<div class="inventory-header item critical-header">
-  <a class="name">{{localize "Critical"}}</a>
-  <a class="location">{{localize "Location"}}</a>
-  {{#if owner}}
-  <div class="item-controls">
-    {{else}}
-    <div class="item-controls" style = "visibility : hidden;">
-    {{/if}}
-    <a class="item-control item-create" title="{{localize 'SHEET.CreateItem'}}" data-type="critical"><i class="fas fa-plus"></i></a>
-  </div>
-</div>
-
-<ol class="inventory-list critical-list save-scroll">
-  {{#each actor.criticals as |critical c|}}
-  <li class="item" data-item-id="{{critical._id}}">
-    <div class="content">
-      <div class="item-name critical-name item-dropdown">
-        <div class="image" style="background-image: url({{critical.img}})"></div>
-        <a class="name critical-title">{{critical.name}}</a>
-      </div>
-
-      <div class="critical-location">
-        {{critical.data.location.value}}
-      </div>
-
-      {{#if ../owner}}
-      <div class="item-controls">
-        {{else}}
-        <div class="item-controls" style = "visibility : hidden;">
-        {{/if}}
-        <a class="item-post" title="{{localize 'SHEET.PostItem'}}"><i class="fas fa-comment"></i></a>
-        <a class="item-control item-edit" title="{{localize 'SHEET.EditItem'}}"><i class="fas fa-edit"></i></a>
-        <a class="item-dropdown" title="{{localize 'SHEET.Dropdown'}}"><i class="fas fa-chevron-down"></i></a>
-        <a class="item-control item-delete" title="{{localize 'SHEET.DeleteItem'}}"><i class="fas fa-trash"></i></a>
-      </div>
-  </li>
-  {{/each}}
-</ol>
-
-
-
 
 <script>
   textContainer = document.querySelectorAll('.app.window-app.sheet.wng.actor .combat .inventory-list .item');

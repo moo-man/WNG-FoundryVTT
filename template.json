@@ -237,6 +237,11 @@
             "value" : 0,
             "bonus" : 0,
             "total" : 0
+          },
+          "stealthscore" : {
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
           }
         }
       },
@@ -320,9 +325,15 @@
             "bonus" : 0,
             "total" : 0
           },
-          "notes" : {
-            "label" : "Notes",
-            "value" : ""
+          "biography": {
+            "type": "String",
+            "label": "Biography",
+            "value": ""
+          },
+          "gmnotes": {
+            "type": "String",
+            "label": "GM Notes",
+            "value": ""
           },
           "faith" : {
             "label" : "Faith",
