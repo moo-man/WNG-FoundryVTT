@@ -1,23 +1,23 @@
-{{#each data.inventory}}
+{{#each actor.inventory as |section type|}}
 <div class="item-list">
   <div class="item-header">
-  <div class="item-name">{{localize "Talent"}}</div>
-  {{#if isGM}}
+  <div class="item-name">{{localize section.label}}</div>
+  {{#if ../owner}}
   <div class="item-controls">
-     {{else}}
-     <div style = "visibility : hidden" class="item-controls">
-        {{/if}}
-        <a class="item-control item-create" title="{{localize 'SHEET.CreateItem'}}" data-type="talent"><i class="fas fa-plus"></i></a>
-     </div>
+   {{else}}
+   <div style = "visibility : hidden" class="item-controls">
+   {{/if}}
+      <a class="item-control item-create" title="{{localize 'SHEET.CreateItem'}}" data-type="talent"><i class="fas fa-plus"></i></a>
+   </div>
   </div>
   <ol class = "items save-scroll">
-     {{#each actor.talents as |item i|}}
+     {{#each section.items as |item i|}}
      <li class="item" data-item-id="{{item._id}}">
         <div class="item-name item-dropdown">
            <div class="image" style="background-image: url({{item.img}})"></div>
            <a class="name">{{item.name}}</a>
         </div>
-        {{#if ../owner}}
+        {{#if ../../owner}}
         <div class="item-controls">
            {{else}}
            <div class="item-controls" style = "visibility : hidden;">
