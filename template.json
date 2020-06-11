@@ -349,7 +349,11 @@
       },
       "keywords" : {"keywords" : []},
       "tier" : {"tier" : 1},
-      "rank" : {"rank" : 1}
+      "rank" : {"rank" : 1},
+      "framework" : {
+        "goal" : "",
+        "bonus" : ""
+      }
     },
     "character" : {
       "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],

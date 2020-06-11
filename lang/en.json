@@ -175,11 +175,11 @@
     "Helm" : "Helm",
     "Stealth Score" : "Stealth Score",
     "Framework" : "Framework",
-    "Framework Goal" : "Framework Goal(s)",
-    "Framework Bonus" : "Framework Bonus(es)",
+    "Framework Goal" : "Goal(s)",
+    "Framework Bonus" : "Bonus(es)",
     "Objectives" : "Objectives",
     "Focus" : "Focus",
-    "Complete" : "Complete",
+    "Wargear" : "Wargear",
 
     "Error.NoAmmo" : "No Ammo!"
 
