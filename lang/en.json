@@ -44,6 +44,7 @@
 
     "SHEET.MeleeWeaponHeader" : "Melee Weapon(s)",
     "SHEET.RangedWeaponHeader" : "Ranged Weapon(s)",
+    "SHEET.ArmourHeader" : "Armour(s)",
     "SHEET.ArmourAP" : "Armour AP",
     "SHEET.TB" : "Toughness Bonus",
     "SHEET.CreateItem" : "Create Item",
@@ -171,6 +172,7 @@
     "Prayer" : "Prayer",
     "Trait" : "Trait",
     "Protects" : "Protects",
+    "Helm" : "Helm",
 
     "Error.NoAmmo" : "No Ammo!"
 
