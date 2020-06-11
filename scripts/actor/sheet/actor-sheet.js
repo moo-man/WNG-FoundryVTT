@@ -1284,6 +1284,13 @@ class ActorSheetWNG extends ActorSheet {
         }
         this.actor.setupSkill(skill.data, career.data.status);
       })
+
+      // Respond to template button clicks
+      div.on("mousedown", '.aoe-template', event =>
+      {
+        AOETemplate.fromString(event.target.text).drawPreview(event);
+      });
+
     }
     li.toggleClass("expanded");
   }
