@@ -702,6 +702,11 @@ class ActorSheetWNG extends ActorSheet {
     item.sheet.render(true);
   });
 
+  html.find(".secondary-input").submit(ev => {
+    let target = $(ev.currentTarget).attr("data-target");
+    this.actor.update({target : ev.target.value})
+  })
+
 
   // Delete Inventory Item
   html.find('.item-delete').click(ev => {

@@ -5,7 +5,7 @@
         <div class="minmax-values">
            <input class="value" data-dtype="Number" type="text" value="{{data.survival.wounds.value}}">
            <div id="divisor">/</div>
-           <input class="max" name="data.survival.wounds.max" type="text" value="{{data.survival.wounds.max}}" data-dtype="Number">
+           <input class="max secondary-input" data-target="data.survival.wounds.max" type="text" value="{{data.survival.wounds.max}}" data-dtype="Number">
         </div>
      </div>
   </div>
@@ -15,7 +15,7 @@
         <div class="minmax-values">
            <input class="value" data-dtype="Number" type="text" value="{{data.survival.shock.value}}">
            <div id="divisor">/</div>
-           <input class="max" name="data.survival.shock.max" type="text" value="{{data.survival.shock.max}}" data-dtype="Number">
+           <input class="max secondary-input" data-target="data.survival.shock.max" type="text" value="{{data.survival.shock.max}}" data-dtype="Number">
         </div>
      </div>
   </div>
@@ -25,7 +25,7 @@
            <h4 id="attribute-label">{{localize "Determination"}}</h4>
         </div>
         <div class="attribute-value">
-           <input name="data.survival.determination.value" type="text" value="{{data.survival.determination.value}}">
+           <input class="secondary-input" data-target="data.survival.determination.value" type="text" value="{{data.survival.determination.value}}">
         </div>
      </div>
   </div>
@@ -35,7 +35,7 @@
           <h4 id="attribute-label">{{localize "Resolve"}}</h4>
        </div>
        <div class="attribute-value">
-          <input name="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
+          <input class="secondary-input" data-target="data.objective.resolve.value" type="text" value="{{data.objective.resolve.value}}">
        </div>
     </div>
  </div>
@@ -45,7 +45,7 @@
         <h4 id="attribute-label">{{localize "Speed"}}</h4>
      </div>
      <div class="attribute-value">
-        <input name="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
+        <input class="secondary-input" data-target="data.objective.speed.value" type="text" value="{{data.objective.speed.value}}">
      </div>
     </div>
   </div>
@@ -59,7 +59,7 @@
             <h4 id="attribute-label">{{localize "Wrath"}}</h4>
          </div>
          <div class="attribute-value">
-            <input name="data.wrath" type="text" value="{{data.wrath}}">
+            <input class="secondary-input" data-target="data.wrath" type="text" value="{{data.wrath}}">
          </div>
       </div>
    </div>
@@ -67,9 +67,9 @@
       <div class="minmax-box">
          <span class="minmax-label">{{localize "Faith"}}</span> 
          <div class="minmax-values">
-            <input class="value" name = "data.details.faith.value" data-dtype="Number" type="text" value="{{data.details.faith.value}}">
+            <input class="value second-input" data-target = "data.details.faith.value" data-dtype="Number" type="text" value="{{data.details.faith.value}}">
             <div id="divisor">/</div>
-            <input class="max" name="data.details.faith.max" type="text" value="{{data.details.faith.max}}" data-dtype="Number">
+            <input class="secondary-input" class="max" data-target="data.details.faith.max" type="text" value="{{data.details.faith.max}}" data-dtype="Number">
          </div>
       </div>
    </div>
@@ -80,7 +80,7 @@
           <h4 id="attribute-label">{{localize "Defence"}}</h4>
        </div>
        <div class="attribute-value">
-          <input name="data.survival.defence.value" type="text" value="{{data.survival.defence.value}}">
+          <input class="secondary-input" data-target="data.survival.defence.value" type="text" value="{{data.survival.defence.value}}">
        </div>
     </div>
   </div>
@@ -95,7 +95,7 @@
                 <h4 id="attribute-label">{{localize "Base"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.base" type="text" value="{{data.surival.defence.base}}">
+                <input class="secondary-input" data-target="data.surival.defence.base" type="text" value="{{data.surival.defence.base}}">
              </div>
           </div>
        </div>
@@ -105,7 +105,7 @@
                 <h4 id="attribute-label">{{localize "Armour"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.armour" type="text" value="{{data.surival.defence.armour}}">
+                <input class="secondary-input" data-target="data.surival.defence.armour" type="text" value="{{data.surival.defence.armour}}">
              </div>
           </div>
        </div>
@@ -115,7 +115,7 @@
                 <h4 id="attribute-label">{{localize "Total"}}</h4>
              </div>
              <div class="attribute-value">
-                <input name="data.surival.defence.total" type="text" value="{{data.surival.defence.total}}">
+                <input class="secondary-input" data-target="data.surival.defence.total" type="text" value="{{data.surival.defence.total}}">
              </div>
           </div>
        </div>
