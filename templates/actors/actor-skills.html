@@ -3,71 +3,46 @@
       <div class="inventory-header item">
         <div class="name">Skill</div>
         <div class="attr">Attr</div>
-        <div class="rating">Rating</div>
-        <div class="total">Total</div>
+        <div class="rating">R</div>
+        <div class="total">T</div>
       </div>
 
       <ol class="items save-scroll">
         {{#each actor.data.skills as |skill sk|}}
-		{{#if (isMed skill.label)}} 
-				  </ol>
-			</div> 
-			
-			<div id="basic-skills-list" class="skill-type">
-			  <div class="inventory-header item">
-				<div class="name">Skill</div>
-				<div class="attr">Attr</div>
-				<div class="rating">Rating</div>
-				<div class="total">Total</div>
-			  </div>
 
-			  <ol class="items save-scroll">
-		{{/if}}
-			<li class="item" data-item-id={{@index}}>
-			  <div class="skill-name">
-				<a class="name skill-select">{{localize skill.label}}</a>
-			  </div>
+      		{{#if (isHalfSkills @index)}}
+          <!-- hacky solution to allow for two columns of skills,
+          planned to refactor later -->
+      				  </ol>
+      			</div>
 
-			  <h3 class="row-label">{{skill.attribute}}</h3>
-			  <h3 class="row-value">0</h3>
+      			<div id="basic-skills-list" class="skill-type">
+      			  <div class="inventory-header item">
+      				<div class="name">Skill</div>
+      				<div class="attr">Attr</div>
+      				<div class="rating">R</div>
+      				<div class="total">T</div>
+      			  </div>
 
-			  <div class="skill-advances input-field">
-				<input data-item-id={{@index}} data-skill="{{sk}}" type="text" data-dtype="rating" value="{{skill.rating}}" />
-			  </div>
+      			  <ol class="items save-scroll">
+      		{{/if}}
+      			<li class="item" data-item-id={{@index}}>
+      			  <div class="skill-name">
+      				<a class="name skill-select">{{localize skill.label}}</a>
+      			  </div>
 
-			  <a class="skill-total">{{skill.total}}</a>
-			</li>
-        {{/each}}
-      </ol>
-    </div> 
-	
-    <div id="basic-skills-list" class="skill-type">
-      <div class="inventory-header item">
-        <div class="name">Skill</div>
-        <div class="attr">Attr</div>
-        <div class="rating">Rating</div>
-        <div class="total">Total</div>
-      </div>
+      			  <h3 class="row-label">{{skill.attribute}}</h3>
 
-      <ol class="items save-scroll">
-        {{#each actor.data.skills as |skill sk|}}
-        <li class="item">
-          <div class="skill-name">
-            <a class="name skill-select">{{localize skill.label}}</a>
-          </div>
+      			  <div class="skill-advances input-field">
+      				      <input data-item-id={{@index}} data-skill="{{sk}}" type="text" data-dtype="rating" value="{{skill.rating}}" />
+      			  </div>
 
-          <h3 class="row-label">{{skill.attribute}}</h3>
-          <h3 class="row-value">0</h3>
-
-
-          <div class="skill-advances input-field">
-            <input data-skill="{{sk}}" type="text" data-dtype="rating" value="{{skill.rating}}" />
-          </div>
-
-          <a class="skill-total">{{skill.total}}</a>
-        </li>
+      			  <a class="skill-total">{{skill.total}}</a>
+      			</li>
         {{/each}}
       </ol>
     </div>
-	
+
+
+
   </div>

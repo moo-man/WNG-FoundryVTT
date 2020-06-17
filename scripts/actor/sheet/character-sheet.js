@@ -14,7 +14,7 @@ class ActorSheetWNGCharacter extends ActorSheetWNG
       {
         classes: options.classes.concat(["wng", "actor", "character-sheet"]),
         width: 610,
-        height: 740,
+        height: 853,
       });
       return options;
     }
