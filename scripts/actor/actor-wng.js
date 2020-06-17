@@ -1363,22 +1363,13 @@ class ActorWNG extends Actor {
   {
     let actorData = duplicate(this.data)
     // These containers are for the various different tabs
-    const careers = [];
-    const basicSkills = [];
-    const advancedOrGroupedSkills = [];
     const talents = [];
-    const traits = [];
     const weapons = [];
     const armour = [];
     const injuries = [];
-    const grimoire = [];
-    const petty = [];
-    const blessings = [];
-    const miracles = [];
-    const psychology = [];
     const mutations = [];
-    const diseases = [];
     const criticals = [];
+    const powers = [];
     let penalties = {
       [game.i18n.localize("Armour")]: {
         value: ""
@@ -1394,33 +1385,6 @@ class ActorWNG extends Actor {
       },
     };
 
-    const AP = {
-      head: {
-        value: 0,
-        layers: [],
-      },
-      body: {
-        value: 0,
-        layers: [],
-      },
-      rArm: {
-        value: 0,
-        layers: [],
-      },
-      lArm: {
-        value: 0,
-        layers: [],
-      },
-      rLeg: {
-        value: 0,
-        layers: [],
-      },
-      lLeg: {
-        value: 0,
-        layers: [],
-      },
-      shield: 0
-    }
 
     // Inventory object is for the Trappings tab - each sub object is for an individual inventory section
     const inventory = {
@@ -1432,7 +1396,7 @@ class ActorWNG extends Actor {
         show: false,                                // Should this section be shown (if an item exists in this list, it is set to true)
         dataType: "weapon"                          // What type of FVTT Item is in this section (used by the + button to add an item of this type)
       },
-      armor: {
+      armour: {
         label: game.i18n.localize("WNG.TrappingType.Armour"),
         items: [],
         toggle: true,
@@ -1447,50 +1411,14 @@ class ActorWNG extends Actor {
         dataType: "ammunition"
       },
       clothingAccessories: {
-        label: game.i18n.localize("WNG.TrappingType.ClothingAccessories"),
+        label: game.i18n.localize("WNG.TrappingType.Equipment"),
         items: [],
         toggle: true,
         toggleName: game.i18n.localize("Worn"),
         show: false,
         dataType: "trapping"
-      },
-      booksAndDocuments: {
-        label: game.i18n.localize("WNG.TrappingType.BooksDocuments"),
-        items: [],
-        show: false,
-        dataType: "trapping"
-      },
-      toolsAndKits: {
-        label: game.i18n.localize("WNG.TrappingType.ToolsKits"),
-        items: [],
-        show: false,
-        dataType: "trapping"
-      },
-      foodAndDrink: {
-        label: game.i18n.localize("WNG.TrappingType.TradeTools"),
-        items: [],
-        show: false,
-        dataType: "trapping"
-      },
-      drugsPoisonsHerbsDraughts: {
-        label: game.i18n.localize("WNG.TrappingType.DrugsPoisonsHerbsDraughts"),
-        items: [],
-        show: false,
-        dataType: "trapping"
-      },
-      misc: {
-        label: game.i18n.localize("WNG.TrappingType.Misc"),
-        items: [],
-        show: true,
-        dataType: "trapping"
       }
     };
-    const inContainers = []; // inContainers is the temporary storage for items within a container
-
-
-    let hasSpells = false;    // if the actor has atleast a single spell - used to display magic tab
-    let hasPrayers = false;   // if the actor has atleast a single prayer - used to display religion tab
-    let defensiveCounter = 0; // Counter for weapons with the defensive quality
 
     // Iterate through items, allocating to containers
     // Items that need more intense processing are sent to a specialized function (see preparation functions below)
@@ -1550,8 +1478,6 @@ class ActorWNG extends Actor {
       {
         console.error("Something went wrong with preparing item " + i.name + ": " + error)
         ui.notifications.error("Something went wrong with preparing item " + i.name + ": " + error)
-        ui.notifications.error("Deleting " + i.name);
-        this.deleteEmbeddedEntity("OwnedItem", i._id);
       }
     } // END ITEM SORTING
 

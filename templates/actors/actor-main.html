@@ -153,12 +153,12 @@
      </div>
   </div>
   <div class="corruption row-section">
-     <div class="attribute-box">
-        <div class="attribute-name">
-           <h4 id="attribute-label">{{localize "Corruption"}}</h4>
-        </div>
-        <div class="attribute-value">
-           <input name="data.survival.corruption.value" type="text" value="{{data.survival.corruption.value}}">
+     <div class="minmax-box">
+         <span class="minmax-label">{{localize "Corruption"}}</span>
+        <div class="minmax-values">
+           <input class="value" name = "data.details.corruption.value" data-dtype="Number" type="text" value="{{data.details.corruption.value}}">
+           <div id="divisor">/</div>
+           <input class="level" name="data.details.corruption.level" type="text" value="{{data.details.corruption.level}}" data-dtype="Number">
         </div>
      </div>
   </div>

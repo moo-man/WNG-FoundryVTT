@@ -702,6 +702,11 @@ class ActorSheetWNG extends ActorSheet {
     item.sheet.render(true);
   });
 
+  html.find(".secondary-input").submit(ev => {
+    let target = $(ev.currentTarget).attr("data-target");
+    this.actor.update({target : ev.target.value})
+  })
+
 
   // Delete Inventory Item
   html.find('.item-delete').click(ev => {
@@ -1284,6 +1289,13 @@ class ActorSheetWNG extends ActorSheet {
         }
         this.actor.setupSkill(skill.data, career.data.status);
       })
+
+      // Respond to template button clicks
+      div.on("mousedown", '.aoe-template', event =>
+      {
+        AOETemplate.fromString(event.target.text).drawPreview(event);
+      });
+
     }
     li.toggleClass("expanded");
   }

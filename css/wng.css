@@ -3980,7 +3980,6 @@
         }
 
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .custom-row {
-
           height: 100px
         }
         .app.window-app.sheet.wng.actor.character-sheet .tab.main.active .custom-row .defence {
@@ -4331,18 +4330,194 @@
     /* background: blue; */
   }
 
-  /* ================== 1. WEAPONS ============================ */
-    .app.window-app.sheet.wng.actor .tab.combat.active .advantage input[name="data.status.advantage.value"] {
+  /* ================== 1. MAIN CALL BACKS ============================ */
+  .app.window-app.sheet.wng.actor .tab.combat.active .main-row {
+    display: flex;
+    height: 47px;
+    margin: 6px 0px 0px 0px;
+  }
+
+  .app.window-app.sheet.wng.actor .tab.combat.active .row-section {
+    display: flex;
+    width: 51px;
+    margin: 0px 0px 0px 0px;
+    border: 1px solid #736953a6;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-right: 5px
+  }
+
+  .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-value {
+      border-right: none;
+      border: none;
       height: 22px;
-      text-align: center;
-      padding-top: 6px;
+      font-family: var(--actor-input-font-family);
+      font-size: var(--actor-input-font-size);
+      font-weight: var(--actor-input-font-weight);
+      color: var(--actor-input-color);
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+      flex: 1
+      /* background: red; */
     }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-value > input {
+        width: inherit;
+        height: inherit;
+        margin: 0px;
+        padding: 5px 0px 0px 0px;
+        text-align: center;
+        height: 100%;
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .defence.row-section .attribute-value > input {
+          font-size: 50px
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .resilience.row-section .attribute-value > input {
+        font-size: 30px
+    }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-value .auto-calc-toggle {
+        padding: 5px 0px 0px 0px;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+      }
+
+    .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-box {
+      height: 100%;
+      display: flex;
+      flex-direction: column
+    }
+
+    .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-name {
+      border: none;
+      border-bottom: 1px solid #736953a6;
+      border-top: none;
+      height: 23px;
+      margin: 0px;
+      padding: 2px 0px 0px 0px;
+      font-family: var(--actor-label-font-family);
+      font-size: var(--actor-label-font-size);
+      font-weight: var(--actor-label-font-weight);
+      color: var(--actor-label-color);
+      text-align: center;
+      box-shadow: 0 0 10px #00000052 inset;
+      /* background: blue; */
+    }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .attribute-name h4 {
+        border: none;
+        padding: 0px;
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+        box-shadow: none;
+        font-family: var(--actor-label-font-family);
+        font-size: var(--actor-label-font-size);
+        font-weight: var(--actor-label-font-weight);
+        color: var(--actor-label-color);
+        background: none;
+      }
+    .app.window-app.sheet.wng.actor .tab.combat.active .row-section.faith{
+      height: 47px
+    }
+
+  .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-box {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    flex-grow: 1;
+  }
+    .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-label {
+      border-right: none;
+      border: none;
+      height: 22px;
+      font-family: var(--actor-label-font-family);
+      font-size: var(--actor-label-font-size);
+      font-weight: var(--actor-label-font-weight);
+      color: var(--actor-label-color);
+      text-align: center;
+      box-shadow: 0 0 10px #00000052 inset;
+      margin: 0px;
+      padding: 2px 0px 0px 0px;
+      /* background: red; */
+    }
+    .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-values {
+      border: none;
+      border-top: 1px solid #736953a6;
+      height: 23px;
+      margin: 0px;
+      padding: 0px 0px 0px 0px;
+      font-family: var(--actor-input-font-family);
+      font-size: var(--actor-input-font-size);
+      font-weight: var(--actor-input-font-weight);
+      color: var(--actor-input-color);
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      /* box-shadow: 0 0 10px #00000052 inset; */
+      /* background: red; */
+    }
+        .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-values .value {
+          margin: 0px 0px 0px 0px;
+          padding: 5px 0px 0px 0px;
+          text-align: center;
+        }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-values #divisor {
+        width: fit-content;
+        height: 22px;
+        padding: 5px 0px 0px 0px;
+        /* background: green; */
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .minmax-values .max {
+        margin: 0px 0px 0px 0px;
+        padding: 5px 0px 0px 0px;
+        text-align: center;
+      }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .custom-row {
+        margin-bottom: 6px;
+        height: 100px
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .custom-row .defence {
+        flex: 0.8
+      }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .subrow {
+        display:flex;
+        height: 100%
+      }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .subrow  > *{
+        margin: 0px;
+        border: 0px;
+        border-right: 1px solid #736953a6;
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section .subrow div:last-of-type{
+        border-right: 0px;
+      }
+
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section.stacked-section {
+        flex: 0.8;
+        display: flex;
+        flex-direction: column;
+        border: 0px;
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section.stacked-section > * {
+        width: 100%
+      }
+      .app.window-app.sheet.wng.actor .tab.combat.active .row-section.stacked-section div:last-of-type {
+        border-top: 0px;
+      }
+
+  
+  /* ================== 2. WEAPONS ============================ */
     .app.window-app.sheet.wng.creature-sheet .inventory-header.melee-weapon-header,
     .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.melee-weapon-header {
       width: 100%;
       height: 20px;
       margin: 0px;
-      padding: 0px 6px;
+      padding: 0px 2px 0px 6px;
       border: 1px solid #736953a6;
       font-family: var(--actor-label-font-family);
       font-size: var(--actor-label-font-size);
@@ -4953,242 +5128,240 @@
         }
 
   /* ================== 2. ARMOUR ============================= */
-    .app.window-app.sheet.wng.actor .tab.combat.active .armour-section {
-      text-align: center;
-      margin: 0px 0px 0px 0px;
-      padding: 0px;
-      width: 100%;
-      height: fit-content;
-      background-position-x: 176px;
-      background-position-y: center;
-      background-size: contain;
-      display: flex;
-      flex-direction: column;
-    }
-    .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .row {
-      text-align: center;
-      margin: 6px 0px 0px 0px;
-      padding: 0px;
-      width: 100%;
-      height: fit-content;
-      background: none;
+
+  .app.window-app.sheet.wng.creature-sheet .inventory-header.armour-header,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.armour-header {
+  width: 100%;
+  height: 20px;
+  margin: 6px 0px 0px 0px;
+  padding: 0px 6px;
+  border: 1px solid #736953a6;
+  font-family: var(--actor-label-font-family);
+  font-size: var(--actor-label-font-size);
+  font-weight: var(--actor-label-font-weight);
+  color: var(--actor-label-color);
+  background: none;
+  box-shadow: 0 0 10px #6b3a0f87 inset;
+  text-align: left;
+  display: inline-block;
+  flex-grow: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.app.window-app.sheet.wng.creature-sheet .inventory-header.armour-header #name,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.armour-header #name {
+    position: relative;
+    left: 0px;
+    height: 18px;
+    width: fit-content;
+    display: inline-block;
+  }
+.app.window-app.sheet.wng.creature-sheet .inventory-header.armour-header #helm,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.armour-header #helm {
+    position: relative;
+    left: 112px;
+    height: 18px;
+    width: fit-content;
+    display: inline-block;
+    /* background: bisque; */
+  }
+.app.window-app.sheet.wng.creature-sheet .inventory-header.armour-header #ar,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.armour-header #ar {
+    position: relative;
+    left: 167px;
+    height: 18px;
+    width: fit-content;
+    display: inline-block;
+    /* background: bisque; */
+  }
+
+  .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list {
+  overscroll-behavior-x: unset;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid #736953a6;
+  border-top: none;
+  list-style: none;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  height: fit-content;
+  width: 100%;
+  margin: -5px 0px 0px 0px;
+  padding: 0px;
+}
+.app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item,
+.app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item {
+  width: 100%;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px 0px;
+  padding: 2px 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px inset black;
+  font-family: var(--actor-input-font-family);
+  font-size: var(--actor-input-font-size);
+  font-weight: var(--actor-input-font-weight);
+  color: var(--actor-input-color);
+  justify-content: space-between;
+  /* background: var(--debug-background-color-green); */
+}
+.app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content,
+  .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content {
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 1px 0px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: row;
+    font-family: var(--actor-input-font-family);
+    font-size: var(--actor-input-font-size);
+    font-weight: var(--actor-input-font-weight);
+    color: var(--actor-input-color);
+    justify-content: space-between;
+    /* background: var(--debug-background-color-green); */
+  }
+.app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .item-name,
+    .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .item-name {
       display: flex;
       flex-direction: row;
+      min-width: 180px;
+      max-width: 180px;
     }
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .head.column,
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .larm.column,
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .lleg.column {
-        width: 50%;
-        margin: 0px 3px 0px 0px;
-        /* background: aqua; */
+      .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .image,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .image {
+        background-size: 32px;
+        background-repeat: no-repeat;
+        min-height: 32px;
+        max-height: 32px;
+        min-width: 32px;
+        max-width: 32px;
       }
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .body.column,
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .rarm.column,
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .rleg.column {
-        width: 50%;
-        margin: 0px 0px 0px 3px;
-        /* background: aqua; */
-      }
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header {
-        width: 100%;
-        height: 20px;
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px;
-        border: 1px solid #736953a6;
-        font-family: var(--actor-label-font-family);
-        font-size: var(--actor-label-font-size);
-        font-weight: var(--actor-label-font-weight);
-        color: var(--actor-label-color);
-        background: none;
-        box-shadow: 0 0 10px #6b3a0f87 inset;
+      .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .name,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .name {
         text-align: left;
-        display: inline-block;
-        flex-grow: 0;
-        overflow-x: hidden;
-        overflow-y: hidden;
+        vertical-align: middle;
+        padding: 11px 0px 0px 4px;
+        overflow: hidden;
+        color: #672323;
+        text-shadow: 1px 0px 1px #6e6e716e;
       }
-        .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header .armour-total {
-          font-family: CaslonPro;
-          font-size: 14px;
-          font-weight: 700;
-          color: #000000c7;
-          position: relative;
-          top: -1px;
-          border-radius: 10px;
-          display: inline-block;
-          box-shadow: 0 0 10px #6b3a0f87 inset;
-          border: 1px solid #7369538a;
-          text-align: center;
-          padding: 2px 0px 0px 0px;
-          margin: 0px;
-          height: 19px;
-          width: 22px;
-        }
-        .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header .shield-total {
-          font-family: CaslonPro;
-          font-size: 14px;
-          font-weight: 700;
-          color: #000000c7;
-          position: relative;
-          top: -1px;
-          border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 10px;
-          display: inline-block;
-          box-shadow: 0 0 10px #3c3b3b87 inset;
-          border: 1px solid #7369538a;
-          text-align: center;
-          padding: 2px 0px 0px 0px;
-          margin: 0px;
-          height: 19px;
-          width: 22px;
-        }
-        .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header .toughness-total {
-          font-family: CaslonPro;
-          font-size: 14px;
-          font-weight: 700;
-          color: #000000c7;
-          position: relative;
-          top: -1px;
-          border-top-left-radius: 9px;
-          border-top-right-radius: 3px;
-          border-bottom-left-radius: 3px;
-          border-bottom-right-radius: 9px;
-          display: inline-block;
-          box-shadow: 0 0 10px #4a324987 inset;
-          border: 1px solid #7369538a;
-          text-align: center;
-          padding: 2px 0px 0px 0px;
-          margin: 0px;
-          height: 19px;
-          width: 22px;
-        }
-        .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header .armour-label {
-          width: 130px;
-          height: 18px;
-          position: relative;
-          top: -1px;
-          display: inline-block;
-          text-align: left;
-          margin-top: 0px;
-        }
-        .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-header .armour-ap {
-          width: fit-content;
-          height: 18px;
-          position: relative;
-          top: -1px;
-          display: inline-block;
-          text-align: center;
-          margin-top: 1px;
-        }
-
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-box {
-        margin: -5px 0px 0px 0px;
+    .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .group,
+    .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .group {
+      min-width: 90px;
+      max-width: 90px;
+      padding: 11px 0px 0px 0px;
+      text-align: center;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 0;
+      /* background: aqua; */
+    }
+    .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .helm-selector,
+    .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .helm-selector {
+      min-width: 110px;
+      max-width: 110px;
+      padding: 7px 0px 0px 0px;
+      text-align: center;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 0;
+      /* background: aqua; */
+    }
+    .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .helm-selector > select,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .helm-selector > select {
+        background: none;
+        border: 1px solid #737373;
+        border-radius: 2px;
         padding: 0px;
-        width: 100%;
-      }
-      .app.window-app.sheet.wng.actor .tab.combat.active .armour-section .column .armour-box .inventory-list.armour-list {
         margin: 0px;
-        padding: 0px 1px;
-        overscroll-behavior-x: unset;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        border: 1px solid #736953a6;
-        border-top: none;
-        list-style: none;
-        box-shadow: 0px 0px 1px inset black;
         font-family: var(--actor-input-font-family);
         font-size: var(--actor-input-font-size);
         font-weight: var(--actor-input-font-weight);
         color: var(--actor-input-color);
-        height: fit-content;
+        height: 19px;
+        width: 100%;
+        text-overflow: ellipsis;
       }
-        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content {
-          width: 100%;
-          text-align: center;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          margin: 1px 0px;
-          padding: 0px 0px;
-          display: flex;
-          flex-direction: row;
+      .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content .ar,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .ar {
+        min-width: 50px;
+        max-width: 50px;
+        padding: 11px 0px 0px 0px;
+        text-align: center;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 0;
+        /* background: aqua; */
+      }
+
+      .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .content.properties,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content.properties {
+        width: 100%;
+        text-align: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--actor-input-font-family);
+        font-size: var(--actor-input-font-size);
+        font-weight: var(--actor-input-font-weight);
+        color: var(--actor-input-color);
+        justify-content: space-between;
+        /* background: var(--debug-background-color-green); */
+      }
+      .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .armour-traits,
+      .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits {
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+        .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .armour-traits .label,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits .label {
+          font-size: 13px;
+          color: #464331f0;
+          border: 1px solid #00000038;
+          border-radius: 3px;
+          margin-right: 4px;
+          padding: 2px 2px 0px 2px;
+          background: #774e000f;
+          box-shadow: 0 0 3px #6b3a0f2b inset;
+        }
+          .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .armour-traits .text,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits .text {
           font-family: var(--actor-input-font-family);
           font-size: var(--actor-input-font-size);
           font-weight: var(--actor-input-font-weight);
           color: var(--actor-input-color);
-          justify-content: space-between;
-          /* background: var(--debug-background-color-green); */
+          padding: 3px 0px 0px 0px;
+          margin-right: 0px;
+          min-width: fit-content;
+          max-width: fit-content;
         }
-          .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .item-name {
-            display: flex;
-            flex-direction: row;
-            min-width: 180px;
-            max-width: 180px;
-          }
-            .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .image {
-              background-size: 32px;
-              background-repeat: no-repeat;
-              min-height: 32px;
-              max-height: 32px;
-              min-width: 32px;
-              max-width: 32px;
-              margin-top: 2px;
-            }
-            .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .name {
-              text-align: left;
-              vertical-align: middle;
-              padding: 11px 0px 0px 4px;
-              overflow: hidden;
-            }
-          .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content .ap-value {
-            min-width: 50px;
-            max-width: 50px;
-            padding: 11px 0px 0px 19px;
-            text-align: center;
-            flex-grow: 0;
-            flex-shrink: 0;
-            flex-basis: 0;
-            /* background: aqua; */
-          }
-        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .content.properties {
-          width: 100%;
-          text-align: center;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          margin: 0px 0px;
-          padding: 0px 0px;
-          display: flex;
-          flex-direction: column;
-          font-family: var(--actor-input-font-family);
-          font-size: var(--actor-input-font-size);
-          font-weight: var(--actor-input-font-weight);
-          color: var(--actor-input-color);
-          justify-content: space-between;
-          /* background: var(--debug-background-color-green); */
+        .app.window-app.sheet.wng.creature-sheet .inventory-list.armour-list .item .armour-traits .comma,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits .comma {
+          border: none;
+          margin: 0px 4px 0px 0px;
+          background: none;
         }
-        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-property {
-          margin: 0px 0px 0px 0px;
-          padding: 0px;
-          display: flex;
-          flex-direction: row;
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits h1:last-of-type,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits h2:last-of-type,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-traits h3:last-of-type,
+        .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .armour-traits h4:last-of-type {
+          visibility: hidden;
+          margin: 0px 2px 0px 0px;
         }
-          .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-property .label {
-            font-size: 13px;
-            color: #464331f0;
-            border: 1px solid #00000038;
-            border-radius: 3px;
-            margin-right: 4px;
-            padding: 2px 2px 0px 2px;
-            background: #774e000f;
-            box-shadow: 0 0 3px #6b3a0f2b inset;
-          }
-          .app.window-app.sheet.wng.actor .tab.combat.active .inventory-list.armour-list .item .armour-property .text {
-            font-family: var(--actor-input-font-family);
-            font-size: var(--actor-input-font-size);
-            font-weight: var(--actor-input-font-weight);
-            color: var(--actor-input-color);
-            padding: 3px 0px 0px 0px;
-            margin-right: 4px;
-          }
 
   /* ================== 3. INJURIES =========================== */
     .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.critical-header,
