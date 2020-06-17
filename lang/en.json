@@ -173,6 +173,13 @@
     "Trait" : "Trait",
     "Protects" : "Protects",
     "Helm" : "Helm",
+    "Stealth Score" : "Stealth Score",
+    "Framework" : "Framework",
+    "Framework Goal" : "Goal(s)",
+    "Framework Bonus" : "Bonus(es)",
+    "Objectives" : "Objectives",
+    "Focus" : "Focus",
+    "Wargear" : "Wargear",
 
     "Error.NoAmmo" : "No Ammo!"
 

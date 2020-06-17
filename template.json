@@ -237,6 +237,11 @@
             "value" : 0,
             "bonus" : 0,
             "total" : 0
+          },
+          "stealthscore" : {
+            "value" : 0,
+            "bonus" : 0,
+            "total" : 0
           }
         }
       },
@@ -320,9 +325,15 @@
             "bonus" : 0,
             "total" : 0
           },
-          "notes" : {
-            "label" : "Notes",
-            "value" : ""
+          "biography": {
+            "type": "String",
+            "label": "Biography",
+            "value": ""
+          },
+          "gmnotes": {
+            "type": "String",
+            "label": "GM Notes",
+            "value": ""
           },
           "faith" : {
             "label" : "Faith",
@@ -338,7 +349,11 @@
       },
       "keywords" : {"keywords" : []},
       "tier" : {"tier" : 1},
-      "rank" : {"rank" : 1}
+      "rank" : {"rank" : 1},
+      "framework" : {
+        "goal" : "",
+        "bonus" : ""
+      }
     },
     "character" : {
       "templates" : ["attributes", "skills", "combat", "mental", "social", "objective", "details", "keywords", "tier", "rank"],
