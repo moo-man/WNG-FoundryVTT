@@ -127,7 +127,7 @@ class DiceWNG
     // Additionally, the auto-success/failure range can complicate things even more.
 
     // ********** Failure **********
-    /*if (roll.total >= 96 || roll.total > targetNum && roll.total > 5)
+    if (roll.total >= 96 || roll.total > targetNum && roll.total > 5)
     {
       description = game.i18n.localize("Failure")
       if (roll.total >= 96 && SL > -1)
@@ -165,7 +165,7 @@ class DiceWNG
       if (SL == 0)
         SL = "-" + SL.toString()
     }
-      */
+
     // ********** Success **********
     else if (roll.total <= 5 || roll.total <= targetNum)
     {
