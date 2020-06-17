@@ -255,8 +255,8 @@
     --tab-header-font-family: CaslonAntique;
     --tab-header-font-size: 14px;
     --tab-header-font-weight: 700;
-    --tab-header-color: #403f3e;
-    --tab-header-color-active: #4a0404;
+    --tab-header-color: #803315;
+    --tab-header-color-active: ‎#FFC2AA;
 
     --actor-input-font-family: CaslonPro;
     --actor-input-font-size: 11px;
@@ -3400,7 +3400,7 @@
 .character-sheet .roll .button-roll {
     padding: 5px;
     border: 2px solid grey;
-    
+
     background-color: black;
     color: white;
     margin-bottom: 5px;
@@ -4510,7 +4510,7 @@
         border-top: 0px;
       }
 
-  
+
   /* ================== 2. WEAPONS ============================ */
     .app.window-app.sheet.wng.creature-sheet .inventory-header.melee-weapon-header,
     .app.window-app.sheet.wng.actor .tab.combat.active .inventory-header.melee-weapon-header {
