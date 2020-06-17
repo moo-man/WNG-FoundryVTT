@@ -33,7 +33,7 @@ class DiceWNG
       sceneStress = game.combat.started ? "challenging" : "average";
     else if (game.settings.get("wng", "testDefaultDifficulty"))
       sceneStress = "average";
-      
+
     // Merge input with generic properties constant between all tests
     mergeObject(testData,
     {
@@ -93,10 +93,10 @@ class DiceWNG
 
   /**
    * Provides the basic evaluation of a test.
-   * 
+   *
    * This function, when given the necessary data (target number, SL bonus, etc.) provides the
    * basic test evaluation - rolling the test, determining SL, success, description, critical/fumble if needed.
-   * 
+   *
    * @param {Object} testData  Test info: target number, SL bonus, success bonus, etc
    */
   static rollTest(testData)
@@ -109,7 +109,7 @@ class DiceWNG
         total: testData.roll
       }
     else
-      roll = new Roll("1d100").roll(); // Use input roll if exists, otherwise, roll randomly (used for editing a test result)
+      roll = new Roll("1d6").roll(); // Use input roll if exists, otherwise, roll randomly (used for editing a test result)
 
     let successBonus = testData.successBonus;
     let slBonus = testData.slBonus;
@@ -291,11 +291,11 @@ class DiceWNG
 
   /**
    * Extends the basic evaluation of a test to include weapon considerations.
-   * 
+   *
    * This function, when given the necessary data (target number, SL bonus, etc.)calls
    * rollTest to provide the basic evaluation, then extends that to mainly account for
    * qualities/flaws of the weapon
-   * 
+   *
    * @param {Object} testData  Test info: weapon, target number, SL bonus, success bonus, etc
    */
   static rollWeaponTest(testData)
@@ -366,11 +366,11 @@ class DiceWNG
 
   /**
    * Extends the basic evaluation of a test to include spell considerations.
-   * 
+   *
    * This function, when given the necessary data (target number, SL bonus, etc.)calls
    * rollTest to provide the basic evaluation, then extends that to mainly account for
    * miscasting or critical castings
-   * 
+   *
    * @param {Object} testData  Test info: spell, target number, SL bonus, success bonus, etc
    */
   static rollCastTest(testData)
@@ -497,11 +497,11 @@ class DiceWNG
 
   /**
    * Extends the basic evaluation of a test to include spell considerations.
-   * 
+   *
    * This function, when given the necessary data (target number, SL bonus, etc.)calls
    * rollTest to provide the basic evaluation, then extends that to mainly account for
    * miscasting or critical castings
-   * 
+   *
    * @param {Object} testData  Test info: spell, target number, SL bonus, success bonus, etc
    */
   static rollChannellTest(testData, actor)
@@ -592,7 +592,7 @@ class DiceWNG
         testResults.extra.majormis = game.i18n.localize("ROLL.MajorMis")
         break;
 	}
-	
+
     if (testData.extra.ingredient)
       miscastCounter--;
     if (miscastCounter < 0)
@@ -604,11 +604,11 @@ class DiceWNG
 
   /**
    * Extends the basic evaluation of a test to include prayer considerations.
-   * 
+   *
    * This function, when given the necessary data (target number, SL bonus, etc.)calls
    * rollTest to provide the basic evaluation, then extends that to mainly account for
    * wrath of the gods
-   * 
+   *
    * @param {Object} testData  Test info: prayer, target number, SL bonus, success bonus, etc
    */
   static rollPrayTest(testData, actor)
@@ -650,7 +650,7 @@ class DiceWNG
     {
       testResults.description = game.i18n.localize("ROLL.PrayGranted")
 
-      // Wrath of the gads activates if ones digit is equal or less than current sin      
+      // Wrath of the gads activates if ones digit is equal or less than current sin
       let unitResult = Number(testResults.roll.toString().split('').pop())
       if (unitResult == 0)
         unitResult = 10;
@@ -683,9 +683,9 @@ class DiceWNG
   }
 
   /** Take roll data and display it in a chat card template.
-   * 
-   * 
-   * 
+   *
+   *
+   *
    * @param {Object} chatOptions - Object concerning display of the card like the template or which actor is testing
    * @param {Object} testData - Test results, values to display, etc.
    * @param {Object} rerenderMessage - Message object to be updated, instead of rendering a new message
@@ -747,7 +747,7 @@ class DiceWNG
         return ChatMessage.create(chatOptions, false);
       });
     }
-    else // Update message 
+    else // Update message
     {
       // Generate HTML from the requested chat template
       return renderTemplate(chatOptions.template, chatData).then(html =>
@@ -1011,7 +1011,7 @@ class DiceWNG
 
   /**
    * Toggles a chat card from to edit mode - switches to using <input>
-   * 
+   *
    * @param {Object} html  chat card html
    */
   static toggleEditable(html)
