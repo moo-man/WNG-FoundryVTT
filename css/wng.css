@@ -259,7 +259,7 @@
     --tab-header-color-active: #4a0404;
 
     --actor-input-font-family: CaslonPro;
-    --actor-input-font-size: 12px;
+    --actor-input-font-size: 11px;
     --actor-input-font-weight: 500;
     --actor-input-color: grey;
 
@@ -3383,23 +3383,28 @@
 /* ============================================================ */
 
 .character-sheet .roll {
-    padding: 2px;
-    margin-top: 25px;
+    padding-top: 5px;
+    margin-top: 30px;
     text-align: center;
+    background-color: grey;
 }
 
 .character-sheet .roll input {
     width: 20px;
     text-align: center;
+    border-color: black;
+    border-width: 1px;
+    border-style: dashed;
 }
 
 .character-sheet .roll .button-roll {
     padding: 5px;
-    border: 2px solid black;
-    margin-top: 10px;
+    border: 2px solid grey;
+    
     background-color: black;
     color: white;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 
