@@ -1,5 +1,9 @@
-Handlebars.registerHelper('isMed', function (value) {
-  return value == "SKILL.Med";
+/**
+ *  hacky fix for skill tab to show all skills - would love to use half the size
+ *  of the array, but need to figure out how to properly use handlebars
+*/
+Handlebars.registerHelper('isHalfSkills', function (index) {
+  return index == 9;
 });
 
 
@@ -29,7 +33,7 @@ class ActorWNG extends Actor {
    * movement values, and encumbrance. Some of these may or may not actually be calculated, depending on the user choosing
    * not to have them autocalculated. These values are relatively simple, more complicated calculations that require items
    * can be found in the sheet's getData() function.
-   * 
+   *
    * NOTE: NOT TO BE CONFUSED WITH prepare() - that function is called upon rendering to organize and process actor data
    *
    * @see ActorSheetWNG.getData()
@@ -162,7 +166,7 @@ class ActorWNG extends Actor {
       testData.hitLocation = true;
     }
 
-    // Setup dialog data: title, template, buttons, prefilled data   
+    // Setup dialog data: title, template, buttons, prefilled data
     let dialogOptions = {
       title: title,
       template : "/systems/wng/templates/chat/skill-dialog.html",
@@ -610,7 +614,7 @@ class ActorWNG extends Actor {
 
     // Find the spell lore, and use that to determine the default channelling selection
     let spellLore = spell.data.lore.value;
-    let defaultSelection 
+    let defaultSelection
     if (spell.data.wind && spell.data.wind.value)
     {
       defaultSelection = channellSkills.indexOf(channellSkills.find(x => x.name.includes(spell.data.wind.value)))
@@ -917,7 +921,7 @@ class ActorWNG extends Actor {
       },
       title: title,
       template : template,
-      flags : {img: this.data.token.randomImg ? this.data.img : this.data.token.img} 
+      flags : {img: this.data.token.randomImg ? this.data.img : this.data.token.img}
       // img to be displayed next to the name on the test card - if it's a wildcard img, use the actor image
     }
 
@@ -1225,9 +1229,9 @@ class ActorWNG extends Actor {
   /* --------------------------------------------------------------------------------------------------------- */
   /**
    * Preparation function takes raw item data and processes it with actor data, typically using the calculate
-   * functions to do so. For example, A weapon passed into prepareWeaponCombat will turn the weapon's damage 
+   * functions to do so. For example, A weapon passed into prepareWeaponCombat will turn the weapon's damage
    * from "SB + 4" to the actual damage value by using the actor's strength bonus. See the specific functions
-   * below for more details on what exactly is processed. These functions are used when rolling a test 
+   * below for more details on what exactly is processed. These functions are used when rolling a test
    * (determining a weapon's base damage) or setting up the actor sheet to be displayed (displaying the damage
    * in the combat tab).
    *
@@ -1235,22 +1239,21 @@ class ActorWNG extends Actor {
 
   /**
    * Prepares actor data for display and other features.
-   * 
+   *
    * prepare() is the principal function behind taking every aspect of an actor and processing them
-   * for display (getData() - see ActorSheetWNG) and other needs. This is where all items (call to 
-   * prepareItems()) are prepared and  organized, then used to calculate different Actor features, 
-   * such as the Size trait influencing wounds and token size, or how talents might affect damage. 
-   * In many areas here, these talents/traits that affect some calculation are updated only if a 
-   * difference is detected to avoid infinite loops, I would like an alternative but I'm not sure 
+   * for display (getData() - see ActorSheetWNG) and other needs. This is where all items (call to
+   * prepareItems()) are prepared and  organized, then used to calculate different Actor features,
+   * such as the Size trait influencing wounds and token size, or how talents might affect damage.
+   * In many areas here, these talents/traits that affect some calculation are updated only if a
+   * difference is detected to avoid infinite loops, I would like an alternative but I'm not sure
    * where to go instead.
-   * 
-   * NOTE: THIS FUNCTION IS NOT TO BE CONFUSED WITH prepareData(). That function is called upon updating 
+   *
+   * NOTE: THIS FUNCTION IS NOT TO BE CONFUSED WITH prepareData(). That function is called upon updating
    * an actor. This function is called whenever the sheet is rendered.
    */
   prepare()
   {
     let preparedData = duplicate(this.data)
-    console.log(preparedData)
     for(let sk in preparedData.data.skills)
     {
       preparedData.data.skills[sk].attribute = WNG.attributeAbbrev[preparedData.data.skills[sk].attribute]
@@ -1263,26 +1266,26 @@ class ActorWNG extends Actor {
 
   /**
    * Augments actor preparation with additional calculations for Characters.
-   * 
+   *
    * Characters have more features and so require more calculation. Specifically,
    * this will add pure soul talent advances to max corruption, as well as display
-   * current career values (details, advancement indicatiors, etc.). 
-   * 
+   * current career values (details, advancement indicatiors, etc.).
+   *
    * Note that this functions requires actorData to be prepared, by this.prepare().
-   * 
-   * @param {Object} actorData  prepared actor data to augment 
+   *
+   * @param {Object} actorData  prepared actor data to augment
    */
   prepareCharacter(actorData)
   {
-   
+
   }
 
   /**
    * Augments actor preparation with additional calculations for NPCs.
-   * 
+   *
    * Currently NPCs do not need any additional calculation, hooray.
-   * 
-   * @param {Object} actorData  prepared actor data 
+   *
+   * @param {Object} actorData  prepared actor data
    */
   prepareNPC(actorData)
   {
@@ -1295,13 +1298,13 @@ class ActorWNG extends Actor {
 
   /**
    * Augments actor preparation with additional calculations for Creatures.
-   * 
+   *
    * preparing for Creatures mainly involves excluding traits that were marked to be excluded,
    * then replacing the traits array with only the included traits (which is used by prepare()).
-   * 
+   *
    * Note that this functions requires actorData to be prepared, by this.prepare().
-   * 
-   * @param {Object} actorData  prepared actor data to augment 
+   *
+   * @param {Object} actorData  prepared actor data to augment
    */
   prepareCreature(actorData)
   {
@@ -1323,17 +1326,17 @@ class ActorWNG extends Actor {
         trait.included = true;
       }
     }
- 
+
     // notes traits is all traits - for display in the notes tab
     actorData.notesTraits = actorData.traits.sort(WNG_Utility.nameSorter);
-    // "traits" is only included traits 
+    // "traits" is only included traits
     actorData.traits = actorData.traits.filter(t => t.included);
- 
+
     // Combine all skills into a skill array (for creatur overview in the maintab)
     actorData.skills = (actorData.basicSkills.concat(actorData.advancedOrGroupedSkills)).sort(WNG_Utility.nameSorter);
     // Filter those skills by those trained (only show skills with an advancement in the main tab)
-    actorData.trainedSkills = actorData.skills.filter(s => s.data.advances.value > 0) 
- 
+    actorData.trainedSkills = actorData.skills.filter(s => s.data.advances.value > 0)
+
     for (let weapon of actorData.weapons)
     {
       try // For each weapon, if it has ammo equipped, add the ammo name to the weapon
@@ -1348,13 +1351,13 @@ class ActorWNG extends Actor {
 
   /**
    * Iterates through the Owned Items, processes them and organizes them into containers.
-   * 
+   *
    * This behemoth of a function goes through all Owned Items, separating them into individual arrays
    * that the html templates use. Before adding them into the array, they are typically processed with
    * the actor data, which can either be a large function itself (see prepareWeaponCombat) or not, such
    * as career items which have minimal processing. These items, as well as some auxiliary data (e.g.
    * encumbrance, AP) are bundled into an return object
-   * 
+   *
    */
   prepareItems()
   {
@@ -1440,7 +1443,7 @@ class ActorWNG extends Actor {
       ammunition: {
         label: game.i18n.localize("WNG.TrappingType.Ammunition"),
         items: [],
-        show: false,            
+        show: false,
         dataType: "ammunition"
       },
       clothingAccessories: {
@@ -1493,57 +1496,57 @@ class ActorWNG extends Actor {
     // Items that need more intense processing are sent to a specialized function (see preparation functions below)
     // Physical items are also placed into containers instead of the inventory object if their 'location' is not 0
     // A location of 0 means not in a container, otherwise, the location corresponds to the id of the container the item is in
-    for (let i of actorData.items) 
+    for (let i of actorData.items)
     {
-      try 
+      try
       {
         i.img = i.img || DEFAULT_TOKEN;
 
         // *********** TALENTS ***********
-        if (i.type === "talent") 
+        if (i.type === "talent")
         {
           talents.push(i);
-        } 
+        }
         // *********** Ammunition ***********
-        else if (i.type === "ammunition") 
+        else if (i.type === "ammunition")
         {
           inventory.ammunition.items.push(i);
-        } 
+        }
 
         // *********** Weapons ***********
         // Weapons are "processed" at the end for efficency
-        else if (i.type === "weapon") 
+        else if (i.type === "weapon")
         {
           inventory.weapons.items.push(i);
-        } 
+        }
 
         // *********** Armour ***********
         // Armour is prepared only if it is worn, otherwise, it is just pushed to inventory and encumbrance is calculated
-        else if (i.type === "armour") 
+        else if (i.type === "armour")
         {
             inventory.armour.items.push(i);
-        } 
+        }
         // *********** Injuries ***********
-        else if (i.type == "injury") 
+        else if (i.type == "injury")
         {
           injuries.push(i);
-        } 
+        }
 
         // *********** Criticals ***********
-        else if (i.type == "critical") 
+        else if (i.type == "critical")
         {
           criticals.push(i);
-        } 
+        }
 
-        // *********** Mutations ***********   
-        // Some mutations have modifiers - see the penalties section below 
-        else if (i.type === "mutation") 
+        // *********** Mutations ***********
+        // Some mutations have modifiers - see the penalties section below
+        else if (i.type === "mutation")
         {
           mutations.push(i);
-        } 
+        }
 
-      } 
-      catch (error) 
+      }
+      catch (error)
       {
         console.error("Something went wrong with preparing item " + i.name + ": " + error)
         ui.notifications.error("Something went wrong with preparing item " + i.name + ": " + error)
@@ -1562,13 +1565,13 @@ class ActorWNG extends Actor {
 
   /**
    * Calculates the wounds of an actor based on prepared items
-   * 
+   *
    * Once all the item preparation is done (prepareItems()), we have a list of traits/talents to use that will
    * factor into Wonuds calculation. Namely: Hardy and Size traits. If we find these, they must be considered
-   * in Wound calculation. 
-   * 
-   * @param {Object} actorData    prepared actor data - all items organized and processed 
-   * 
+   * in Wound calculation.
+   *
+   * @param {Object} actorData    prepared actor data - all items organized and processed
+   *
    * @returns {Number} Max wound value calculated
    */
   calculateWounds(actorData)
@@ -1594,7 +1597,7 @@ class ActorWNG extends Actor {
 
     if (actorData.flags.autoCalcWounds)
     {
-      // Construct trait means you use SB instead of WPB 
+      // Construct trait means you use SB instead of WPB
       if (actorData.traits.find(t => t.name.toLowerCase().includes("construct")) || actorData.traits.find(t => t.name.toLowerCase().includes("mindless")))
         wpb = sb;
       switch (actorData.data.details.size.value) // Use the size to get the correct formula (size determined in prepare())
